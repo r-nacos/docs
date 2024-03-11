@@ -52,8 +52,8 @@ export default {
     giscusTalk({
       repo: 'r-nacos/docs', //仓库
       repoId: 'R_kgDOLevX8w', //仓库ID
-      category: 'General', // 讨论分类
-      categoryId: 'DIC_kwDOLevX884Cd41U', //讨论分类ID
+      category: 'Announcements', // 讨论分类
+      categoryId: 'DIC_kwDOLevX884Cd41T', //讨论分类ID
       mapping: 'pathname',
       inputPosition: 'bottom',
       lang: 'zh-CN',
