@@ -36,11 +36,12 @@ jobs:
         run: |
           npm install
           npm run docs:build
+          ls -al docs/.vitepress/dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
+          publish_dir: ./docs/.vitepress/dist
 
