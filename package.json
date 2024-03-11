@@ -1,0 +1,25 @@
+{
+  "name": "r-nacos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs --mode development",
+    "docs:build": "vitepress build docs --mode production",
+    "docs:cloudflare": "vitepress build docs --base /",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "vitepress": "^1.0.0-rc.44"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.4.5",
+    "medium-zoom": "^1.1.0",
+    "vitepress-plugin-comment-with-giscus": "^1.1.12"
+  }
+}
