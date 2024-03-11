@@ -1,0 +1,46 @@
+name: docs Publish
+
+#v
+
+on:
+  push:
+    branches:
+      - master 
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            changed:
+              - 'docs/**'
+              - '.github/workflows/page.yml'
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
+        with:
+          node-version: 16
+
+      - name: Install dependencies and build
+        if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
+        run: |
+          npm install
+          npm run docs:build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
+

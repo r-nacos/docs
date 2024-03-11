@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 //const { VITE_BASE_URL } = loadEnv(process.env.NODE_ENV || "", process.cwd())
 const VITE_BASE_URL="/docs/"
 
-console.log('VITE_BASE_URL', process.env.NODE_ENV, VITE_BASE_URL)
+//console.log('VITE_BASE_URL', process.env.NODE_ENV, VITE_BASE_URL)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
