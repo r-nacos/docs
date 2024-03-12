@@ -3,14 +3,23 @@
 }
 
 .medium-zoom-image {
-  z-index: 9999 !important;/* 给的值是21，但是实测盖不住，直接999 */
+  z-index: 9999 !important;
+  /* 给的值是21，但是实测盖不住，直接999 */
 }
 
 /* 禁止双指缩放 */
-body, html {
-    touch-action: manipulation;
-    -webkit-touch-callout: none;
-    -ms-touch-action: manipulation;
+body,
+html {
+  -ms-touch-action: manipulation;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
 }
 
-
+:root {
+  --base-color: #ff649f;
+  --base-hover-color: #bd4b77;
+  --vp-c-default-1: var(--base-color);
+  --vp-c-brand-1: var(--base-color);
+  --vp-button-brand-bg: var(--base-color);
+  --vp-button-brand-hover-bg: var(--base-hover-color);
+}

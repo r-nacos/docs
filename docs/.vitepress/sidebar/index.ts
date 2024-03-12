@@ -1,21 +1,42 @@
 import { DefaultTheme } from 'vitepress'
-import { commonDirectoryName } from '../utils/constant'
 export const sidebar: DefaultTheme.Sidebar = {
-  '/': [
+  '/notes/': [
     {
       text: '简介',
-      link: `/notes/`,
+      collapsed: false,
+      items: [
+        {
+          text: 'R-Nacos是什么?',
+          link: `/notes/intro/what_is_r-nacos/`,
+        },
+        {
+          text: '快速开始',
+          link: `/notes/intro/quick_start/`,
+        },
+        {
+          text: '集群部署',
+          link: `/notes/intro/cluster_deploy/`,
+        },
+      ],
+    },
+    {
+      text: '高级',
+      collapsed: false,
+      items: [
+        {
+          text: '运行参数和性能',
+          link: `/notes/high/run_params_performance/`,
+        },
+        {
+          text: '架构',
+          link: `/notes/high/architecture/`,
+        },
+      ]
     },
     {
       text: '快速开始',
       collapsed: true,
       link: `/p/quick_started/`,
-      items: [
-        {
-          text: '部署样列',
-          link: `/notes/01_intro/quick_start/`,
-        },
-      ],
     },
     {
       text: '集群部署',
@@ -39,7 +60,7 @@ export const sidebar: DefaultTheme.Sidebar = {
     },
     {
       text: '常见问题',
-      link: `/p/faq/`,
+      link: `/notes/faq/`,
     },
   ],
 }
