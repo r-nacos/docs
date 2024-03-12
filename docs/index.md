@@ -25,10 +25,10 @@ hero:
   actions:
     - theme: brand
       text: "简介"
-      link: "/notes/"  
+      link: "/notes/intro/what_is_r-nacos/"  
     - theme: alt
       text: "快速开始"
-      link: "/notes/01_intro/quick_start/"
+      link: "/notes/intro/quick_start/"
 
 # 按钮下方的描述
 features:
