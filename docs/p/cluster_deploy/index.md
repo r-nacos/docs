@@ -32,14 +32,14 @@ r-nacos 在v0.3.0版本后支持集群部署。
 
 ### 一、取得r-nacos安装包
 
-安装包的获取方式与 [快速开始](./quick-started.md)一致
+安装包的获取方式与 [快速开始](/p/quick-started/)一致
 
 ### 二、配置集群规则
 
 
 集群部署相关的配置参数有四个:RNACOS_RAFT_NODE_ID,RNACOS_RAFT_NODE_ADDR,RNACOS_RAFT_AUTO_INIT,RNACOS_RAFT_JOIN_ADDR。
 
-具体参数说明参考 [运行参数说明](./deplay_env.md) 
+具体参数说明参考 [运行参数说明](/p/deplay_env/) 
 
 集群配置规则： 
 
