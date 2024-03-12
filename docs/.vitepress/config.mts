@@ -20,7 +20,7 @@ export default defineConfig({
     ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no" }],
     ['meta', { name: "keywords", content: "R-Nacos,Nacos,r-nacos,nacos" }],
     //百度统计
-    [ 'script', { async: '', src: 'https://hm.baidu.com/hm.js?9640cfff6281936db5e9d046d4e7fce3' } ],
+    [ 'script', { async: '', src: 'https://hm.baidu.com/hm.js?afa135946ba7fb33d69bea1f370b905c' } ],
   ],
   base: VITE_BASE_URL,
   lastUpdated: true, // 上次更新
