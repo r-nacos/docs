@@ -160,9 +160,43 @@ docker run -d --name nacos \
 > * ② 最新的 alpine 正式版本: `qingpan/rnacos:stable-alpine`。
 > * ③ 目前 MacOS arm 系统运行`stable`镜像失败，可以先换成`stable-alpine`镜像，等后面解决arm `stable`镜像问题后再把这个注意事项去掉。
 
-## 1.4 使用 R-Nacos 控制台
+## 1.4 Docker Compose 运行
 
-### 1.4.1 访问
+* 编写 docker-compose.yaml 文件：
+
+```shell
+vim docker-compose.yaml
+```
+
+```yaml
+version: '3.8'
+
+services:
+  nacos:
+    image: qingpan/rnacos:stable
+    container_name: nacos
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "10848:10848"
+    volumes:
+      - /var/nacos/io:/io:rw
+    restart: always
+```
+
+
+
+* 运行：
+
+```shell
+docker compose up -d 
+```
+
+
+
+## 1.5 使用 R-Nacos 控制台
+
+### 1.5.1 访问
 
 * 服务启动后，可以在浏览器通过 `http://192.168.10.100:8848` 来进行访问老控制台：
 
@@ -184,7 +218,7 @@ docker run -d --name nacos \
 
 ![](./assets/14.gif)
 
-### 1.4.2 用户管理
+### 1.5.2 用户管理
 
 * 用户管理的角色如下：
 
@@ -200,7 +234,7 @@ docker run -d --name nacos \
 
 ![image-20240306133443458](./assets/16.png)
 
-### 1.4.3 配置管理
+### 1.5.3 配置管理
 
 * 配置列表管理：
 
@@ -210,7 +244,7 @@ docker run -d --name nacos \
 
 ![](./assets/18.gif)
 
-### 1.4.4 服务管理
+### 1.5.4 服务管理
 
 * 服务列表管理：
 
@@ -220,7 +254,7 @@ docker run -d --name nacos \
 
 ![image-20240306143340543](./assets/20.png)
 
-### 1.4.5 命名空间管理
+### 1.5.5 命名空间管理
 
 * 命名空间列表：
 
