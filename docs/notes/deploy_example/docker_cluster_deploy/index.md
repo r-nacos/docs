@@ -56,7 +56,7 @@
 | RNACOS_RAFT_AUTO_INIT | 是否当做主节点初始化(只在每一次启动时生效)           | true           | 节点 1 时默认为 true。<br>节点非 1 时为 false。              |
 | RNACOS_RAFT_JOIN_ADDR | 是否作为节点加入对应的主节点（只在第一次启动时生效） | 空             | 127.0.0.1:9848                                               |
 
-> 温馨提示ℹ️：具体参数说明在[这里](../../high/run_params_performance/)。
+> 温馨提示ℹ️：具体参数说明在[这里](../../env_config/)。
 
 * 集群配置规则：
   * ① 所有的`集群节点`都需要设置 `RNACOS_RAFT_NODE_ID` 和 `RNACOS_RAFT_NODE_ADDR`；其中，不同节点的 `node_id` 和 `node_addr` 不能相同，并且 `node_id` 是一个`正整数`，`node_addr` 是 `ip:grpc_port`。
@@ -177,7 +177,7 @@ docker compose ps
 
 ### 2.5.1 概述
 
-* 部署方式和[软件包单机部署](../quick_start/#第二章-源码安装)类似，只不过 R-Nacos 支持通过环境变量启动或通过配置文件方式启动，对应的文档在[这里]()。
+* 部署方式和[软件包单机部署](../linux_deploy/)类似，只不过 R-Nacos 支持通过环境变量启动或通过配置文件方式启动，对应的文档在[这里]()。
 
 ### 2.5.2 集群规划
 
