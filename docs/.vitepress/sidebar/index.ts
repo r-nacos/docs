@@ -36,13 +36,14 @@ export const sidebar: DefaultTheme.Sidebar = {
     },
     {
       text: '部署样例',
+      collapsed: true,
       items: [
         {
-          text: 'linux单机部署',
+          text: '单机部署',
           link: `/notes/deploy_example/linux_deploy/`,
         },
         {
-          text: 'docker 集群部署',
+          text: '集群部署',
           link: `/notes/deploy_example/docker_cluster_deploy/`,
         }
       ],
