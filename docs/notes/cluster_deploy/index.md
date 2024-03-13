@@ -39,7 +39,7 @@ r-nacos 在v0.3.0版本后支持集群部署。
 
 集群部署相关的配置参数有四个:RNACOS_RAFT_NODE_ID,RNACOS_RAFT_NODE_ADDR,RNACOS_RAFT_AUTO_INIT,RNACOS_RAFT_JOIN_ADDR。
 
-具体参数说明参考 [运行参数说明](../deplay_env/) 
+具体参数说明参考 [运行参数说明](../env_config/) 
 
 集群配置规则： 
 
