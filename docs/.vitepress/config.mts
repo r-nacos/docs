@@ -46,7 +46,7 @@ export default defineConfig({
     nav: nav, // 导航
     sidebar: sidebar, // 侧边栏
     socialLinks: [ // 社交链接
-      { icon: 'github', link: 'https://github.com/r-nacos' }
+      { icon: 'github', link: 'https://github.com/r-nacos/r-nacos' }
     ],
     docFooter: { // 自定义上下页名
       prev: '上一篇', next: '下一篇'
