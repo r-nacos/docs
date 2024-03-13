@@ -12,13 +12,13 @@ const VITE_BASE_URL = "/docs/"
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN', // html 标签的 language
-  title: "R-Nacos", // 标题
+  title: "r-nacos", // 标题
   titleTemplate: "Hi，终于等到你",
-  description: "R-Nacos",
+  description: "r-nacos doc",
   head: [ // favicon.ico 图标等
     ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}/favicon.ico` }],
     ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no" }],
-    ['meta', { name: "keywords", content: "R-Nacos,Nacos,r-nacos,nacos" }],
+    ['meta', { name: "keywords", content: "r-nacos,nacos,rnacos" }],
     //百度统计
     [ 'script', { async: '', src: 'https://hm.baidu.com/hm.js?afa135946ba7fb33d69bea1f370b905c' } ],
   ],
@@ -53,7 +53,7 @@ export default defineConfig({
     },
     footer: { // 页脚
       message: 'Released under the MIT License.',
-      copyright: `Copyright © ${dayjs().format("YYYY")} R-Nacos`
+      copyright: `Copyright © ${dayjs().format("YYYY")} r-nacos`
     },
     outline: { // 大纲显示 1-6 级标题
       level: [1, 6],

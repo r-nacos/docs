@@ -18,14 +18,14 @@ head:
       content: r-nacos 
 
 hero:
-  name: "R-Nacos"
+  name: "r-nacos"
   text: ""
-  tagline: "『R-Nacos 是一个用 Rust 实现的 Nacos 服务』"
+  tagline: "『r-nacos是一个用rust实现的nacos服务』"
   # 按钮相关
   actions:
     - theme: brand
       text: "简介"
-      link: "/notes/intro/what_is_r-nacos/"  
+      link: "/notes/intro/"  
     - theme: alt
       text: "快速开始"
       link: "/notes/quick_started/"

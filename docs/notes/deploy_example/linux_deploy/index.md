@@ -202,7 +202,7 @@ docker ps
 
 ![](./assets/14.gif)
 
-## 1.5 使用 R-Nacos 控制台
+## 1.5 使用 r-nacos 控制台
 
 ### 1.5.1 访问
 
