@@ -36,11 +36,15 @@ export const sidebar: DefaultTheme.Sidebar = {
     },
     {
       text: '部署样例',
-      collapsed: true,
+      collapsed: false,
       items: [
         {
           text: '单机部署',
           link: `/notes/deploy_example/linux_deploy/`,
+        },
+        {
+          text: '使用systemd部署r-nacos',
+          link: `/notes/deploy_example/linux_systemd_deploy/`,
         },
         {
           text: '集群部署',
