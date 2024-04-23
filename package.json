@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.11.20",
-    "vitepress": "^1.0.0-rc.44"
+    "@types/node": "^20.11.30",
+    "vitepress": "^1.0.1"
   },
   "dependencies": {
     "dayjs": "^1.11.10",

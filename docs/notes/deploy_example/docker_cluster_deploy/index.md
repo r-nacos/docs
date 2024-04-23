@@ -201,7 +201,7 @@ docker compose ps
 
 * `r-nacos-master` 的 `env01` 配置文件的信息如下：
 
-```env
+```txt
 #file:env01 , Initialize with the leader node role
 RUST_LOG=warn
 RNACOS_HTTP_PORT=8848
@@ -213,7 +213,7 @@ RNACOS_RAFT_AUTO_INIT=true
 
 * `r-nacos-slave1` 的 `env02` 配置文件的信息如下：
 
-```env
+```txt
 #file:env02 , Initialize with the follower node role
 RUST_LOG=warn
 RNACOS_HTTP_PORT=8849
