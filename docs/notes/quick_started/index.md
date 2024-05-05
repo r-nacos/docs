@@ -45,8 +45,6 @@ docker 的容器运行目录是 /io，会从这个目录读写配置文件
 + 最新的gnu正式版本: `qingpan/rnacos:stable`
 + 最新的alpine正式版本: `qingpan/rnacos:stable-alpine`
 
-**MacOS arm系统补充说明** ：目前MacOS arm系统运行`stable`镜像失败，可以先换成`stable-alpine`镜像。等后面解决arm `stable`镜像问题后再把这个注意事项去掉。
-
 
 方式3：通过 cargo 编译安装
 
@@ -65,6 +63,23 @@ cd rnacos
 cargo build --release
 cargo run
 ```
+
+方式5: MacOS支持通过brew安装
+
+```shell
+# 把r-nacos加入taps
+brew tap r-nacos/r-nacos 
+
+# brew 安装 r-nacos
+brew install r-nacos
+
+# 运行
+rnacos
+
+# 后续可以直接通过以下命令更新到最新版本
+# brew upgrade r-nacos 
+```
+
 
 测试、试用推荐使用第1、第2种方式，直接下载就可以使用。
 
@@ -113,27 +128,46 @@ curl "http://127.0.0.1:8848/nacos/v1/ns/instance/list?&namespaceId=public&servic
 
 [open-api](https://nacos.io/zh-cn/docs/open-api.html)
 
-
 ## 三、使用r-nacos控制台
 
 从0.4.0版本开始，支持独立端口号的新控制台。新控制台有完备的用户管理、登陆校验、权限控制，支持对外网暴露。
 
-启动服务后可以在浏览器通过 `http://127.0.0.1:10848/` 访问r-nacos新控制台。 
-老控制台`http://127.0.0.1:8848/` 也仍然可用，不过后继会考虑废弃。老控制台不需要登陆、不支持用户管理。
+启动服务后可以在浏览器通过 `http://127.0.0.1:10848/rnacos/` 访问r-nacos新控制台。 
+
+老控制台`http://127.0.0.1:8848/rnacos/` 标记废弃，默认不开启，可通过配置开启。老控制台不需要登陆鉴权、不支持用户管理。
+
+控制台主要包含用户管理、命名空间管理、配置管理、服务管理、服务实例管理。
+
+> 控制台线上演示
+
+地址： [https://www.bestreven.top/rnacos/](https://www.bestreven.top/rnacos/) 
+(演示服务与网址由一位热心用户提供）
+
+演示用户：
+
++ 开发者:
+    + 用户名: `dev` ,密码: `dev`
++ 访客:
+    + 用户名: `guest`, 密码: `guest`
+
+演示内容：
+
++ 配置中心：接近5千个配置
++ 服务中心：30个服务，每个服务有15个实例，共450个服务实例。
 
 
-主要包含用户管理、命名空间管理、配置管理、服务管理、服务实例管理。
 
-1、用户登陆
+
+> 1、用户登陆
 
 在新控制台打开一个地址，如果检测到没有登陆，会自动跳转到登陆页面。
 一个用户连续登陆失败5次，会被锁定1个小时。这个次数可以通过启动参数配置。
 
-<img style="width: 400px;" width="400" src="https://github.com/heqingpan/rnacos/raw/master/doc/assets/imgs/20231223220425.png" />
+<img style="width: 400px;" width="400" src="https://github.com/r-nacos/r-nacos/raw/master/doc/assets/imgs/20231223220425.png" />
 
-2、用户管理
+> 2、用户管理
 
-![](https://github.com/heqingpan/rnacos/raw/master/doc/assets/imgs/20231223222325.png)
+![](https://github.com/r-nacos/r-nacos/raw/master/doc/assets/imgs/20231223222325.png)
 
 系统会默认创建一个名为`admin`的用户，密码为`admin`。 
 
@@ -149,25 +183,25 @@ curl "http://127.0.0.1:8848/nacos/v1/ns/instance/list?&namespaceId=public&servic
 **注意：** 对外暴露的nacos控制台端口前，建议增加一个自定义管理员，把admin用户删除或禁用。
 
 
-3、配置管理
+> 3、配置管理
 
 配置列表管理
 
-![](https://github.com/heqingpan/rnacos/raw/master/doc/assets/imgs/20230506155441.png)
+![](https://github.com/r-nacos/r-nacos/raw/master/doc/assets/imgs/20230506155441.png)
 
 新建、编辑配置
 
-![](https://github.com/heqingpan/rnacos/raw/master/doc/assets/imgs/20230506155545.png)
+![](https://github.com/r-nacos/r-nacos/raw/master/doc/assets/imgs/20230506155545.png)
 
-4、服务列表管理
+> 4、服务列表管理
 
-![](https://github.com/heqingpan/rnacos/raw/master/doc/assets/imgs/20230506155133.png)
+![](https://github.com/r-nacos/r-nacos/raw/master/doc/assets/imgs/20230506155133.png)
 
-5、服务实例管理
+> 5、服务实例管理
 
-![](https://github.com/heqingpan/rnacos/raw/master/doc/assets/imgs/20230506155158.png)
+![](https://github.com/r-nacos/r-nacos/raw/master/doc/assets/imgs/20230506155158.png)
 
-6、命名空间管理
+> 6、命名空间管理
 
 ![](https://user-images.githubusercontent.com/1174480/268299574-4947b9f8-79e1-48e2-97fe-e9767e26ddc0.png)
 
