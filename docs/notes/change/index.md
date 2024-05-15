@@ -1,415 +1,427 @@
 > 常用的符号说明：
 >
-> :sparkles:新增：用于表示添加新功能或新特性的任务。
+> ✨新增：用于表示添加新功能或新特性的任务。
 >
-> :hammer_and_wrench:优化：用于表示代码重构或性能优化的任务。
+> 🛠️优化：用于表示代码重构或性能优化的任务。
 >
-> :book:文档：用于表示更新或添加文档的任务。
+> 📖文档：用于表示更新或添加文档的任务。
 >
-> :bug:修复：用于表示修复错误或问题的任务。
+> 🐛修复：用于表示修复错误或问题的任务。
 >
-> :boom:破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
+> 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
-# [v0.5.8-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.8-beta.1) (2024-05-12)
 
-* :hammer_and_wrench:优化：Rebuild the structure of openapi by [@Freedomfirebody](https://github.com/Freedomfirebody) in [#70](https://github.com/nacos-group/r-nacos/pull/70)
-* :sparkles:新增：调整 github workflows 以增加支持打包 MacOS arm64 安装包 [#77](https://github.com/nacos-group/r-nacos/issues/77)
-* :sparkles:新增：面向 SDK 的接口增加鉴权 [#65](https://github.com/nacos-group/r-nacos/issues/65)
-* :hammer_and_wrench:优化：切换重构后的新版控制台 0.4.0-beta.2 ，目前功能基本一致；后续会基于新版适配支持移动端，支持国际化等。
-* :hammer_and_wrench:优化：openapi 接口代码结构调整重构 #[62](https://github.com/nacos-group/r-nacos/issues/62)
+## [v0.5.8-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.8-beta.1) 2024-05-12
+Released by @github-actions[bot] on 2024-05-12T17:38:30Z
 
+## What's Changed
+* Rebuild the structure of openapi by @Freedomfirebody in https://github.com/nacos-group/r-nacos/pull/70
 
+1. 调整github workflows以增加支持打包MacOS arm64安装包 #77
+2. 面向SDK的接口增加鉴权  #65
+3. 切换重构后的新版控制台 0.4.0-beta.2 ，目前功能基本一致；后续会基于新版适配支持移动端，支持国际化等。
+4. openapi接口代码结构调整重构 #62
 
-# [v0.5.7](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.7) (2024-05-08)
 
-* :book:文档：将文档链接旧地址更新 by [@Aurorxa](https://github.com/Aurorxa) in [#63](https://github.com/nacos-group/r-nacos/pull/63) 
-* :hammer_and_wrench:优化：merge Develop update version to v0.5.7-beta by [@heqingpan](https://github.com/heqingpan) in [#67](https://github.com/nacos-group/r-nacos/pull/67)
-* :bug:修复：解决日志打印中的时间不能按时区打印题；默认以本机时区打印日志时间，支持通过配置指定时区。 [#56](https://github.com/nacos-group/r-nacos/issues/56)
-* :bug:修复：因控制台切换 v2 版本接口，导致 dataId 为空的配置可以增加不能删除的问题。 [#69](https://github.com/nacos-group/r-nacos/issues/69)
+## New Contributors
+* @Freedomfirebody made their first contribution in https://github.com/nacos-group/r-nacos/pull/70
 
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.7...v0.5.8-beta.1
 
+## [v0.5.7](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.7) 2024-05-05
+Released by @github-actions[bot] on 2024-05-05T11:25:53Z
 
-# [v0.5.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.6)
+## What's Changed
+* 将文档链接旧地址更新 by @Aurorxa in https://github.com/nacos-group/r-nacos/pull/63
+* merge Develop update version to v0.5.7-beta by @heqingpan in https://github.com/nacos-group/r-nacos/pull/67
 
-* :hammer_and_wrench:优化：重构控制台接口，把控制台接口独立出来不依赖 openapi。这样控制台接口能灵活的支持控制台功能，同时也方便系统对 nacos openapi 后续的持续兼容。
-* :sparkles:新增：配置中心，配置信息内容增加配置格式和配置描述两个字段。 [#55](https://github.com/nacos-group/r-nacos/issues/55) [#57](https://github.com/nacos-group/r-nacos/issues/57)
-* :sparkles:新增：控制台页面，配置中心配置编辑器换成代码编辑器，支持高亮显示配置内容，对编辑配置内容操作更友好。 [#55](https://github.com/nacos-group/r-nacos/issues/55) [#57](https://github.com/nacos-group/r-nacos/issues/57)
-* :bug:修复：重启后配置中心历史记录id从1计数的问题。(配置历史记录id只用于控制台显示，不影响使用)
 
+1. 解决日志打印中的时间不能按时区打印题；默认以本机时区打印日志时间，支持通过配置指定时区。 #56
+2. 修复因控制台切换v2版本接口，导致dataId为空的配置可以增加不能删除的问题。 #69
 
+## New Contributors
+* @Aurorxa made their first contribution in https://github.com/nacos-group/r-nacos/pull/63
 
-# [v0.5.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.5)
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.6...v0.5.7
 
-* :hammer_and_wrench:优化：简化控制台登录验证码 [#54](https://github.com/nacos-group/r-nacos/issues/54)
-* :bug:修复：控制台使用 nginx 代理时，退出后重新登陆跳转的页面路径不对的问题。
-* :sparkles:新增：控制台登陆默认过期设置为一天，可通过配置设置过期时间。
+----
 
+2024-05-08 09:00
 
+本版本由github actions打出来的mac包`rnacos-x86_64-apple-darwin.tar.gz`在x86中提示 `bad CPU type in executable` (可能是MacOS最新的打包平台已经切换到arm64架构)。
 
-# [v0.5.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.4)
+我今天在我电脑重新打个包手动上传，后续再调整对应的github actions。
 
-* :sparkles:新增：控制台增加支持css/js 缓存提高页面加载效率 [#53](https://github.com/nacos-group/r-nacos/issues/53)
-* :bug:修复：控制台已登陆的用户修改密码没有权限问题。
+如果还有问题，可以先用v0.5.6版本。
 
 
 
-# [v0.5.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.3)
+## [v0.5.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.6) 2024-04-19
+Released by @github-actions[bot] on 2024-04-19T16:32:55Z
 
-* :bug:修复：控制台配置列表页面下载和上传文件使用旧接口，不支持请求转发到 /rnacos/ 二级目录下的问题。
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.5.5...v0.5.6
 
+1. 重构控制台接口，把控制台接口独立出来不依赖openapi。这样控制台接口能灵活的支持控制台功能，同时也方便系统对nacos openapi后续的持续兼容。 #58
+2. 配置中心，配置信息内容增加配置格式和配置描述两个字段。 #55 #57
+3. 控制台页面，配置中心配置编辑器换成代码编辑器，支持高亮显示配置内容，对编辑配置内容操作更友好。 #55 #57
+4. 修复重启后配置中心历史记录id从1计数的问题。(配置历史记录id只用于控制台显示，不影响使用)
 
+## [v0.5.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.5) 2024-04-13
+Released by @github-actions[bot] on 2024-04-13T02:24:29Z
 
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.5.4...v0.5.5
 
+1. 简化控制台登录验证码 #54
+2. 修复控制台使用nginx代理时，退出后重新登陆跳转的页面路径不对的问题；
+3. 控制台登陆默认过期设置为一天，可通过配置设置过期时间；
 
-# [v0.5.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.2)
+## [v0.5.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.4) 2024-04-07
+Released by @github-actions[bot] on 2024-04-07T16:00:37Z
 
-- :bug:修复：控制台查询用户接口用户参数字段不正确的问题。
-- :sparkles:新增：控制台前后端路径放到二级目录，支持以二级目录把 r-nacos 转发到已有的域名上。[#46](https://github.com/nacos-group/r-nacos/issues/46)
-- :sparkles:新增：默认只保留鉴权控制台，关闭无鉴权控制台，支持通过配置开启。[#51](https://github.com/nacos-group/r-nacos/issues/51)
-- :sparkles:新增：打包增加对 linux arm64 包支持。
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.5.3...v0.5.4
 
+1. 控制台增加支持css/js 缓存提高页面加载效率 #53
+2. 修复控制台已登陆的用户修改密码没有权限问题
 
+## [v0.5.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.3) 2024-04-02
+Released by @github-actions[bot] on 2024-04-02T00:11:02Z
 
-# [v0.5.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.1)
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.5.2...v0.5.3
 
-* :sparkles:新增：[config]打包加入默认配置文件 by [@asmpg](https://github.com/asmpg) in [#47](https://github.com/nacos-group/r-nacos/pull/47)
-* :sparkles:新增：控制台前端资源请求支持开启 gzip 以提升页面首屏加载速度 [#43](https://github.com/nacos-group/r-nacos/issues/43)
-* :bug:修复：raft 在初始化index文件分两次写入弟一次写入成功弟二次写入失败，导致重启时 index 内容不全启动失败的问题。
++ 修复控制台配置列表页面下载和上传文件使用旧接口，不支持请求转发到/rnacos/二级目录下的问题。
 
+## [v0.5.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.2) 2024-03-31
+Released by @github-actions[bot] on 2024-03-31T14:14:42Z
 
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.5.1...v0.5.2
 
-# [v0.5.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.0)
++ 修复控制台查询用户接口用户参数字段不正确的问题
++ 控制台前后端路径放到二级目录,支持以二级目录把r-nacos转发到已有的域名上。#46
++ 默认只保留鉴权控制台，关闭无鉴权控制台，支持通过配置开启。#51
++ 打包增加对linux arm64包支持
 
-* :hammer_and_wrench:优化：raft 集群写入机制。
-  * 配置中心单节点写入 tps 从 1.8 千提升到 1.76 万，提升 9.7 倍。
-  * (在单台机器运行)3 节点集群写入 tps 从 1.5 千提升到 7.6 千，提升 5 倍 。
-* :hammer_and_wrench:优化：raft 集群写入机制同时去除 sled 存储，以自定义 raft log 与 snapshot 文件替代。
-  * 调整后初始启动内存从 26M 降低到 5M 。
-  * 写入配置中心压测时内存从上百 M 左右 降低到 20M 左右。
-* :boom:破坏性变更：去除 sled 存储这项调整使得 v0.5.x 版本与 v0.4.x 的储存不兼容，这点旧版本用户在升级前需要注意；储存不兼容主要影响配置中心与控制台用户数据：
-  * 配置中心可通过配置导出与导入做数据迁移。
-  * 控制台用户数据目前没有工具支持迁移；因预计这部分的需求不会很大，暂定不单独提供迁移工具；如果这部分用户需求较多，后面也可以考虑单独出个工具支持从 v0.4.x 迁移到 v0.5.x；（ 有需求的同学去提 issue反馈，数量超过 10 个我再抽空补充这个迁移工具)。
+## [v0.5.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.1) 2024-03-27
+Released by @github-actions[bot] on 2024-03-27T16:13:27Z
 
+## What's Changed
+* [config]打包加入默认配置文件 by @asmpg in https://github.com/r-nacos/r-nacos/pull/47
+* 控制台前端资源请求支持开启gzip以提升页面首屏加载速度 #43
+* 修复raft在初始化index文件分两次写入弟一次写入成功弟二次写入失败，导致重启时index内容不全启动失败的问题。 #50
 
 
-# [v0.5.0-beta](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.0-beta)
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.5.0...v0.5.1
 
-* :hammer_and_wrench:优化：raft 集群写入机制；
-  - 配置中心单节点写入 tps 从 1.8 千提升到 1.76 万，提升 9.7 倍。
-  - (在单台机器运行)3 节点集群写入 tps 从 1.5 千提升到 7.6千，提升 5 倍 。
+## [v0.5.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.0) 2024-03-18
+Released by @github-actions[bot] on 2024-03-18T15:38:23Z
 
-* :hammer_and_wrench:优化：raft 集群写入机制同时去除 sled 存储，以自定义 raft log 与 snapshot 文件替代：
-  - 调整后初始启动内存从 26M 降低到 5 M。
-  - 写入配置中心压测时内存从上百 M 左右 降低到 20M 左右。
-* :boom:破坏性变更：去除 sled 存储这项调整使得 v0.5.x 版本与 v0.4.x 的储存不兼容，这点旧版本用户在升级前需要注意；储存不兼容主要影响配置中心与控制台用户数据：
-  * 配置中心可通过配置导出与导入做数据迁移。
-  * 控制台用户数据目前没有工具支持迁移；因预计这部分的需求不会很大，暂定不单独提供迁移工具；如果这部分用户需求较多，后面也可以考虑单独出个工具支持从 v0.4.x 迁移到 v0.5.x；（ 有需求的同学去提 issue反馈，数量超过 10 个我再抽空补充这个迁移工具)。
-  * 目前 v0.5.x 只出 beta 版本，生产环境可以等正式版本后再考虑迁移。
+## What's Changed
+* [polish] Update the repository URL in the README file to r-nacos by @asmpg in https://github.com/r-nacos/r-nacos/pull/45
 
+* 优化raft集群写入机制；
+	* 配置中心单节点写入tps从1.8千提升到1.76万，提升9.7倍；
+	* (在单台机器运行)3节点集群写入 tps 从1.5千提升到7.6千，提升5倍 ;
+* 优化raft集群写入机制同时去除sled存储，以自定义raft log与snapshot文件替代；
+	* 调整后初始启动内存从26M降低到5M；
+	* 写入配置中心压测时内存从上百M左右 降低到20M 左右；
+* 去除sled存储这项调整使得v0.5.x版本与v0.4.x的储存不兼容，这点旧版本用户在升级前需要注意；储存不兼容主要影响配置中心与控制台用户数据；
+	* 配置中心可通过配置导出与导入做数据迁移
+	* 控制台用户数据目前没有工具支持迁移；因预计这部分的需求不会很大，暂定不单独提供迁移工具；如果这部分用户需求较多，后面也可以考虑单独出个工具支持从v0.4.x 迁移到v0.5.x；（ 有需求的同学去提 issue反馈，数量超过10个我再抽空补充这个迁移工具)；
 
+## New Contributors
+* @asmpg made their first contribution in https://github.com/r-nacos/r-nacos/pull/45
 
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.4.3...v0.5.0
 
+## [v0.5.0-beta](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.0-beta) 2024-03-10
+Released by @github-actions[bot] on 2024-03-10T10:20:02Z
 
-# [v0.4.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.3)
+## What's Changed
+* [polish] Update the repository URL in the README file to r-nacos by @asmpg in https://github.com/r-nacos/r-nacos/pull/45
+* 优化raft集群写入机制；
+	* 配置中心单节点写入tps从1.8千提升到1.76万，提升9.7倍；
+	* (在单台机器运行)3节点集群写入 tps 从1.5千提升到7.6千，提升5倍 ;
+* 优化raft集群写入机制同时去除sled存储，以自定义raft log与snapshot文件替代；
+	* 调整后初始启动内存从26M降低到5M；
+	* 写入配置中心压测时内存从上百M左右 降低到20M 左右；
+* 去除sled存储这项调整使得v0.5.x版本与v0.4.x的储存不兼容，这点旧版本用户在升级前需要注意；储存不兼容主要影响配置中心与控制台用户数据；
+	* 配置中心可通过配置导出与导入做数据迁移
+	* 控制台用户数据目前没有工具支持迁移；因预计这部分的需求不会很大，暂定不单独提供迁移工具；如果这部分用户需求较多，后面也可以考虑单独出个工具支持从v0.4.x 迁移到v0.5.x；（ 有需求的同学去提 issue反馈，数量超过10个我再抽空补充这个迁移工具)；
+	* 目前 v0.5.x只出 beta 版本，生产环境可以等正式版本后再考虑迁移；
 
-* :sparkles:新增：add helm chart by [@dickens7](https://github.com/dickens7) in [#40](https://github.com/nacos-group/r-nacos/pull/40)
-* :bug:修复：修复集群从节点在控制台导入配置不生效的问题 [#41](https://github.com/nacos-group/r-nacos/issues/41)
+本次变更主内容要是[优化raft集群写入机制](https://github.com/r-nacos/r-nacos/issues/19)，具体的信息也可以参考对应[issue](https://github.com/r-nacos/r-nacos/issues/19)下的内容。
 
+## New Contributors
+* @asmpg made their first contribution in https://github.com/r-nacos/r-nacos/pull/45
 
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.4.3...v0.5.0-beta
 
-# [v0.4.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.2)
+## [v0.4.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.3) 2024-03-01
+Released by @github-actions[bot] on 2024-03-01T14:35:05Z
 
-* :bug:修复：控制台前端时间转化成字符串格式取值错误的问题。
+## What's Changed
+* feat: add helm chart by @dickens7 in https://github.com/r-nacos/r-nacos/pull/40
+* 修复集群从节点在控制台导入配置不生效的问题 #41
 
+## New Contributors
+* @dickens7 made their first contribution in https://github.com/r-nacos/r-nacos/pull/40
 
+**Full Changelog**: https://github.com/r-nacos/r-nacos/compare/v0.4.2...v0.4.3
 
-# [v0.4.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.1)
+## [v0.4.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.2) 2024-01-09
+Released by @github-actions[bot] on 2024-01-09T15:38:38Z
 
-* :hammer_and_wrench:优化：调整 r-nacos 部分出入参类型处理以支持 nacos-sdk-go [#35](https://github.com/nacos-group/r-nacos/issues/35)
-* :hammer_and_wrench:优化：调整 r-nacos 部分出入参类型处理以支持 nacos-sdk-rust [#36](https://github.com/nacos-group/r-nacos/issues/36)
+更新版本到v0.4.2,修复控制台前端时间转化成字符串格式取值错误的问题。
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.4.1...v0.4.2
 
+## [v0.4.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.1) 2024-01-08
+Released by @github-actions[bot] on 2024-01-08T16:58:27Z
 
-# [v0.4.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.0)
+1. 调整r-nacos部分出入参类型处理以支持nacos-sdk-go #35
+2. 调整r-nacos部分出入参类型处理以支持nacos-sdk-rust #36
 
-* :sparkles:新增：支持另开一个 http 独立端口专门用于新控制台，可以单独开放新控制台的端口到外网使用 。 [#29](https://github.com/heqingpan/rnacos/issues/29)
-* :sparkles:新增：新控制台 http 端口请求，增加一个统一的登录校验拦截，支持登录校验频率等必要的校验，以支持对外网暴露 。 [#29](https://github.com/heqingpan/rnacos/issues/29)
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.4.0...v0.4.1
 
-* :sparkles:新增：启用新控制台时，默认增加一个管理员。 [#29](https://github.com/heqingpan/rnacos/issues/29)
-* :sparkles:新增：新控制台增加一个用户管理模块，管理用户，与用户权限。 [#29](https://github.com/heqingpan/rnacos/issues/29)
-* :sparkles:新增：新控制台维护一个简易权限控制模块。 [#29](https://github.com/heqingpan/rnacos/issues/29)
-* :sparkles:新增：新控制台 web 前端页面实现，更新 rnacos-web-dist-wrap 版本到 v0.3.1。 [#29](https://github.com/heqingpan/rnacos/issues/29)
+## [v0.4.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.0) 2023-12-23
+Released by @github-actions[bot] on 2023-12-23T14:59:09Z
 
+1. 支持另开一个http独立端口专门用于新控制台，可以单独开放新控制台的端口到外网使用 。 [#29](https://github.com/heqingpan/rnacos/issues/29)
+2. 新控制台http端口请求，增加一个统一的登录校验拦截，支持登录校验频率等必要的校验，以支持对外网暴露 。 [#29](https://github.com/heqingpan/rnacos/issues/29)
+3. 启用新控制台时，默认增加一个管理员。 [#29](https://github.com/heqingpan/rnacos/issues/29)
+4. 新控制台增加一个用户管理模块，管理用户，与用户权限。 [#29](https://github.com/heqingpan/rnacos/issues/29)
+5. 新控制台维护一个简易权限控制模块. [#29](https://github.com/heqingpan/rnacos/issues/29)
+6. 新控制台 web前端页面实现,更新rnacos-web-dist-wrap版本到v0.3.1。 [#29](https://github.com/heqingpan/rnacos/issues/29)
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.9...v0.4.0
 
-# [v0.4.0-beta.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.0-beta.4)
+## [v0.4.0-beta.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.0-beta.4) 2023-12-17
+Released by @github-actions[bot] on 2023-12-17T13:27:08Z
 
-* :sparkles:新增：新控制台前端增加页面权限控制。
-* :sparkles:新增：新控制台后端增加接口与页面的请求的权限控制。
+1. 新控制台前端增加页面权限控制；
+2. 新控制台后端增加接口与页面的请求的权限控制；
+3. 发布r-nacos新版本 v0.4.0-beta.4
 
+角色权限说明：
 
+1. 管理员: 所有控制台权限
+2. 开发者：除了用户管理的所有控制台权限
+3. 访客：只能查询配置中心与注册中心的数据，没有编辑权限。
 
-# [v0.4.0-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.0-beta.1)
+新控制台总体功能已完成，还有登录校验失败频率限制等一部分安全增强内容待补充，完成后再发正式版本。
 
-* :sparkles:新增：开发 r-nacos 新控制台，支持新开一个 http 端口、支持用户密码登陆、支持对外网暴露。
-  * 新控制台单据开一个 http 端口，以支持外网访问，可以单独开放新控制台的端口到外网。端口号：http_port+2000，默认为 10848，本地可以通过 http://127.0.0.1:10848/ 访问。
-  * 新控制台增加用户管理模块，支持管理控制台用户。默认用户名为 admin，对应的密码为 admin；对外网开放前需要更新密码。
-  * 新控制台所有的接口都控制加上登陆校验，登录页面接口增加验证码校验（后继正式版本还会增加错误校验频率拦截）。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.4.0-beta.1...v0.4.0-beta.4
 
 
+## [v0.4.0-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.4.0-beta.1) 2023-12-09
+Released by @github-actions[bot] on 2023-12-09T16:10:05Z
 
-# [v0.3.9](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.9)
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.9...v0.4.0-beta.1
 
-* :hammer_and_wrench:优化：rnacos-web-dist-wrap 版本到 v0.2.2，优化控制台页面样式，解决控制台在 windows 浏览器默认显示滚动条样式不美观的问题。
-* :sparkles:新增：znb 20231014 配置中心校验tenant by [@zhangyubo](https://github.com/zhangyubo) in [#24](https://github.com/nacos-group/r-nacos/pull/24)
-* :sparkles:新增：znb 20231015 配置中心校验data_id、group、content等参数 by [@zhangyubo](https://github.com/zhangyubo) in [#25](https://github.com/nacos-group/r-nacos/pull/25)
-* :hammer_and_wrench:优化：znb 20231016 删除配置时对 tenant、group、data_id的字符有效性校验 by [@zhangyubo](https://github.com/zhangyubo) in [#27](https://github.com/nacos-group/r-nacos/pull/27)
+开发r-nacos新控制台，支持新开一个http端口、支持用户密码登陆、支持对外网暴露。
 
+1. 新控制台单据开一个http端口，以支持外网访问，可以单独开放新控制台的端口到外网。端口号：http_port+2000，默认为10848，本地可以通过 http://127.0.0.1:10848/ 访问。 
+2. 新控制台增加用户管理模块，支持管理控制台用户。默认用户名为 admin,对应的密码为 admin；对外网开放前需要更新密码。
+3. 新控制台所有的接口都控制加上登陆校验，登录页面接口增加验证码校验（后继正式版本还会增加错误校验频率拦截）。
 
+新控制台后面还差最后一个角色权限控制功能模块待开发。具体计划可参考： https://github.com/heqingpan/rnacos/issues/29
 
-# [v0.3.8](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.8)
+## [v0.3.9](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.9) 2023-10-16
+Released by @github-actions[bot] on 2023-10-16T16:14:25Z
 
-* :hammer_and_wrench:优化：api body 解析逻辑。
-* :sparkles:新增：[ns mock_operator_metrics api](https://github.com/nacos-group/r-nacos/commit/df5d4c9449456735bda4dcc990aae20006d3e60e)。
-* :hammer_and_wrench:优化：[处理配置中心1.x监听空配置立即返回的问题](https://github.com/nacos-group/r-nacos/commit/fbd680942dd8c1a277da5ee1fdc2c79569002431)。
+## What's Changed
+* 更新rnacos-web-dist-wrap版本到v0.2.2，优化控制台页面样式，解决控制台在windows浏览器默认显示滚动条样式不美观的问题
+* znb 20231014 配置中心校验tenant by @zhangyubo in https://github.com/heqingpan/rnacos/pull/24
+* znb 20231015  配置中心校验data_id、group、content等参数 by @zhangyubo in https://github.com/heqingpan/rnacos/pull/25
+* Develop by @heqingpan in https://github.com/heqingpan/rnacos/pull/26
+* znb 20231016 删除配置时对 tenant、group、data_id的字符有效性校验 by @zhangyubo in https://github.com/heqingpan/rnacos/pull/27
 
+## New Contributors
+* @zhangyubo made their first contribution in https://github.com/heqingpan/rnacos/pull/24
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.8...v0.3.9
 
+## [v0.3.8](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.8) 2023-09-29
+Released by @github-actions[bot] on 2023-09-29T14:30:58Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.7...v0.3.8
 
-# [v0.3.7](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.7)
+## [v0.3.7](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.7) 2023-09-28
+Released by @github-actions[bot] on 2023-09-28T13:28:11Z
 
-* :hammer_and_wrench:优化：更新 Dockerfile。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.6...v0.3.7
 
+## [v0.3.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.6) 2023-09-27
+Released by @github-actions[bot] on 2023-09-27T00:11:59Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.5...v0.3.6
 
+## [v0.3.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.5) 2023-09-24
+Released by @github-actions[bot] on 2023-09-24T07:11:00Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.4...v0.3.5
 
-# [v0.3.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.6)
+## [v0.3.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.4) 2023-09-20
+Released by @github-actions[bot] on 2023-09-20T15:20:21Z
 
-* :hammer_and_wrench:优化：更新 async-raft-ext 版本 v0.6.3，修正 raft 集群冷启动等待时间单位从秒更新为 5 毫秒，避免冷启动过长。
-* :hammer_and_wrench:优化：更新 starter，切换从 beanfactory 构造。
-* :hammer_and_wrench:优化：调整raft store的注入构建。
-* :hammer_and_wrench:优化：注册中心依赖注入逻辑。
-* :sparkles:新增：actor初步接入依赖注入 factory。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.3...v0.3.4
 
+## [v0.3.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.3) 2023-09-18
+Released by @github-actions[bot] on 2023-09-18T16:18:24Z
 
+## What's Changed
+* Fix issue #14 by @zzyandzzy in https://github.com/heqingpan/rnacos/pull/15
 
-# [v0.3.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.5)
+## New Contributors
+* @zzyandzzy made their first contribution in https://github.com/heqingpan/rnacos/pull/15
 
-* :sparkles:新增：通过将 `actix-web web::Form<T>` 自动构建参数对象的方式更新为从 request body 手动构建参数，兼容兼容 java nacos-client 1.3.x 。
-* :sparkles:新增：更新说明文档，增加 java client sdk 验证版本说明。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.2...v0.3.3
 
+## [v0.3.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.2) 2023-09-17
+Released by @github-actions[bot] on 2023-09-17T16:45:10Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.1...v0.3.2
 
-# [v0.3.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.4)
+## [v0.3.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.1) 2023-09-17
+Released by @github-actions[bot] on 2023-09-17T15:50:27Z
 
-* :bug:修复：注册中心从数据库加载信息时，需要重算 md5，不直接取 db 的值，避免 db md5 值为空导致客户端一直循环请求的问题。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.3.0...v0.3.1
 
+## [v0.3.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.0) 2023-09-16
+Released by @github-actions[bot] on 2023-09-16T12:36:37Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.2.2...v0.3.0
 
-# [v0.3.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.3)
+## [v0.2.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.3) 2023-09-16
+Released by @github-actions[bot] on 2023-09-16T12:07:25Z
 
-* :bug:修复：修复  issue [#14](https://github.com/nacos-group/r-nacos/issues/14) by [@zzyandzzy](https://github.com/zzyandzzy) in [#15](https://github.com/nacos-group/r-nacos/pull/15)。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.2.1...v0.2.3
 
+## [v0.2.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.2) 2023-09-15
+Released by @github-actions[bot] on 2023-09-15T16:19:09Z
 
+## What's Changed
+* raft_feature v0.2.1-beta.1 by @heqingpan in https://github.com/heqingpan/rnacos/pull/9
 
-# [v0.3.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.2)
 
-* :bug:修复：raft 节点变更需要等更新配置后才同步到 naming node manage 的问题。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.2.0...v0.2.2
 
+## [v0.2.2-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.2-beta.1) 2023-08-26
+Released by @github-actions[bot] on 2023-08-26T00:57:32Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.2.1-beta.1...v0.2.2-beta.1
 
-# [v0.3.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.1)
+## [v0.2.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.1) 2023-08-25
+Released by @github-actions[bot] on 2023-08-25T23:57:27Z
 
-* :bug:修复：raft 节点变更需要等更新配置后才同步到 naming node manage 的问题。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.2.0...v0.2.1
 
+## [v0.2.1-beta.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.1-beta.2) 2023-08-25
+Released by @github-actions[bot] on 2023-08-25T16:21:56Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.2.0...v0.2.1-beta.2
 
-# [v0.3.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.3.0)
+## [v0.2.1-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.1-beta.1) 2023-08-07
+Released by @github-actions[bot] on 2023-08-07T17:08:40Z
 
-* :sparkles:新增：更新 rnacos-web-dist-wrap 版本到 0.2.1 。
+## What's Changed
+* raft_feature v0.2.1-beta.1 by @heqingpan in https://github.com/heqingpan/rnacos/pull/9
 
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.2.0...v0.2.1-beta.1
 
-# [v0.2.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.3)
+## [v0.2.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.0) 2023-07-03
+Released by @github-actions[bot] on 2023-07-03T15:54:40Z
 
-* :sparkles:新增：更新版本从 v0.2.1 到 v0.2.3 。
+## What's Changed
+* Loadtest feature by @heqingpan in https://github.com/heqingpan/rnacos/pull/5
+* Clippy and fmt by @heqingpan in https://github.com/heqingpan/rnacos/pull/6
 
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.10...v0.2.0
 
-# [v0.2.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.2)
+## [v0.1.10](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.10) 2023-06-18
+Released by @github-actions[bot] on 2023-06-18T16:10:12Z
 
-* :sparkles:新增：raft_feature v0.2.1-beta.1 by [@heqingpan](https://github.com/heqingpan) in [#9](https://github.com/nacos-group/r-nacos/pull/9)
+## What's Changed
+* Develop by @heqingpan in https://github.com/heqingpan/rnacos/pull/4
 
+## New Contributors
+* @heqingpan made their first contribution in https://github.com/heqingpan/rnacos/pull/4
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.9...v0.1.10
 
-# [v0.2.2-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.2-beta.1)
+## [v0.1.9](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.9) 2023-06-10
+Released by @github-actions[bot] on 2023-06-10T10:56:49Z
 
-* :sparkles:新增：update version to 0.2.2-beta.1。
-* :sparkles:新增：support grpc naming_service_list。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.8...v0.1.9
 
+## [v0.1.8](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.8) 2023-06-01
+Released by @github-actions[bot] on 2023-06-01T14:08:59Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.7...v0.1.8
 
+## [v0.1.7](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.7) 2023-05-31
+Released by @github-actions[bot] on 2023-05-31T16:11:34Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.6...v0.1.7
 
-# [v0.2.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.1)
+## [v0.1.6-3](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.6-3) 2023-05-30
+Released by @github-actions[bot] on 2023-05-30T16:11:34Z
 
-* :sparkles:新增：update version to 0.2.1-beta.2。
-* :sparkles:新增：support grpc naming_service_list。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.6-2...v0.1.6-3
 
+## [v0.1.6-2](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.6-2) 2023-05-29
+Released by @github-actions[bot] on 2023-05-29T15:12:05Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.6...v0.1.6-2
 
-# [v0.2.1-beta.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.1-beta.2)
+## [v0.1.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.6) 2023-05-28
+Released by @github-actions[bot] on 2023-05-28T15:02:38Z
 
-* :sparkles:新增：support grpc naming_service_list。
-* :sparkles:新增：update version to 0.2.1-beta.2。
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.5...v0.1.6
 
+## [v0.1.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.5) 2023-05-19
+Released by @github-actions[bot] on 2023-05-19T15:29:52Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.4...v0.1.5
 
-# [v0.2.1-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.1-beta.1)
+## [v0.1.5-beta2](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.5-beta2) 2023-05-15
+Released by @github-actions[bot] on 2023-05-15T16:38:24Z
 
-* :sparkles:新增：raft_feature v0.2.1-beta.1 by [@heqingpan](https://github.com/heqingpan) in [#9](https://github.com/nacos-group/r-nacos/pull/9)
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.4...v0.1.5-beta2
 
+## [v0.1.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.4) 2023-05-11
+Released by @github-actions[bot] on 2023-05-11T17:28:22Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.3...v0.1.4
 
-# [v0.2.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.2.0)
+v0.1.4
 
-* :sparkles:新增：Loadtest feature by [@heqingpan](https://github.com/heqingpan) in [#5](https://github.com/nacos-group/r-nacos/pull/5)
-* :sparkles:新增：Clippy and fmt by [@heqingpan](https://github.com/heqingpan) in [#6](https://github.com/nacos-group/r-nacos/pull/6)
+1. 修复2.0版本注册心跳的问题，注册中心支持grpc统一维持心跳。
+2. 配置中心支持导入配置文件，配置文件兼容 nacos 格式。（导出计划后继版本支持）
 
+## [v0.1.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.3) 2023-05-07
+Released by @github-actions[bot] on 2023-05-07T15:48:13Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.2...v0.1.3
 
+## [v0.1.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.2) 2023-05-06
+Released by @github-actions[bot] on 2023-05-06T16:27:51Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.1...v0.1.2
 
-# [v0.1.10](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.10)
+## [v0.1.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.1) 2023-05-05
+Released by @github-actions[bot] on 2023-05-05T17:06:37Z
 
-- :sparkles:新增：Develop by [@heqingpan](https://github.com/heqingpan) in [#4](https://github.com/nacos-group/r-nacos/pull/4)
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.0...v0.1.1
 
+## [v0.1.0.beta3](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.0.beta3) 2023-05-05
+Released by @github-actions[bot] on 2023-05-05T14:50:50Z
 
+**Full Changelog**: https://github.com/heqingpan/rnacos/compare/v0.1.0.beta2...v0.1.0.beta3
 
-# [v0.1.9](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.9)
+## [v0.1.0.beta2](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.0.beta2) 2023-05-03
+Released by @github-actions[bot] on 2023-05-03T17:15:16Z
 
-* :sparkles:新增：配置中心删除配置时也需要持久化。
-* :sparkles:新增：前端版本更新到 0.1.9，配置变更前支持配置内容差异比较。
-
-
-
-# [v0.1.8](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.8)
-
-* :sparkles:新增：更新实例时，如果新实例来自 http，旧实例来自 grpc，则保持 grpc 的实例信息。
-
-
-
-# [v0.1.7](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.7)
-
-* :hammer_and_wrench:优化：调整重连机制。
-* :hammer_and_wrench:优化：调整配置中心 grpc 错误时的返回对象名。
-* :hammer_and_wrench:优化：调整 grpc 给 client 推送时参数 id 与模块内容。
-* :hammer_and_wrench:优化：调整注册中心 grpc 错误时的返回对象名。
-
-
-
-# [v0.1.6-3](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.6-3)
-
-* :hammer_and_wrench:优化：调整重连机制。
-* :hammer_and_wrench:优化：调整配置中心 grpc 错误时的返回对象名。
-* :hammer_and_wrench:优化：调整 grpc 给 client 推送时参数 id 与模块内容。
-* :hammer_and_wrench:优化：调整注册中心 grpc 错误时的返回对象名。
-
-
-
-# [v0.1.6-2](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.6-2)
-
-* :sparkles:新增：删除服务实例时校验 grpc client_id是否一致。
-
-
-
-# [v0.1.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.6)
-
-* :sparkles:新增：配置中心支持 grpc 取消监听。
-* :sparkles:新增：核心服务 actor 实现 Supervised 以支持 actor 错误后重启。
-* :sparkles:新增：配置中心增加控制台查询历史记录接口。
-* :sparkles:新增：配置中心查询历史记录接口增加内容字段。
-* :sparkles:新增：配置中心查询历史记录接口增加 id 字段。
-* :bug:修复：grpc 处理日志中时长一直为 0 的问题。
-
-
-
-# [v0.1.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.5)
-
-* :hammer_and_wrench:优化：调整接收 grpc 请求时对链路注册的验证机制，没有注册前不支持访问，调整 grpc 请求的日志打印，增加处理时长信息。
-* :bug:修复：更新过滤 ServerCheckRequest 请求的链接报错。
-* :hammer_and_wrench:优化：调整 build.rs 不使用 env，避免 docs.rs 文档构建异常。
-* :hammer_and_wrench:优化：调整 docker 打包方式，alpha和beta不更新 latest。
-* :sparkles:新增：增加 rnacos 架构图。
-* :sparkles:新增：初步完成按条件导出配置接口。
-* :hammer_and_wrench:优化：调整 rnacos-web-dist-wrap 引入方式，不通过 build 做二次处理。
-
-
-
-# [v0.1.5-beta2](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.5-beta2)
-
-* :hammer_and_wrench:优化：调整接收 grpc 请求时对链路注册的验证机制，没有注册前不支持访问，调整 grpc 请求的日志打印，增加处理时长信息。
-* :bug:修复：更新过滤 ServerCheckRequest 请求的链接报错。
-* :hammer_and_wrench:优化：调整 build.rs 不使用 env，避免 docs.rs 文档构建异常。
-* :hammer_and_wrench:优化：调整 docker 打包方式，alpha和beta不更新 latest。
-* :sparkles:新增：增加 rnacos 架构图。
-* :sparkles:新增：初步完成按条件导出配置接口。
-* :hammer_and_wrench:优化：调整 rnacos-web-dist-wrap 引入方式，不通过 build 做二次处理。
-
-
-
-# [v0.1.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.4)
-
-* :bug:修复：2.0 版本注册心跳的问题，注册中心支持 grpc 统一维持心跳。
-* :sparkles:新增：配置中心支持导入配置文件，配置文件兼容 nacos 格式。
-
-
-
-# [v0.1.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.3)
-
-* :hammer_and_wrench:优化：更新前端资源的加载方式。
-
-
-
-# [v0.1.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.2)
-
-* :sparkles:新增：压测性能说明。
-
-
-
-# [v0.1.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.1)
-
-* :hammer_and_wrench:优化：调整清理空服务的判断逻辑，避免多次标记清除导致提前清理的问题。
-* :sparkles:新增：naming instance 使用 arc 并兼容 http，grpc的group_server。
-* :hammer_and_wrench:优化：更新 Dockerfile 。
-
-
-
-# [v0.1.0.beta3](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.0.beta3)
-
-* :hammer_and_wrench:优化：更新 Dockerfile 。
-
-
-
-# [v0.1.0.beta2](https://github.com/nacos-group/r-nacos/releases/tag/v0.1.0.beta2)
-
-* :sparkles:新增：http 线程数支持通过 env 设置。
-* :sparkles:新增：支持通过 env 设置配置文件、服务端口号。
-* :hammer_and_wrench:优化：调整告警信息。
-* :sparkles:新增：支持构建时从 github 加载控制台的前端资源。
-* :sparkles:新增：支持打包控制台web资源。
-* :sparkles:新增：初步完成实例高优先级元数据更新、过期逻辑。
-* :sparkles:新增：instance 增加高优先级元数据。
-* :sparkles:新增：instance 增加高优先级元数据。
-* :sparkles:新增：实例元素 ip 使用 Arc。
-* :sparkles:新增：实例元素使用 Arc。
-* :sparkles:新增：grpc 不支持更新实例上线状态。
-* :sparkles:新增：实例心跳不更新其是否开启状态。
-* :sparkles:新增：增加 o 查询服务所有实例列表 ops 接口。
-* :sparkles:新增：增加 o 查询服务所有实例列表 ops 接口。
-* :hammer_and_wrench:优化：调整 ops 查询服务列表返回值类型。
-* :sparkles:新增：服务中心增加创建、更新服务与删除空服务的功能逻辑。
-* :sparkles:新增：查询配置信息返回值增加 md5 值。
+**Full Changelog**: https://github.com/heqingpan/rnacos/commits/v0.1.0.beta2
 
