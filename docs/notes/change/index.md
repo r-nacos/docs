@@ -11,6 +11,17 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.5.8](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.8) 2024-05-20
+Released by @github-actions[bot] on 2024-05-20T01:01:10Z
+
+## What's Changed
+* Rebuild the structure of openapi by @Freedomfirebody in https://github.com/nacos-group/r-nacos/pull/70
+
+## New Contributors
+* @Freedomfirebody made their first contribution in https://github.com/nacos-group/r-nacos/pull/70
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.7...v0.5.8
+
 ## [v0.5.8-beta.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.8-beta.1) 2024-05-12
 Released by @github-actions[bot] on 2024-05-12T17:38:30Z
 
