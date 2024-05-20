@@ -17,6 +17,13 @@ Released by @github-actions[bot] on 2024-05-20T01:01:10Z
 ## What's Changed
 * Rebuild the structure of openapi by @Freedomfirebody in https://github.com/nacos-group/r-nacos/pull/70
 
+---
+
+发布后收到问题：添加配置会直接添加到public内 #82 
+
+有使用控制台编辑配置的暂时先使用v0.5.7版本,
+这两天我抽空处理下再发一个新版本出来。
+
 ## New Contributors
 * @Freedomfirebody made their first contribution in https://github.com/nacos-group/r-nacos/pull/70
 
