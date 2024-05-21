@@ -11,6 +11,34 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.5.9](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.9) 2024-05-21
+Released by @github-actions[bot] on 2024-05-21T14:40:05Z
+
+## What's Changed
+* feat(*): 代码片段优化 by @Clownsw in https://github.com/nacos-group/r-nacos/pull/90
+
+v0.5.9是修复v0.5.8控制台前端问题的问题，相对于v0.5.7的变更项：
+
+1. ✨新增: 调整github workflows以增加支持打包MacOS arm64安装包 #77
+2. ✨新增: 面向SDK的接口增加鉴权  #65
+3. ✨新增: 支持开启集群间的通信请求校验cluster token #93
+4. 🛠️优化: 切换重构后的新版控制台目前功能基本一致；后续会基于新版适配支持移动端，支持国际化等。#58
+5. 🛠️优化: openapi接口代码结构调整重构 #62
+
+
+这次变更中控制台前端切换到重构后的新版本 [rnacos-console-web](https://github.com/r-nacos/rnacos-console-web)。
+整个控制台重构工作是由 @DaqiongYang 完成的。这次上线后控制台前端后续的开发工作可以交给他主导开发。 
+
+经过一个多月的磨合，终于为项目找到了合适的前端开发负责人。
+之后作者可以更专注于系统设计与后端开发。
+
+在这里特别感谢 @DaqiongYang 的工作。
+
+## New Contributors
+* @Clownsw made their first contribution in https://github.com/nacos-group/r-nacos/pull/90
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.8...v0.5.9
+
 ## [v0.5.8](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.8) 2024-05-20
 Released by @github-actions[bot] on 2024-05-20T01:01:10Z
 
