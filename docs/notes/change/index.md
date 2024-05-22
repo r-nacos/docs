@@ -17,7 +17,7 @@ Released by @github-actions[bot] on 2024-05-21T14:40:05Z
 ## What's Changed
 * feat(*): 代码片段优化 by @Clownsw in https://github.com/nacos-group/r-nacos/pull/90
 
-v0.5.9是修复v0.5.8控制台前端问题的问题，相对于v0.5.7的变更项：
+v0.5.9是修复v0.5.8控制台前端的问题，相对于v0.5.7的变更项：
 
 1. ✨新增: 调整github workflows以增加支持打包MacOS arm64安装包 #77
 2. ✨新增: 面向SDK的接口增加鉴权  #65
