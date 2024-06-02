@@ -11,6 +11,25 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.5.11](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.11) 2024-06-02
+Released by @github-actions[bot] on 2024-06-02T15:25:47Z
+
+## What's Changed
+* add RNACOS_ADMIN_USERNAME and RNACOS_ADMIN_PASSWORD env for support mod default admin username and password by @yimiaoxiehou in https://github.com/nacos-group/r-nacos/pull/97
+
+
+1. 🐛修复: 解决开启鉴权后token过期后没有及时被客户端刷新的问题 #100
+2. 🛠️优化：服务实例心跳接口支持light beat模式，解决运行中的应用从nacos切换rnacos时服务列表为空问题 #85
+3. 🛠️优化：支持通过SDK接口设置配置中心的配置格式 #87
+4. ✨新增：支持go sdk中使用SearchConfig查询接口 #101
+5. ✨新增：支持通过启动配置设置初始化管理员用户名与密码 #97
+6. 📖文档：补充接口鉴权过期时间参数RNACOS_API_LOGIN_TIMEOUT说明 #100
+
+## New Contributors
+* @yimiaoxiehou made their first contribution in https://github.com/nacos-group/r-nacos/pull/97
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.10...v0.5.11
+
 ## [v0.5.10](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.10) 2024-05-27
 Released by @github-actions[bot] on 2024-05-27T01:10:11Z
 
