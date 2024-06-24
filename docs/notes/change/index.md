@@ -11,6 +11,34 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.5.13](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.13) 2024-06-23
+Released by @github-actions[bot] on 2024-06-23T16:41:33Z
+
+## What's Changed
+* 根据 data_id 匹配配置文件类型 by @bestK in https://github.com/nacos-group/r-nacos/pull/105
+
+1. ✨新增: 增加系统运行状态可观测能力，支持定义、采集服务关键指标，支持打印指标到日志; #64
+2. 🐛修复: 部分使用场景r-nacos连续长时间运行内存会缓慢增加问题; #108
+3. 🐛修复: config grpc查询接口 lastModified 为 0的兼容性问题（官方sdk不依赖）; #107
+4. 🛠️优化：[调整控制台API请求超时时长从1秒到15秒](https://github.com/r-nacos/rnacos-console-web/issues/7)；
+5. 🛠️优化：控制台导入配置，支持根据 data_id 匹配配置文件类型 （用户rp); #105
+
+## New Contributors
+* @bestK made their first contribution in https://github.com/nacos-group/r-nacos/pull/105
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.12...v0.5.13
+
+
+## [v0.5.12](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.12) 2024-06-10
+Released by @github-actions[bot] on 2024-06-10T16:15:12Z
+
+## What's Changed
+* feat(*): 切换内存分配器到mimalloc以及添加编译发布优化 by @Clownsw in https://github.com/nacos-group/r-nacos/pull/99
+* [polish]released文件名添加版本号 by @asmpg in https://github.com/nacos-group/r-nacos/pull/103
+
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.11...v0.5.12
+
 ## [v0.5.11](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.11) 2024-06-02
 Released by @github-actions[bot] on 2024-06-02T15:25:47Z
 
