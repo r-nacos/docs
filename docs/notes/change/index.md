@@ -11,6 +11,23 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.5.14](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.14) 2024-06-30
+Released by @github-actions[bot] on 2024-06-30T17:01:10Z
+
+## What's Changed
+* fix: ingress 503 by @linonetwo in https://github.com/nacos-group/r-nacos/pull/112
+
+1. 🐛修复: 登录接口兼容问题，解决nacos-sdk-rust无法使用enable_auth_plugin_http进行账号密码登录的问题； #110
+2. 🛠️优化: 增加指标采集间隔配置，默认15秒，与原日志打印指标间隔独立控制；以支持打印日志的间隔设置很长与就影响采集； #64
+3. 🛠️优化: 支持采集summary类指标数据，对http/grpc请求响应时长分别采集其对应的histogram与summary指标；#64
+4. ✨新增：实现prometheus metrics exporter，支持把监控指标数据接入prometheus，对应的接口为`http://127.0.0.1:8848/metrics` ; #64
+5. 🛠️优化: 调整k8s helm中service ports的定义，增加10848端口，以支持ingress方式透出控制台 ；#112 
+
+## New Contributors
+* @linonetwo made their first contribution in https://github.com/nacos-group/r-nacos/pull/112
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.13...v0.5.14
+
 ## [v0.5.13](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.13) 2024-06-23
 Released by @github-actions[bot] on 2024-06-23T16:41:33Z
 
