@@ -11,6 +11,30 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.5.16](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.16) 2024-07-14
+Released by @github-actions[bot] on 2024-07-14T23:11:17Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.15...v0.5.16
+
+1. ✨新增: 可观测能力增强，控制台增加监控页面支持查看r-nacos监控指标数据
+	1. r-nacos后端，内部采集并缓存最近指标数据，并提供查询监控指标数据接口给控制台页面使用。#117
+	2. r-nacos前端，控制台增加基于echarts实现的监控页面，支持查看r-nacos监控指标数据。
+2. 🐛修复: 通过调整数据加载与raft初始化顺序，修复windows环境快速关闭再启动r-nacos后偶尔出现配置列表为空的问题。 
+
+## [v0.5.15](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.15) 2024-07-07
+Released by @github-actions[bot] on 2024-07-07T16:02:19Z
+
+## What's Changed
+* feat: 增加验证码的开关 by @moyu-x in https://github.com/nacos-group/r-nacos/pull/113
+
+1. 🐛修复：通过增加文件锁机制，修复windows环境快速关闭再启动r-nacos后偶尔出现配置列表为空的问题。  #86 #88
+2. ✨新增：增加一个是否启用控制台验证码的开关，默认为启用，关闭的时候可暂时用于使用 openapi 对 console 接口进行管理 #113
+
+## New Contributors
+* @moyu-x made their first contribution in https://github.com/nacos-group/r-nacos/pull/113
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.14...v0.5.15
+
 ## [v0.5.14](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.14) 2024-06-30
 Released by @github-actions[bot] on 2024-06-30T17:01:10Z
 
