@@ -11,6 +11,18 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.5.17](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.17) 2024-07-21
+Released by @github-actions[bot] on 2024-07-21T17:16:34Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.16...v0.5.17
+
+1. 优化r-naocs系统监控
+
+	1. 监控指标数据增加间隔为1小时的指标缓存，以支持控制参按小时查询15天左右的资源使用情况；
+	2. 监控指标不需要太高的精度，把浮点型从从f64调整为f32；
+	3. 修改前端切出监控页面的自动加载数据没有停止的问题；
+2. 优化控制台页面，配置管理、服务实例管理等页面中的数据表格分页支持选择不同分页数量展示数据。
+
 ## [v0.5.16](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.16) 2024-07-14
 Released by @github-actions[bot] on 2024-07-14T23:11:17Z
 
