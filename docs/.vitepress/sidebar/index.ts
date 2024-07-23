@@ -49,6 +49,10 @@ export const sidebar: DefaultTheme.Sidebar = {
         {
           text: '集群部署',
           link: `/notes/deploy_example/docker_cluster_deploy/`,
+        },
+        {
+          text: '如何平稳地从nacos迁移到r-nacos？',
+          link: `/notes/deploy_example/nacos_to_rnacos_doc/`,
         }
       ],
     }
