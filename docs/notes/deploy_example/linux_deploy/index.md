@@ -335,3 +335,9 @@ netstat -anp | grep 8848
 
 * 解压直接运行 rnacos.exe 即可：略。
 
+----
+
+时间: 2024-02
+
+作者: [Aurorxa](https://github.com/Aurorxa)
+

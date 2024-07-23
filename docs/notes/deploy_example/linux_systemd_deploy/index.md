@@ -132,6 +132,10 @@ systemctl status rnacos
 ```
 
 把上以的脚本连起来执行，r-nacos服务即可部署完成。
+
+整合起来的脚本可以参考： [linux-systemd-deploy.sh](https://github.com/nacos-group/r-nacos/blob/v0.5.17/tools/linux-systemd-deploy.sh)
+
+
 ## 4、管理服务
 
 1. 使用`systemctl`管理服务
@@ -223,3 +227,12 @@ r-nacos是一个用rust实现的nacos服务，我们用它平替java nacos以降
 systemd提供便捷的服务托管功能，可以方便的将一个命令运行的应用，转化成一个可方便控制的后台服务。
 
 使用systemd部署r-nacos，是一个比较和合适的、可用于生产环境的部署方案。
+
+
+
+----
+
+时间: 2024-03-26
+
+作者: [heqingpan](https://github.com/heqingpan)
+
