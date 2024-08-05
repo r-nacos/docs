@@ -11,6 +11,22 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.5.19](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.19) 2024-08-05
+Released by @github-actions[bot] on 2024-08-05T00:32:57Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.18...v0.5.19
+
+1. 🐛修复: 修复dubbo 3.2.14版本使用r-nacos有报错问题 #124　
+2. 🛠️优化: 优化控制台页面的命名空间选择器，命名空间组件增加组件描述，命名空间选择值支持持久化到浏览器中。
+
+## [v0.5.18](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.18) 2024-07-29
+Released by @github-actions[bot] on 2024-07-29T00:50:58Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.17...v0.5.18
+
+1. 兼容nacos注册中心1.x http协议中metadata同时支持json与nacos自定义格式 #121 
+2. 优化r-naocs系统监控；间隔为1小时的指标时间展示增加日期，增加请求处理时长百分位统计监控视图 
+
 ## [v0.5.17](https://github.com/nacos-group/r-nacos/releases/tag/v0.5.17) 2024-07-21
 Released by @github-actions[bot] on 2024-07-21T17:16:34Z
 
