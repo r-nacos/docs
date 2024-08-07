@@ -4,7 +4,7 @@
 
 * r-nacos设计上完全兼容最新版本nacos面向client sdk 的协议（包含1.x的http OpenApi，和2.x的grpc协议）。这使得原本依赖于nacos服务的应用程序能够不修改代码无缝迁移至r-nacos。
 
-github downloads: ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/r-nacos/r-nacos/total)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/r-nacos/r-nacos/total)
 ![Docker Pulls](https://img.shields.io/docker/pulls/qingpan/rnacos)  
 
 # 第二章：应用场景和功能
