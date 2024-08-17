@@ -16,12 +16,12 @@ head:
       content: r-nacos docs
   - - meta
     - name: keywords
-      content: r-nacos 
+      content: r-nacos R-Nacos nacos
 
 hero:
   name: "R-NACOS"
-  text: ""
-  tagline: "『r-nacos是一个用rust实现的nacos服务』"
+  text: "Fast Nacos"
+  tagline: "Rust 语言实现的 Nacos 服务平台，兼容 Nacos(Java)"
   image:  # text 和 tagline 区域旁的图片
     src: /logo.png
     alt: "R-NACOS"  
