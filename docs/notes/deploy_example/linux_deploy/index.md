@@ -131,7 +131,7 @@ EOF
 
 > [!NOTE]
 >
-> 如果上述**阴影**地方的 Docker 镜像源地址失效，那么，请在[这里](https://status.1panel.top/status/docker)查询，并替换。
+> 如果上述**阴影**地方的 Docker 镜像源地址失效；那么，请在[这里](https://status.1panel.top/status/docker)查询，并替换。
 
 ```shell
 sudo systemctl daemon-reload
