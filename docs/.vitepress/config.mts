@@ -17,10 +17,29 @@ export default defineConfig({
   description: "r-nacos doc",
   head: [ // favicon.ico 图标等
     ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}/favicon.ico` }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    [
+      'script',
+      { id: 'register-sw' },
+      `;(() => {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+        }
+      })()`
+      // would render:
+      //
+      // <script id="register-sw">
+      // ;(() => {
+      //   if ('serviceWorker' in navigator) {
+      //     navigator.serviceWorker.register('/sw.js')
+      //   }
+      // })()
+      // </script>
+    ],
     ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no" }],
     ['meta', { name: "keywords", content: "r-nacos,nacos,rnacos" }],
     //百度统计
-    [ 'script', { async: '', src: 'https://hm.baidu.com/hm.js?afa135946ba7fb33d69bea1f370b905c' } ],
+    ['script', { async: '', src: 'https://hm.baidu.com/hm.js?afa135946ba7fb33d69bea1f370b905c' }],
   ],
   base: VITE_BASE_URL,
   lastUpdated: true, // 上次更新
