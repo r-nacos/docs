@@ -4,6 +4,7 @@ layout: home
 home: true
 
 # 官方文档相关配置：https://vitepress.dev/reference/default-theme-home-page
+lang: zh-CN
 title: R-NACOS
 titleTemplate: R-NACOS docs
 editLink: true
@@ -21,6 +22,9 @@ hero:
   name: "R-NACOS"
   text: ""
   tagline: "『r-nacos是一个用rust实现的nacos服务』"
+  image:  # text 和 tagline 区域旁的图片
+    src: /logo.png
+    alt: "R-NACOS"  
   # 按钮相关
   actions:
     - theme: brand
@@ -32,12 +36,15 @@ hero:
 
 # 按钮下方的描述
 features:
-  - title: "更轻量"
-    details: "r-nacos使用rust实现，rust是无gc的系统级言语，使得服务运行时占用的内存和CPU资源更少。演示系统中接入接近5千个配置，450个服务实例，服务使用的内存在15M左右。"
-  - title: "更稳定"
-    details: "依托于rust的内存安全特性，通过所有权系统和生命周期的机制，几乎消除了空指针引用、悬挂指针、数据竞争和内存泄漏等常见的内存错误。r-nacos基本没有遇到过内存相关问题，可以长时间稳定运行。从用户的实际反馈情况来看，也确实基本没有遇到过非功能性问题。"
-  - title: "高性能"
-    details: "rust是系统级高性能编程语言，同时r-nacos通过精心设计的数据结构和算法。这使得它能够在支持大规模的数据时，同时保持较高的性能。"  
+  - icon: 🪶
+    title: "更轻量"
+    details: "得益于 Rust 的内存管理和编译时优化，R-Nacos 运行时占用的资源更少，二进制文件更小，适合资源受限的环境。"
+  - icon: 🧱
+    title: "更稳定"
+    details: "Rust 提供了严格的编译器检查和内存安全性，避免了常见的空指针、数据竞争等问题，从而提升了系统的稳定性和可靠性。"
+  - icon: 🚀
+    title: "高性能"
+    details: "Rust 的零成本抽象和高效的并发模型使得 R-Nacos 在处理大量请求时具有更高的性能表现，能够更快地响应和处理服务注册、发现等任务。"  
 ---
 
 
