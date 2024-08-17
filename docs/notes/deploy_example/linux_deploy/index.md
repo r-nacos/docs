@@ -62,6 +62,11 @@ systemctl disable --now firewalld
 
 * 增加 Docker 源：
 
+> [!WARNING]
+>
+> 某些国家，如：中国等，可能会有 Docker 域名污染等问题，官方的 Docker 仓库地址不可以，那么请使用`
+> dnf config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`。
+
 ```shell
 sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
@@ -92,13 +97,17 @@ docker version
 
 ![](./assets/9.gif)
 
-* 阿里云镜像加速：
+* Docker 镜像加速：
+
+> [!WARNING]
+>
+> 某些国家，如：中国等，可能会有镜像源下线等问题，导致之前的镜像源地址不可用，请在[这里](https://status.1panel.top/status/docker)查询对应的镜像源地址。
 
 ```shell
 sudo mkdir -pv /etc/docker
 ```
 
-```shell
+```shell {4-11} 
 tee /etc/docker/daemon.json <<-'EOF'
 {
   "exec-opts": ["native.cgroupdriver=systemd"],	
@@ -120,11 +129,15 @@ tee /etc/docker/daemon.json <<-'EOF'
 EOF
 ```
 
+> [!NOTE]
+>
+> 如果上述**加粗**地方的镜像源地址失效，就去[这里](https://status.1panel.top/status/docker)查询，并替换即可。
+
 ```shell
 sudo systemctl daemon-reload
 ```
 
-```shell
+``` shell
 sudo systemctl restart docker
 ```
 
