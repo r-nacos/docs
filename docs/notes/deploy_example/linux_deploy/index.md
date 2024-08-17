@@ -64,7 +64,7 @@ systemctl disable --now firewalld
 
 > [!WARNING]
 >
-> 某些国家，如：中国等，可能会有 Docker 域名污染等问题，官方的 Docker 仓库地址不可以，那么请使用`
+> 某些国家，如：中国等，可能会有 Docker 域名污染等问题，导致官方的 Docker 仓库地址不可用，那么请使用`
 > dnf config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`。
 
 ```shell
@@ -101,7 +101,7 @@ docker version
 
 > [!WARNING]
 >
-> 某些国家，如：中国等，可能会有镜像源下线等问题，导致之前的镜像源地址不可用，请在[这里](https://status.1panel.top/status/docker)查询对应的镜像源地址。
+> 某些国家，如：中国等，可能会有 Docker 镜像源地址下线或不可用等问题，导致之前配置的 Docker 镜像源地址不可用；那么，请在[这里](https://status.1panel.top/status/docker)查询对应的镜像源地址，并替换。
 
 ```shell
 sudo mkdir -pv /etc/docker
@@ -131,7 +131,7 @@ EOF
 
 > [!NOTE]
 >
-> 如果上述**加粗**地方的镜像源地址失效，就去[这里](https://status.1panel.top/status/docker)查询，并替换即可。
+> 如果上述**阴影**地方的 Docker 镜像源地址失效，那么，请在[这里](https://status.1panel.top/status/docker)查询，并替换。
 
 ```shell
 sudo systemctl daemon-reload
