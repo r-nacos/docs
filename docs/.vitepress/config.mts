@@ -12,7 +12,7 @@ const VITE_BASE_URL = "/docs/"
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN', // html 标签的 language
-  title: "r-nacos", // 标题
+  title: "R-Nacos", // 标题
   titleTemplate: "Hi，终于等到你",
   description: "r-nacos doc",
   head: [ // favicon.ico 图标等
