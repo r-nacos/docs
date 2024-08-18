@@ -13,7 +13,9 @@
 | 写入     | 只有主节点能写入，其它节点收到写入请求后转发到主节点写入 | 集群 2000 tps 左右，有优化空间。              |
 | 读取     | 每个节点都能读取全量数据                                 | 单节点 80 000 qps 左右，集群总容量为 n*8 万。 |
 
-> 温馨提示ℹ️：TPS（Transactions Per Second）和QPS（Queries Per Second）都是衡量系统性能的指标，但它们关注的方面有所不同。
+> [!IMPORTANT]
+>
+> TPS（Transactions Per Second）和QPS（Queries Per Second）都是衡量系统性能的指标，但它们关注的方面有所不同。
 >
 > * **TPS（每秒事务数）**：
 >   - TPS 指的是服务器在单位时间内（通常是每秒）能够完成的事务数量。
@@ -56,7 +58,9 @@
 | RNACOS_RAFT_AUTO_INIT | 是否当做主节点初始化(只在每一次启动时生效)           | true           | 节点 1 时默认为 true。<br>节点非 1 时为 false。              |
 | RNACOS_RAFT_JOIN_ADDR | 是否作为节点加入对应的主节点（只在第一次启动时生效） | 空             | 127.0.0.1:9848                                               |
 
-> 温馨提示ℹ️：具体参数说明在[这里](../../env_config/)。
+> [!NOTE]
+>
+> 具体参数说明在[这里](../../env_config/)。
 
 * 集群配置规则：
   * ① 所有的`集群节点`都需要设置 `RNACOS_RAFT_NODE_ID` 和 `RNACOS_RAFT_NODE_ADDR`；其中，不同节点的 `node_id` 和 `node_addr` 不能相同，并且 `node_id` 是一个`正整数`，`node_addr` 是 `ip:grpc_port`。
@@ -193,7 +197,10 @@ docker compose ps
 | r-nacos-slave1 | 192.168.10.101 | 从节点 |
 | r-nacos-slave2 | 192.168.10.102 | 从节点 |
 
-> 注意⚠️：需要保证三台 Linux 主机能互相通信，测试环境中，可以选择关闭防火墙！！！
+> [!IMPORTANT]
+>
+> * ① 需要确保三台 Linux 主机能互相通信。
+> * ② 测试环境中，可以选择关闭防火墙！！！
 
 ### 2.5.3 集群部署
 
@@ -277,7 +284,7 @@ docker compose restart
 * 部分节点重启，在重启一个心跳时间（`0.5s`）就会被重新加入集群。
 * 全部节点重启， raft 需要启动静默 `5s` + 选举超时 `3s` 后才重新选举主节点；`10s` 左右集群才提供配置写入服务。 期间配置查询，和注册中心的读写可以正常使用。
 
---- 
+---
 
 时间: 2024-02
 
