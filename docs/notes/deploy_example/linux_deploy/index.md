@@ -156,7 +156,9 @@ docker run -d --name nacos \
 	qingpan/rnacos:stable
 ```
 
-> 注意⚠️：stable 是最新正式版本号，也可以指定镜像版本号，如： `qingpan/rnacos:v0.4.0`。
+> [!WARNING]
+>
+> `stable` 是最新正式版本号，也可以指定镜像版本号，如： `qingpan/rnacos:v0.4.0`。
 
 ![](./assets/11.gif)
 
@@ -167,11 +169,13 @@ docker run -d --name nacos \
 | gnu debian包    | `$version`        | qingpan/rnacos:v0.4.0        | 基于 debian-slim，体积比较大(压缩包 36M，解压后102M)，运行性能相对较高。 |
 | musl alpine包   | `$version-alpine` | qingpan/rnacos:v0.4.0-alpine | 基于 alpine，体积比较小(压缩包 11M，解压后34M)，运行性能相对较低。 |
 
-> 注意⚠️：如果不关心版本，可以使用最新正式版本 tag
+> [!WARNING]
+>
+> 如果不关心版本，可以使用最新正式版本，如下所示：
 >
 > * ① 最新的 gnu 正式版本：`qingpan/rnacos:stable`。
 > * ② 最新的 alpine 正式版本: `qingpan/rnacos:stable-alpine`。
-> * ③ 目前 MacOS arm 系统运行`stable`镜像失败，可以先换成`stable-alpine`镜像，等后面解决arm `stable`镜像问题后再把这个注意事项去掉。
+> * ③ 目前 MacOS arm 系统运行`stable`镜像失败，可以先换成`stable-alpine`镜像，等后面解决 arm `stable`镜像问题后再把这个注意事项去掉。
 
 ## 1.4 Docker Compose 运行
 
@@ -223,17 +227,23 @@ docker ps
 
 ![image-20240306132348350](./assets/15.png)
 
-> 注意⚠️：`8848`端口属于老的控制台，不需要登录，也不支持用户管理，未来可能被废弃！！！
+> [!WARNING]
+>
+> `8848`端口属于老的控制台，不需要登录，也不支持用户管理，未来可能被废弃！！！
+
+
 
 * 服务启动后，可以在浏览器通过 `http://192.168.10.100:10848` 来进行访问新控制台：
 
 ![image-20240306132624905](./assets/16.png)
 
-> 注意⚠️：
+> [!IMPORTANT]
 >
 > * ① 默认的用户名和密码是 `admin`/`admin` 。
 >
 > * ②`10848`端口属于新的控制台，有完备的用户管理、登陆校验、权限控制，支持对外网暴露。
+
+
 
 * 此时，可以登录进去查看一下：
 
@@ -245,7 +255,9 @@ docker ps
 
 ![image-20240306133046221](./assets/18.png)
 
-> 注意⚠️：对外暴露的 nacos 控制台端口前，建议增加一个自定义管理员，把 admin 用户删除或禁用，默认的角色如下：
+> [!IMPORTANT]
+>
+> 对外暴露的 nacos 控制台端口前，建议增加一个自定义管理员，把 admin 用户删除或禁用，默认的角色如下：
 >
 > * 管理员：所有控制台权限。
 > * 开发者：除了用户管理的所有控制台权限。
