@@ -16,7 +16,7 @@ export default defineConfig({
   titleTemplate: "Hi，终于等到你",
   description: "r-nacos doc",
   head: [ // favicon.ico 图标等
-    ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}/favicon.ico` }],
+    ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}/logo2.svg` }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     [
       'script',
