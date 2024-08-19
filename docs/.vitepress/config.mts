@@ -61,7 +61,7 @@ export default defineConfig({
     search: { // 本地搜索
       provider: 'local'
     },
-    logo: '/logo.png',  // 左上角logo logo.svg
+    logo: '/logo2.svg',  // 左上角logo logo.svg
     nav: nav, // 导航
     sidebar: sidebar, // 侧边栏
     socialLinks: [ // 社交链接
