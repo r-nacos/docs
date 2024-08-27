@@ -19,22 +19,8 @@ export default defineConfig({
     ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}/logo2.svg` }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     [
-      'script',
-      { id: 'register-sw' },
-      `;(() => {
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw.js')
-        }
-      })()`
-      // would render:
-      //
-      // <script id="register-sw">
-      // ;(() => {
-      //   if ('serviceWorker' in navigator) {
-      //     navigator.serviceWorker.register('/sw.js')
-      //   }
-      // })()
-      // </script>
+      'link',
+      { href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', rel: 'stylesheet' }
     ],
     ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no" }],
     ['meta', { name: "keywords", content: "r-nacos,nacos,rnacos" }],
