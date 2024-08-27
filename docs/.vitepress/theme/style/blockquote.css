@@ -1,0 +1,77 @@
+:root {
+  --vp-c-brand-1: #18794e;
+  --vp-c-brand-2: #299764;
+  --vp-c-brand-3: #30a46c;
+
+  --vp-custom-block-note: #cccccc;
+  --vp-custom-block-note-bg: #EFF0F3;
+  --vp-custom-block-tip: #009400;
+  --vp-custom-block-tip-bg: #e6f6e6;
+  --vp-custom-block-warning: #e6a700;
+  --vp-custom-block-warning-bg: #fff8e6;
+  --vp-custom-block-danger: #e13238;
+  --vp-custom-block-danger-bg: #ffebec;
+  --vp-custom-block-important: #a371f7;
+  --vp-custom-block-important-bg: #f4eefe;
+}
+
+.dark {
+  --vp-c-brand-1: #3dd68c;
+  --vp-c-brand-2: #30a46c;
+  --vp-c-brand-3: #298459;
+
+  --vp-custom-block-note: #cccccc;
+  --vp-custom-block-note-bg: #474748;
+  --vp-custom-block-tip: #009400;
+  --vp-custom-block-tip-bg: #003100;
+  --vp-custom-block-warning: #e6a700;
+  --vp-custom-block-warning-bg: #4d3800;
+  --vp-custom-block-danger: #e13238;
+  --vp-custom-block-danger-bg: #4b1113;
+  --vp-custom-block-important: #a371f7;
+  --vp-custom-block-important-bg: #230555;
+}
+
+h1 {
+  background: -webkit-linear-gradient(10deg, #bd34fe 5%, #e43498 15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 提醒 */
+.note.custom-block.github-alert{
+  background-color: var(--vp-custom-block-note-bg);
+  border-left: 5px solid var(--vp-custom-block-note);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 建议 */
+.tip.custom-block.github-alert {
+  background-color: var(--vp-custom-block-tip-bg);
+  border-left: 5px solid var(--vp-custom-block-tip);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 重要框 */
+.important.custom-block.github-alert {
+  background-color: var(--vp-custom-block-important-bg);
+  border-left: 5px solid var(--vp-custom-block-important);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 警告 */
+.warning.custom-block.github-alert {
+  background-color: var(--vp-custom-block-warning-bg);
+  border-left: 5px solid var(--vp-custom-block-warning);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  
+}
+
+/* 注意 */
+.caution.custom-block.github-alert {
+  border-color: var(--vp-c-red-soft);
+  border-left: 5px solid var(--vp-c-red-3);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+

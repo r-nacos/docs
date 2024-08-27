@@ -4,19 +4,23 @@
 ## 1. 引言
 
 
-很多同学了解r-nacos特性后最开始只将r-nacos用于开发测试环境。
+很多同学了解 r-nacos 特性后最开始只将 r-nacos 用于开发测试环境。
 
-经过一段时间的使用后，部分同学有打算生产环境也从nacos迁移到r-nacos。
+经过一段时间的使用后，部分同学有打算生产环境也从 nacos 迁移到r-nacos 。
 
-一些之前使用nacos服务的同学了解r-nacos后打算从nacos迁移到r-nacos。
+一些之前使用 nacos 服务的同学了解 r-nacos 后打算从 nacos 迁移到 r-nacos。
 
-那么如何平衡地从nacos迁移到r-nacos呢？
+那么如何平衡地从 nacos 迁移到 r-nacos 呢？
 
-[r-nacos](https://github.com/nacos-group/r-nacos) 简介：
 
-> r-nacos是一个用rust实现的nacos服务。相较于java nacos来说，是一个提供相同功能，启动更快、占用系统资源更小（初始内存小于10M）、性能更高、运行更稳定的服务。
-> 
-> r-nacos设计上完全兼容最新版本nacos面向client sdk 的协议（包含1.x的http OpenApi，和2.x的grpc协议）, 支持使用nacos服务的应用平迁到 r-nacos。 
+
+> [!NOTE]
+>
+> [r-nacos](https://github.com/nacos-group/r-nacos) 简介：
+>
+> * ① r-nacos 是一个用 rust 实现的 nacos 服务。相较于 java nacos 来说，是一个提供相同功能，启动更快、占用系统资源更小（初始内存小于 10 M）、性能更高、运行更稳定的服务。
+>
+> * ② r-nacos 设计上完全兼容最新版本 nacos 面向 client sdk 的协议（包含 1.x 的 http OpenApi，和 2.x 的 grpc 协议）, 支持使用 nacos 服务的应用平迁到 r-nacos 。 
 
 ## 2. 迁移计划
 
@@ -63,12 +67,16 @@ nacos用户数据、命名空间数据与配置数据是持久化数据，需要
 
 把应用请求流量切到r-nacos中，这一步不同的场景需要用不同的处理方式：
 
-> 1) 应用直接请求nacos服务场景：r-nacos需要和nacos在同一个机器替换它；需要先关闭nacos，再把r-nacos的端口改成原nacos端口启动，完成切换。
-> 2) 应用请求nginx后反向代理到nacos场景：更新nginx配置，把nacos反向代理地址更新为r-nacos地址，然后重新增加配置完成切换。
+> [!NOTE]
+>
+> * ① 应用直接请求 nacos 服务场景：r-nacos 需要和 nacos 在同一个机器替换它；需要先关闭 nacos，再把 r-nacos 的端口改成原 nacos 端口启动，完成切换。
+> * ② 应用请求 nginx 后反向代理到 nacos 场景：更新 nginx 配置，把 nacos 反向代理地址更新为 r-nacos 地址，然后重新增加配置完成切换。
 
 切流迁移完成后，注意观察应用与r-nacos的表现是否符合预期。
 
-注意：就算目标是要开启鉴权，这个阶段r-naocs也不要启接口鉴权 (`RNACOS_ENABLE_OPEN_API_AUTH=false`)，以防应用使用原nacos分配旧token请求被拦截。
+> [!CAUTION]
+>
+> 就算目标是要开启鉴权，这个阶段 r-naocs 也不要启接口鉴权 (`RNACOS_ENABLE_OPEN_API_AUTH=false`)，以防应用使用原 nacos 分配旧 token 请求被拦截。
 
 
 三、迁移后收尾
@@ -81,8 +89,10 @@ nacos用户数据、命名空间数据与配置数据是持久化数据，需要
 完成迁移稳定运行一小段时间后，可以将nacos移除，只保留r-nacos。
 
 如果需要对接口开启鉴权，则走以下操作： 
-> a) 等应用旧token都过期(默认过期时间是5小时)都重新从r-nacos获取新token之后，再开启接口鉴权配置重启r-nacos（r-nacos可以秒级重启，应用几乎无感）。
-> b) 也可以分批重启应用强行其使用r-nacos token,之后再开启接口鉴权配置重启r-nacos。
+> [!NOTE] 
+>
+> * ① 等应用旧 token 都过期(默认过期时间是 5 小时)都重新从 r-nacos 获取新 token 之后，再开启接口鉴权配置重启 r-nacos （r-nacos 可以秒级重启，应用几乎无感）。
+> * ② 也可以分批重启应用强行其使用 r-nacos token，之后再开启接口鉴权配置重启 r-nacos 。
 
 至此完成从nacos迁移到r-nacos
 
@@ -103,14 +113,17 @@ nacos持久化内容:
 
 ![](imgs/20240721224800.png)
 
-nacos使用情况：
-> 1. 在10.0.24.9部署一台nacos，使用默认端口号8848,8948提供服务；
-> 2. nacos上设置两个命名空间pre,prod分别对预发、生产环境提供服务
-> 3. 有3个应用，每个应用2个实例使用nacos服务； 总共两套环境，其中一套环境共有3个配置文件，3个服务，6个实例；
-> 4. 应用使用的用户名：`xxx_app_id`  ,密码:  `a07a6deb5e56`
 
-目标：
-在同一台机器中部署r-nacos替换nacos提供服务，使用[systemd方式部署](https://r-nacos.github.io/docs/notes/deploy_example/linux_systemd_deploy/)
+> [!NOTE]
+>
+> nacos 使用情况：
+>
+> * ① 在 10.0.24.9 部署一台 nacos ，使用默认端口号 8848，8948 提供服务。
+> * ② nacos 上设置两个命名空间 pre、prod 分别对预发、生产环境提供服务。
+> * ③ 有 3 个应用，每个应用 2 个实例使用 nacos 服务； 总共两套环境，其中一套环境共有 3 个配置文件，3 个服务，6 个实例。
+> * ④ 应用使用的用户名：`xxx_app_id`  ,密码:  `a07a6deb5e56`
+
+目标：在同一台机器中部署r-nacos替换nacos提供服务，使用[systemd方式部署](https://r-nacos.github.io/docs/notes/deploy_example/linux_systemd_deploy/)
 
 #### 3.1.1 迁移步骤——迁移前
 
