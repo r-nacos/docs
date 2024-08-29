@@ -296,8 +296,10 @@ server {
     server_name  localhost;
 
     location /nacos {
-        proxy_set_header Host $proxy_host;
         proxy_pass http://10.0.24.9:8848;
+        proxy_set_header Host $proxy_host;
+        proxy_set_header  Connection "";
+        proxy_http_version  1.1;
     }
 }
 
@@ -325,8 +327,10 @@ server {
     server_name  localhost;
 
     location /nacos {
-        proxy_set_header Host $proxy_host;
         proxy_pass http://10.0.24.9:8858;
+        proxy_set_header Host $proxy_host;
+        proxy_set_header  Connection "";
+        proxy_http_version  1.1;
     }
 }
 
