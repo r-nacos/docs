@@ -307,7 +307,7 @@ server {
     listen  [::]:9848;
     server_name  localhost;
 
-    location /nacos {
+    location / {
         grpc_pass grpc://10.0.24.9:9848;
     }
 }
@@ -336,7 +336,7 @@ server {
     listen  [::]:9848;
     server_name  localhost;
 
-    location /nacos {
+    location / {
         grpc_pass grpc://10.0.24.9:9858;
     }
 }
