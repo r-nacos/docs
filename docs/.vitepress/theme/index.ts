@@ -1,5 +1,6 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme'
+import ArticleMetadata from "./components/ArticleMetadata.vue"
 import mediumZoom from 'medium-zoom'
 import { onMounted, watch, nextTick } from 'vue'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus'
@@ -8,7 +9,9 @@ import './style/index.css'
 
 export default {
   extends: DefaultTheme,
-
+  enhanceApp({ app }) {
+    app.component('ArticleMetadata', ArticleMetadata)
+  },
   setup() {
     // Get frontmatter and route
     const { frontmatter } = useData()
@@ -50,10 +53,10 @@ export default {
     );
     // giscus配置
     giscusTalk({
-      repo: 'r-nacos/docs', //仓库
-      repoId: 'R_kgDOLevX8w', //仓库ID
+      repo: 'Aexiar/Aexiar.github.io', //仓库
+      repoId: 'R_kgDOK820xg', //仓库ID
       category: 'Announcements', // 讨论分类
-      categoryId: 'DIC_kwDOLevX884Cd41T', //讨论分类ID
+      categoryId: 'DIC_kwDOK820xs4Cb8sS', //讨论分类ID
       mapping: 'pathname',
       inputPosition: 'bottom',
       lang: 'zh-CN',
