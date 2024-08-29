@@ -16,13 +16,16 @@ export default defineConfig({
   titleTemplate: "Hi，终于等到你",
   description: "r-nacos doc",
   head: [ // favicon.ico 图标等
-    ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}/logo2.svg` }],
+    ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}/logo.svg` }],
+    // 网站 favicon.ico 图标
+    ['link', { rel: "icon", href: `${VITE_BASE_URL}/logo.svg`, type: "image/svg+xml" }],
+    // 引入 Google Fonts
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    [
-      'link',
-      { href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', rel: 'stylesheet' }
-    ],
+    ['link', { href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap', rel: 'stylesheet' }],
+    // 网页视口
     ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no" }],
+    // 关键词和描述
     ['meta', { name: "keywords", content: "r-nacos,nacos,rnacos" }],
     //百度统计
     ['script', { async: '', src: 'https://hm.baidu.com/hm.js?afa135946ba7fb33d69bea1f370b905c' }],
@@ -39,7 +42,31 @@ export default defineConfig({
     }
   },
   markdown: { // markdown 配置
+    math: true,
     lineNumbers: true, // 行号显示
+    image: {
+      // 开启图片懒加载
+      lazyLoading: true
+    },
+    // 组件插入h1标题下
+    config: (md) => {
+      // 创建 markdown-it 插件
+      md.use((md) => {
+        const defaultRender = md.render
+        md.render = function (...args) {
+          const [content, env] = args
+          const isHomePage = env.path === '/' || env.relativePath === 'index.md'  // 判断是否是首页
+
+          if (isHomePage) {
+            return defaultRender.apply(md, args) // 如果是首页，直接渲染内容
+          }
+          // 在每个 md 文件内容的开头插入组件
+          const defaultContent = defaultRender.apply(md, args)
+          const component = '<ArticleMetadata />\n'
+          return component + defaultContent
+        }
+      })
+    }
   },
   themeConfig: {// 主题设置
     lastUpdatedText: '上次更新', // 上次更新显示文本
