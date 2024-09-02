@@ -42,7 +42,7 @@ jobs:
           ls -lah .
           for file in $(find docs/notes -type f -name "*.md"); do
             # 获取当前文件的所有提交者
-            AUTHORS=$(git log --follow --format='%an <%ae>' -- "$file" | sort | uniq | paste -sd "，" -)
+            AUTHORS=$(git log --follow --format='%an <%ae>' -- "$file" | sort | uniq | paste -sd ", " -)
             # 打印作者的信息
             echo "=========================================="
             echo "Markdown file: $file"
