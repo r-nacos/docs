@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 克隆整个历史记录
       - uses: dorny/paths-filter@v3
         id: changes
         with:
@@ -35,17 +37,20 @@ jobs:
         if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
         run: |
           npm install
-      - name: Get commit information
-        uses: rlespinasse/git-commit-data-action@v1
       - name: Add author to each Markdown file in notes
         run: |
-          AUTHOR_NAME="${{ env.GIT_COMMIT_AUTHOR_NAME }}"
-          AUTHOR_EMAIL="${{ env.GIT_COMMIT_AUTHOR_EMAIL }}"
           ls -lah .
           for file in $(find docs/notes -type f -name "*.md"); do
-            if ! grep -q "^作者：" "$file"; then
-              sed -i "1s/^/作者：$AUTHOR_NAME <$AUTHOR_EMAIL>\n\n/" "$file"
-            fi
+            # 获取当前文件的所有提交者
+            AUTHORS=$(git log --follow --format='%an <%ae>' -- "$file" | sort | uniq | paste -sd "，" -)
+            # 打印作者的信息
+            echo "=========================================="
+            echo "Markdown file: $file"
+            echo "=========================================="
+            echo "提交者：$AUTHORS"
+            echo ""
+            # 追加作者信息到 Markdown 文件中
+            echo -e "作者：$AUTHORS\n\n$(cat "$file")" > "$file"
           done
       - name: build
         if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
