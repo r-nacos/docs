@@ -7,26 +7,37 @@
 
 方式1：从 [github release](https://github.com/heqingpan/rnacos/releases) 下载对应系统的应用包，解压后即可运行。
 
-linux 或 mac 
-
 ```shell
 # 解压
 tar -xvf rnacos-x86_64-apple-darwin.tar.gz
+```
+
+```shell
 # 运行
 ./rnacos
 ```
 
-windows 解压后直接运行 rnacos.exe 即可。
+> [!NOTE]
+>
+> Windows 解压后直接运行 rnacos.exe 即可。
 
 方式2:  通过docker 运行
 
-```
-#stable是最新正式版本号，也可以指定镜像版本号，如： qingpan/rnacos:v0.4.0
-docker pull qingpan/rnacos:stable  
-docker run --name mynacos -p 8848:8848 -p 9848:9848 -p 10848:10848 -d qingpan/rnacos:stable
+```shell
+# stable 是最新正式版本号，也可以指定镜像版本号，如： qingpan/rnacos:v0.4.0
+docker pull qingpan/rnacos:stable 
 ```
 
-docker 的容器运行目录是 /io，会从这个目录读写配置文件
+```shell
+docker run -d \
+	--name mynacos \
+	-p 8848:8848 -p 9848:9848 -p 10848:10848 \
+	qingpan/rnacos:stable
+```
+
+> [!NOTE]
+>
+> docker 的容器运行目录是 /io，会从这个目录读写配置文件。
 
 #### docker 版本说明
 
@@ -48,44 +59,66 @@ docker 的容器运行目录是 /io，会从这个目录读写配置文件
 
 方式3：通过 cargo 编译安装
 
-```
+```shell
 # 安装
 cargo install rnacos
+```
+
+```shell
 # 运行
 rnacos
 ```
 
 方式4: 下载源码编译运行
 
-```
+```shell
 git clone https://github.com/heqingpan/rnacos.git
+```
+
+```shell
 cd rnacos
+```
+
+```shell
 cargo build --release
+```
+
+```shell
 cargo run
 ```
 
-方式5: MacOS支持通过brew安装
+方式5: MacOS 支持通过 brew 安装
 
 ```shell
 # 把r-nacos加入taps
 brew tap r-nacos/r-nacos 
-
-# brew 安装 r-nacos
-brew install r-nacos
-
-# 运行
-rnacos
-
-# 后续可以直接通过以下命令更新到最新版本
-# brew upgrade r-nacos 
 ```
 
+```shell
+# brew 安装 r-nacos
+brew install r-nacos
+```
 
-测试、试用推荐使用第1、第2种方式，直接下载就可以使用。
+```shell
+# 运行
+rnacos
+```
 
-在linux下第1、第2种方式默认是musl版本(性能比gnu版本差一些)，在生产服务对性能有要求的可以考虑使用第3、第4种在对应环境编译gnu版本部署。
+> [!IMPORTANT]
+>
+> 后续可以直接通过以下命令更新到最新版本：
+>
+> ```shell 
+> brew upgrade r-nacos
+> ```
 
-启动配置可以参考： [运行参数说明](../env_config/)
+> [!NOTE]
+>
+> 测试、试用推荐使用第1、第2种方式，直接下载就可以使用。
+>
+> 在 Linux 下第 1、第 2 种方式默认是 musl 版本(性能比 gnu 版本差一些)，在生产服务对性能有要求的可以考虑使用第 3、第 4种在对应环境编译 gnu 版本部署。
+>
+> 启动配置可以参考： [运行参数说明](../env_config/)
 
 ## 二、运行nacos 应用
 
@@ -93,32 +126,63 @@ rnacos
 
 ### 配置中心http api例子
 
+```shell
+# 发送 POST 请求到 Nacos 配置中心以发布配置
+curl -X POST 'http://127.0.0.1:8848/nacos/v1/cs/configs' \
+    -d 'dataId=t001' \                    # 配置的唯一标识符，例如 t001
+    -d 'group=foo' \                      # 配置所属的分组名称，例如 foo
+    -d 'content=contentTest'              # 配置的内容，例如 contentTest
 ```
-# 设置配置
-curl -X POST 'http://127.0.0.1:8848/nacos/v1/cs/configs' -d 'dataId=t001&group=foo&content=contentTest'
 
+```shell
 # 查询
 curl 'http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=t001&group=foo'
-
 ```
+
+
 
 ### 注册中心http api例子
 
+```shell
+# 注册服务实例：发送 POST 请求到 Nacos 注册中心以注册服务实例
+curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance' \
+-d 'port=8000' \                       # 服务实例的端口号，例如 8000
+-d 'healthy=true' \                    # 服务实例的健康状态，true 表示健康
+-d 'ip=192.168.1.11' \                 # 服务实例的 IP 地址，例如 192.168.1.11
+-d 'weight=1.0' \                      # 服务实例的权重，例如 1.0
+-d 'serviceName=nacos.test.001' \      # 服务的名称，例如 nacos.test.001
+-d 'groupName=foo' \                   # 服务实例所属的分组名称，例如 foo
+-d 'metadata={"app":"foo","id":"001"}' # 服务实例的元数据，以 JSON 字符串形式表示
 ```
-# 注册服务实例
-curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance' -d 'port=8000&healthy=true&ip=192.168.1.11&weight=1.0&serviceName=nacos.test.001&groupName=foo&metadata={"app":"foo","id":"001"}'
 
-curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance' -d 'port=8000&healthy=true&ip=192.168.1.12&weight=1.0&serviceName=nacos.test.001&groupName=foo&metadata={"app":"foo","id":"002"}'
+```shell
+# 注册服务实例：发送 POST 请求到 Nacos 注册中心以注册服务实例
+curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance' \
+-d 'port=8000' \                        # 服务实例的端口号，例如 8000
+-d 'healthy=true' \                     # 服务实例的健康状态，true 表示健康
+-d 'ip=192.168.1.12' \                  # 服务实例的 IP 地址，例如 192.168.1.12
+-d 'weight=1.0' \                       # 服务实例的权重，例如 1.0
+-d 'serviceName=nacos.test.001' \       # 服务名称，例如 nacos.test.001
+-d 'groupName=foo' \                    # 服务实例所属的分组名称，例如 foo
+-d 'metadata={"app":"foo","id":"002"}'  # 服务实例的元数据，格式为 JSON 字符串
+```
 
- curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance' -d 'port=8000&healthy=true&ip=192.168.1.13&weight=1.0&serviceName=nacos.test.001&groupName=foo&metadata={"app":"foo","id":"003"}'
+```shell
+# 注册服务实例：发送 POST 请求到 Nacos 注册中心以注册服务实例
+curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance' \
+-d 'port=8000' \      					# 服务实例的端口号，例如 8000
+-d 'healthy=true' \   					# 服务实例的健康状态，true 表示健康
+-d 'ip=192.168.1.13' \                  # 服务实例的 IP 地址，例如 192.168.1.13
+-d 'weight=1.0' \                       # 服务实例的权重，例如 1.0
+-d 'serviceName=nacos.test.001' \       # 服务名称，例如 nacos.test.001
+-d 'groupName=foo' \                    # 服务实例所属的分组名称，例如 foo
+-d 'metadata={"app":"foo","id":"003"}'	# 服务实例的元数据，格式为 JSON 字符串
+```
 
+```shell
 # 查询服务实例
-
 curl "http://127.0.0.1:8848/nacos/v1/ns/instance/list?&namespaceId=public&serviceName=foo%40%40nacos.test.001&groupName=foo&clusters=&healthyOnly=true"
-
 ```
-
-
 
 具体的用法参考 nacos.io 的用户指南。
 

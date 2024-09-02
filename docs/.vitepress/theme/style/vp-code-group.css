@@ -1,0 +1,7 @@
+/* .vitepress/theme/style/vp-code-group.css */
+/* 代码组 */
+.vp-code-group {
+    color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
+}
