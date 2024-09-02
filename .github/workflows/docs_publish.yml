@@ -43,8 +43,12 @@ jobs:
           AUTHOR_EMAIL="${{ env.GIT_COMMIT_AUTHOR_EMAIL }}"
           ls -lah .
           for file in $(find docs/notes -type f -name "*.md"); do
+            # 获取当前文件的所有提交者
+            AUTHORS=$(git log --follow --format='%an <%ae>' -- "$file" | sort | uniq | paste -sd ", " -)
+            # 检查文件中是否已经包含作者信息  
             if ! grep -q "^作者：" "$file"; then
-              sed -i "1s/^/作者：$AUTHOR_NAME <$AUTHOR_EMAIL>\n\n/" "$file"
+              # 将作者信息添加到文件的开头
+              sed -i "1s/^/作者：$AUTHORS\n\n/" "$file"
             fi
           done
       - name: build
