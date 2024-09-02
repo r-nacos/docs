@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 克隆整个历史记录
       - uses: dorny/paths-filter@v3
         id: changes
         with:
