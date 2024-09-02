@@ -45,11 +45,14 @@ jobs:
           for file in $(find docs/notes -type f -name "*.md"); do
             # 获取当前文件的所有提交者
             AUTHORS=$(git log --follow --format='%an <%ae>' -- "$file" | sort | uniq | paste -sd ", " -)
-            # 检查文件中是否已经包含作者信息  
-            if ! grep -q "^作者：" "$file"; then
-              # 将作者信息添加到文件的开头
-              sed -i "1s/^/作者：$AUTHORS\n\n/" "$file"
-            fi
+            # 打印作者的信息
+            echo "=========================================="
+            echo "Markdown file: $file"
+            echo "=========================================="
+            echo "提交者：$AUTHORS"
+            echo ""
+            # 追加作者信息到 Markdown 文件中
+            echo -e "作者：$AUTHORS\n\n$(cat "$file")" > "$file"
           done
       - name: build
         if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
