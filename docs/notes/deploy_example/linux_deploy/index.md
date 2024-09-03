@@ -68,7 +68,8 @@ systemctl disable --now firewalld
 > dnf config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`。
 
 ```shell
-sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf config-manager \
+	--add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
 ![](./assets/6.gif)
@@ -305,12 +306,17 @@ docker ps
 
 * （对于 Linux 或 Mac  只需要从 [github](https://github.com/r-nacos/r-nacos/releases) 下载对应的软件包，解压后即可运行）。
 
+> [!IMPORTANT]
+>
+> 目前，R-Nacos 的仓库已经迁移了，地址在[这里](https://github.com/nacos-group/r-nacos/)。
+
 ### 2.1.2 安装
 
 * 下载：
 
 ```
-wget -P /opt https://github.com/r-nacos/r-nacos/releases/download/v0.4.3/rnacos-x86_64-unknown-linux-musl.tar.gz
+wget -P /opt \
+https://github.com/r-nacos/r-nacos/releases/download/v0.4.3/rnacos-x86_64-unknown-linux-musl.tar.gz
 ```
 
 ![](./assets/25.gif)
@@ -359,10 +365,4 @@ netstat -anp | grep 8848
 ## 2.2 Win 安装和运行
 
 * 解压直接运行 rnacos.exe 即可：略。
-
-----
-
-时间: 2024-02
-
-作者: [Aurorxa](https://github.com/Aurorxa)
 
