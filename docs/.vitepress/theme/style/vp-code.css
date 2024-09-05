@@ -10,8 +10,23 @@ div[class*="language-"].vp-adaptive-theme.line-numbers-mode {
   padding-top: 24px; /* 给小圆点留出空间 */
 }
 
-/* 添加小圆点 */
-div[class*="language-"].vp-adaptive-theme.line-numbers-mode:not(.vp-code-group .line-numbers-mode)::before {
+/* 无行号添加小圆点 */
+div[class*="language-"].vp-adaptive-theme::before {
+  content: "";
+  display: block;
+  position: relative;
+  top: 12px;
+  left: 12px;
+  width: 12px;
+  height: 12px;
+  background-color: #ff5f56; /* 红色 */
+  border-radius: 50%;
+  box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f; /* 黄色和绿色的小圆点 */
+  z-index: 1; /* 确保圆点在代码块上方 */
+}
+
+/* 有行号添加小圆点 */
+div[class*="language-"].line-numbers-mode::before {
   content: "";
   display: block;
   position: absolute;
