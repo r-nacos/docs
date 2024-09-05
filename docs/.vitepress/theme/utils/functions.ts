@@ -5,9 +5,9 @@ export function countWord(data: string) {
   data = data.trim()
   // 正则表达式匹配 "更新: 2024/8/27 字数: 0 字 时长: 0 分钟" 并删除它
   const ignorePattern = /更新:\s*\d{4}\/\d{1,2}\/\d{1,2}\s*字数:\s*\d+\s*字\s*时长:\s*\d+\s*分钟/
-  data = data.replace(ignorePattern, '')
-  debugger
-  console.log('data', data)
+  if (ignorePattern.test(data)) {
+    data = data.replace(ignorePattern, '')
+  }
   const m = data.match(pattern)
   let count = 0
   if (!m) {
