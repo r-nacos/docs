@@ -289,28 +289,29 @@ nacos内容和前一个场景一样，部署时中间多用了nginx代理提供�
 原nginx配置 
 
 ```
-# nacos http
-server {
-    listen       8848;
-    listen  [::]:8848;
-    server_name  localhost;
+http {
+    # nacos http , 走http反向代理
+    server {
+        listen       8848;
+        listen  [::]:8848;
+        server_name  localhost;
 
-    location /nacos {
-        proxy_pass http://10.0.24.9:8848;
-        proxy_set_header Host $proxy_host;
-        proxy_set_header  Connection "";
-        proxy_http_version  1.1;
+        location /nacos {
+            proxy_pass http://10.0.24.9:8848;
+            proxy_set_header Host $proxy_host;
+            proxy_set_header  Connection "";
+            proxy_http_version  1.1;
+        }
     }
 }
 
-# nacos grpc
-server {
-    listen       9848;
-    listen  [::]:9848;
-    server_name  localhost;
-
-    location / {
-        grpc_pass grpc://10.0.24.9:9848;
+stream {
+    # nacos grpc , 走tcp反向代理
+    server {
+        listen       9848;
+        proxy_pass http://10.0.24.9:9848;
+        proxy_connect_timeout 5s;
+        proxy_timeout 20s;
     }
 }
 
@@ -320,32 +321,33 @@ server {
 更新后的nginx配置 
 
 ```
-# nacos http
-server {
-    listen       8848;
-    listen  [::]:8848;
-    server_name  localhost;
+http {
+    # nacos http , 走http反向代理
+    server {
+        listen       8848;
+        listen  [::]:8848;
+        server_name  localhost;
 
-    location /nacos {
-        proxy_pass http://10.0.24.9:8858;
-        proxy_set_header Host $proxy_host;
-        proxy_set_header  Connection "";
-        proxy_http_version  1.1;
+        location /nacos {
+            proxy_pass http://10.0.24.9:8858;
+            proxy_set_header Host $proxy_host;
+            proxy_set_header  Connection "";
+            proxy_http_version  1.1;
+        }
     }
 }
 
-# nacos grpc
-server {
-    listen       9848;
-    listen  [::]:9848;
-    server_name  localhost;
-
-    location / {
-        grpc_pass grpc://10.0.24.9:9858;
+stream {
+    # nacos grpc , 走tcp反向代理
+    server {
+        listen       9848;
+        proxy_pass http://10.0.24.9:9858;
+        proxy_connect_timeout 5s;
+        proxy_timeout 20s;
     }
 }
-
 ```
+
 
 执行`nginx -s reload` 重新加载配置规则即可完成切流。
 
