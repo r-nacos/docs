@@ -8,6 +8,10 @@ on:
       - master
   #  pull_request:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Update Change Log", "Update Change Log2"] # 允许被 "Update Change Log2" 触发
+    types:
+      - completed
 
 jobs:
   deploy:
@@ -18,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 克隆整个历史记录
+          fetch-depth: 0 # 克隆整个历史记录
       - uses: dorny/paths-filter@v3
         id: changes
         with:

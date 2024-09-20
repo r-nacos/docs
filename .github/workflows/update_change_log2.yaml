@@ -1,0 +1,156 @@
+name: Update Change Log2
+
+on:
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update-change-log:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+      - name: Install github_changelog_generator
+        run: |
+          gem install github_changelog_generator
+      - name: Generate Changelog
+        run: |
+          github_changelog_generator --help
+          github_changelog_generator \
+            --token ${{ secrets.GITHUB_TOKEN }} \
+            --user nacos-group \
+            --project r-nacos \
+            --output CHANGELOG.md
+          ls -lah .
+          cat CHANGELOG.md
+      - name: Set Up GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh jq
+      - name: Authenticate GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          gh auth setup-git
+      - name: Append commit-based changelog
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          BASE_DIR=$PWD
+          echo "BASE_DIR ==> $BASE_DIR"
+          CHANGELOG_FILE=$BASE_DIR/CHANGELOG.md
+          echo "CHANGELOG_FILE ==> $CHANGELOG_FILE"
+          sed -i '1i\
+            > 常用的符号说明：\
+            > ✨新增：用于表示添加新功能或新特性的任务。\
+            > 🛠️优化：用于表示代码重构或性能优化的任务。\
+            > 📖文档：用于表示更新或添加文档的任务。\
+            > 🐛修复：用于表示修复错误或问题的任务。\
+            > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。\' $CHANGELOG_FILE
+          git clone https://github.com/nacos-group/r-nacos.git external-repo
+          cd external-repo
+          git pull
+          TAGS=$(git tag --sort=-creatordate | tr '\n' ' ')
+          echo "TAGS ==> $TAGS"
+          # 声明 map   
+          declare -A BODY_MAP
+          # 遍历 TAG 标签
+          for TAG in $TAGS; do
+            echo "Processing tag: $TAG"
+            RELEASE_INFO=$(gh release view $TAG --json tagName,createdAt,author,body,url || echo "NOT_FOUND")
+            if [[ "$RELEASE_INFO" == "NOT_FOUND" ]]; then
+              continue
+            fi
+            # 获取标签名称
+            TAG_NAME=$(echo "$RELEASE_INFO" | jq -r '.tagName')
+            # 获取标签详细信息
+            BODY=$(echo "$RELEASE_INFO" | jq -r '.body')
+            echo "==========显示每个TAG内容===降级前开始====="
+            echo $BODY
+            echo "==========显示每个TAG内容===降级前结束====="
+            # 降级 Markdown 标题
+            # 将所有 # 转换为 ##
+            BODY=$(echo "$BODY" | sed 's/^### /#### /g')
+            BODY=$(echo "$BODY" | sed 's/^## /### /g')
+            BODY=$(echo "$BODY" | sed 's/^# /## /g')
+            # 删除包含 "Full Changelog" 的行
+            BODY=$(echo "$BODY" | sed '/Full Changelog/d')
+            echo "==========显示每个TAG内容===降级后开始====="
+            echo $BODY
+            echo "==========显示每个TAG内容===降级后结束====="
+            # 设置到 Map 中
+            BODY_MAP["$TAG_NAME"]="$BODY"
+          done
+          # 打印 BODY_MAP 的内容
+          echo "BODY_MAP 内容："
+          # for TAG in "${!BODY_MAP[@]}"; do
+          #   echo "Tag: $TAG"
+          #   echo "Body: ${BODY_MAP[$TAG]}"
+          #   echo "----------------------"
+          # done
+          # 回到原始目录
+          cd $BASE_DIR
+          rm -rf external-repo
+          # 替换
+          TEMP_CHANGELOG=$(mktemp)
+          while IFS= read -r line; do
+            echo "$line" >> "$TEMP_CHANGELOG"
+            echo "每行的内容是：$line"
+            for TAG in "${!BODY_MAP[@]}"; do
+              # 使用 \b 确保 TAG 作为完整的独立词出现
+              regex="\[\b$TAG\b\]"
+              if [[ "$line" =~ $regex ]]; then
+                echo "${BODY_MAP[$TAG]}" >> "$TEMP_CHANGELOG"
+                echo "插入 $TAG 的 body 到 CHANGELOG"
+              fi
+            done
+          done < "$CHANGELOG_FILE"
+
+          mv "$TEMP_CHANGELOG" "$CHANGELOG_FILE"
+          pwd && ls -lah .
+          echo "===查看生成的日志文件开头==="
+          cat $CHANGELOG_FILE 
+          echo "===查看生成的日志文件结束==="
+      - name: Move Changelog to docs/notes/change/index.md
+        run: |
+          BASE_DIR=$PWD
+          echo "BASE_DIR ==> $BASE_DIR"
+          cd $BASE_DIR
+          pwd && ls -lah .   
+          mv CHANGELOG.md $BASE_DIR/docs/notes/change/index.md
+          rm -rf r-nacos
+          cat $BASE_DIR/docs/notes/change/index.md
+      - name: Commit and Push Change Log
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Update Change Log"
+            git push --force
+          else
+            echo "No changes to commit"
+          fi
+      - name: Trigger Docs Publish Workflow
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          gh workflow run docs_publish.yml
