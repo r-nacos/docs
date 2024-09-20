@@ -60,9 +60,17 @@ export default defineConfig({
           if (isHomePage) {
             return defaultRender.apply(md, args) // 如果是首页，直接渲染内容
           }
+          // 调用原始渲染
+          let defaultContent = defaultRender.apply(md, args)
+          // 替换内容
+          defaultContent = defaultContent.replace(/NOTE/g, '提醒')
+            .replace(/TIP/g, '建议')
+            .replace(/IMPORTANT/g, '重要')
+            .replace(/WARNING/g, '警告')
+            .replace(/CAUTION/g, '注意')
           // 在每个 md 文件内容的开头插入组件
-          const defaultContent = defaultRender.apply(md, args)
           const component = '<ArticleMetadata />\n'
+          // 返回渲染的内容
           return component + defaultContent
         }
       })

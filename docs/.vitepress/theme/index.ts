@@ -7,6 +7,7 @@ import giscusTalk from 'vitepress-plugin-comment-with-giscus'
 import { useData, useRoute } from 'vitepress'
 import confetti from "./components/confetti.vue"
 import backTop from "./components/backTop.vue"
+import HomeUnderline from "./components/HomeUnderline.vue"
 import './style/index.css'
 
 export default {
@@ -19,6 +20,7 @@ export default {
   enhanceApp({ app }) {
     app.component('ArticleMetadata', ArticleMetadata)
     app.component('confetti', confetti)
+    app.component('HomeUnderline', HomeUnderline)
   },
   setup() {
     // Get frontmatter and route

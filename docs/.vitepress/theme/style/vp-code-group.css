@@ -37,3 +37,8 @@
 .vp-code-group div[class*="language-"].vp-adaptive-theme.line-numbers-mode::before {
   display: none;
 }
+
+/* 确保代码组内部的代码块没有间距 */
+.vp-code-group div[class*="language-"].vp-adaptive-theme {
+  margin: 0 !important; /* 取消代码组内部相邻代码块之间的间距 */
+}
