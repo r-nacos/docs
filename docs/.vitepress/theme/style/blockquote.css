@@ -3,6 +3,8 @@
   --vp-c-brand-2: #299764;
   --vp-c-brand-3: #30a46c;
 
+  --vp-custom-block-info: #cccccc;
+  --vp-custom-block-info-bg: #fafafa;
   --vp-custom-block-note: #4cb3d4;
   --vp-custom-block-note-bg: #eef9fd;
   --vp-custom-block-tip: #009400;
@@ -20,6 +22,8 @@
   --vp-c-brand-2: #30a46c;
   --vp-c-brand-3: #298459;
 
+  --vp-custom-block-info: #cccccc;
+  --vp-custom-block-info-bg: #474748;
   --vp-custom-block-note: #4cb3d4;
   --vp-custom-block-note-bg: #193c47;
   --vp-custom-block-tip: #009400;
@@ -39,12 +43,60 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 90% 0);
+    }
+    25% {
+        clip-path: inset(0 90% 0 0);
+    }
+    50% {
+        clip-path: inset(90% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 90%);
+    }
+}
+
+
 /* NOTE容器:背景色、左侧 */
 .custom-block.note {
   background-color: var(--vp-custom-block-note-bg);
   border-left: 5px solid var(--vp-custom-block-note);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  /* 实现跑马灯的效果 */
+  position: relative;
+  transition: all .3s;
 }
+
+.custom-block.note:hover{
+  filter: contrast(1.1);
+}
+
+.custom-block.note:active{
+  filter: contrast(0.9);
+}
+
+/* 实现跑马灯的效果 */
+.custom-block.note.github-alert::before,
+.custom-block.note.github-alert::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--vp-custom-block-note);
+    transition: all .5s;
+    animation: clippath 6s infinite linear;
+    border-radius: 10px;
+}
+/* 实现跑马灯的效果 */
+.custom-block.note.github-alert::after {
+    animation: clippath 6s infinite -3s linear;
+}
+
 
 /* NOTE容器:svg图 */
 .custom-block.note [class*="custom-block-title"]::before {
@@ -71,6 +123,36 @@ h1 {
   background-color: var(--vp-custom-block-tip-bg);
   border-left: 5px solid var(--vp-custom-block-tip);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  /* 实现跑马灯的效果 */
+  position: relative;
+  transition: all .8s;
+}
+
+.custom-block.tip:hover{
+  filter: contrast(1.1);
+}
+
+.custom-block.tip:active{
+  filter: contrast(0.9);
+}
+
+/* 实现跑马灯的效果 */
+.custom-block.tip.github-alert::before,
+.custom-block.tip.github-alert::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--vp-custom-block-tip);
+    transition: all .5s;
+    animation: clippath 3s infinite linear;
+    border-radius: 10px;
+}
+/* 实现跑马灯的效果 */
+.custom-block.tip.github-alert::after {
+    animation: clippath 3s infinite -1.5s linear;
 }
 
 /* 提示容器:svg图 */
@@ -97,6 +179,37 @@ h1 {
   border-left: 5px solid var(--vp-custom-block-important);
   background-color: var(--vp-custom-block-important-bg);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+  /* 实现跑马灯的效果 */
+  position: relative;
+  transition: all .3s;
+}
+
+.custom-block.important:hover{
+  filter: contrast(1.1);
+}
+
+.custom-block.important:active{
+  filter: contrast(0.9);
+}
+
+/* 实现跑马灯的效果 */
+.custom-block.important.github-alert::before,
+.custom-block.important.github-alert::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--vp-custom-block-important);
+    transition: all .5s;
+    animation: clippath 3s infinite linear;
+    border-radius: 10px;
+}
+/* 实现跑马灯的效果 */
+.custom-block.important.github-alert::after {
+    animation: clippath 3s infinite -1.5s linear;
 }
 
 /* IMPORTANT容器:svg图 */
@@ -123,6 +236,37 @@ h1 {
   background-color: var(--vp-custom-block-warning-bg);
   border-left: 5px solid var(--vp-custom-block-warning);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+  /* 实现跑马灯的效果 */
+  position: relative;
+  transition: all .3s;
+}
+
+.custom-block.warning:hover{
+  filter: contrast(1.1);
+}
+
+.custom-block.warning:active{
+  filter: contrast(0.9);
+}
+
+/* 实现跑马灯的效果 */
+.custom-block.warning.github-alert::before,
+.custom-block.warning.github-alert::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--vp-custom-block-warning);
+    transition: all .5s;
+    animation: clippath 3s infinite linear;
+    border-radius: 10px;
+}
+/* 实现跑马灯的效果 */
+.custom-block.warning.github-alert::after {
+    animation: clippath 3s infinite -1.5s linear;
 }
 
 /* 警告容器:svg图 */
@@ -150,6 +294,37 @@ h1 {
   border-color: var(--vp-c-red-soft);
   border-left: 5px solid var(--vp-c-red-3);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+  /* 实现跑马灯的效果 */
+  position: relative;
+  transition: all .3s;
+}
+
+.custom-block.caution:hover{
+  filter: contrast(1.1);
+}
+
+.custom-block.caution:active{
+  filter: contrast(0.9);
+}
+
+/* 实现跑马灯的效果 */
+.custom-block.caution.github-alert::before,
+.custom-block.caution.github-alert::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--vp-c-red-3);
+    transition: all .5s;
+    animation: clippath 3s infinite linear;
+    border-radius: 10px;
+}
+/* 实现跑马灯的效果 */
+.custom-block.caution.github-alert::after {
+    animation: clippath 3s infinite -1.5s linear;
 }
 
 /* CAUTION容器:svg图 */
