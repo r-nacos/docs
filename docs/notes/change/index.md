@@ -11,6 +11,30 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.4) 2024-11-03
+Released by @github-actions[bot] on 2024-11-03T17:30:36Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.3...v0.6.4
+
++  修复：修复控制台编辑配置时查找替换光标无法定位到输入框问题；#156
++  优化：控制台编辑器支持动态调整高度，并且支持切换全屏编辑；
++  修复：修复从v0.5.x升级到v0.6.x后部分命名空间的名称被重置为id问题；#161
+
+## [v0.6.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.3) 2024-10-27
+Released by @github-actions[bot] on 2024-10-27T18:03:59Z
+
+## What's Changed
+* fix: 移除不必要的前缀 by @MangerLe in https://github.com/nacos-group/r-nacos/pull/153
+* refactor: 将打印语句替换为日志记录 by @MangerLe in https://github.com/nacos-group/r-nacos/pull/154
+
++  新增：控制台命名空间组件，支持查看、复制命名空间id。
++  新增：r-nacos增加子命令`openapi-to-data` ,支持通过openapi从nacos全量导出命名空间、配置信息到中间文件；即支持间接把nacos数据导入到r-nacos中 ；#138
+
+## New Contributors
+* @MangerLe made their first contribution in https://github.com/nacos-group/r-nacos/pull/153
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.2...v0.6.3
+
 ## [v0.6.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.2) 2024-10-21
 Released by @github-actions[bot] on 2024-10-21T01:09:52Z
 
