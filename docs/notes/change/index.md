@@ -11,6 +11,15 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.5) 2024-11-11
+Released by @github-actions[bot] on 2024-11-11T01:09:03Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.4...v0.6.5
+
++  优化：兼容nacos-sdk-csharp中的grpc发布配置接口；#162 
++  新增：r-nacos增加子命令`mysql-to-data` ,支持把nacos mysql数据（包含配置、命名空间、用户数据）导出为中间数据文件；即支持间接把nacos数据导入到r-nacos中 ；#138
++  修复：修改控制台页面错别字，将`主角点`纠正为`主节点`；
+
 ## [v0.6.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.4) 2024-11-03
 Released by @github-actions[bot] on 2024-11-03T17:30:36Z
 
