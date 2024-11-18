@@ -23,6 +23,14 @@ export const sidebar: DefaultTheme.Sidebar = {
       link: `/notes/performance/`,
     },
     {
+      text: '服务健康检测、探活',
+      link: `/notes/health/`,
+    },
+    {
+      text: '数据备件与迁移',
+      link: `/notes/backup/`,
+    },
+    {
       text: '版本说明',
       link: `/notes/version_describe/`,
     },
