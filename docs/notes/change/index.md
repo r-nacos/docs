@@ -11,6 +11,23 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.6) 2024-11-17
+Released by @github-actions[bot] on 2024-11-17T17:09:08Z
+
+## What's Changed
+* feat: support extra runtime configs with env by @fengxsong in https://github.com/nacos-group/r-nacos/pull/169
+
+## New Contributors
+* @fengxsong made their first contribution in https://github.com/nacos-group/r-nacos/pull/169
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.5...v0.6.6
+
+
++  修复：修复变更集群部分节点地址导致注册中心集群不正常问题；#170
++  新增：提供服务探活接口以支持发现有问题的节点，可支持自动移除或重启集群中的问题节点； #171
++  新增：提供备份数据http接口，以支持通过外部定时脚本发起定时备份功能； #172
++  优化：调整k8s helm模板的参数配置项，支持设置r-nacos所有配置参数；from @fengxsong PR #169
+
 ## [v0.6.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.5) 2024-11-11
 Released by @github-actions[bot] on 2024-11-11T01:09:03Z
 
