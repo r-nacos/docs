@@ -411,8 +411,6 @@
     animation: rainbow 8s linear infinite;
 }
 
-
-
 :root {
     /* hero标题渐变色 */
     --vp-home-hero-name-color: transparent;
@@ -421,6 +419,14 @@
     /*hero logo背景渐变色 */
     --vp-home-hero-image-background-image: linear-gradient(-45deg, var(--rainbow-prev) 30%, var(--rainbow-next));
     --vp-home-hero-image-filter: blur(80px);
+}
+
+/* h1 标题 */
+h1 {
+  background: -webkit-linear-gradient(10deg, var(--rainbow-prev) 5%, var(--rainbow-next) 15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 

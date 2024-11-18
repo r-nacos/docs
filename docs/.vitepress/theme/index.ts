@@ -5,8 +5,8 @@ import mediumZoom from 'medium-zoom'
 import { onMounted, watch, nextTick, h } from 'vue'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus'
 import { useData, useRoute } from 'vitepress'
-import confetti from "./components/confetti.vue"
-import backTop from "./components/backTop.vue"
+import confetti from "./components/Confetti.vue"
+import backTop from "./components/BackTop.vue"
 import HomeUnderline from "./components/HomeUnderline.vue"
 import './style/index.css'
 

@@ -1,6 +1,6 @@
 {
   "name": "r-nacos",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,15 +13,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^22.5.2",
-    "markdown-it-mathjax3": "^4.3.2",
+   "@types/node": "^22.9.0",
     "canvas-confetti": "^1.9.3",
-    "vitepress": "^1.3.4"
+    "markdown-it-mathjax3": "^4.3.2",
+    "vitepress": "^1.5.0"
   },
   "dependencies": {
-    "dayjs": "^1.11.13",
+    "@fontsource/roboto": "^5.1.0",
+    "@theojs/lumen": "^4.1.0",
+    "busuanzi.pure.js": "^1.0.3",
+    "dayjs": "1.11.13",
     "dotenv": "^16.4.5",
+    "font-pingfang-sc-font-weight-improved": "^1.0.7",
     "medium-zoom": "^1.1.0",
-    "vitepress-plugin-comment-with-giscus": "^1.1.15"
+    "vitepress-plugin-comment-with-giscus": "^1.1.15",
+    "vue-router": "^4.4.5"
   }
 }
