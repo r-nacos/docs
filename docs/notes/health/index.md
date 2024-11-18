@@ -14,7 +14,7 @@ GET /health
 1. http status code: 200
 2. http body: `success`
 
-检测到不模块不正常是返回内容为： `error: $module ill`
+检测到模块不正常的返回内容为： `error: $module ill`
 
 ## 示例
 
