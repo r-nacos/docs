@@ -1,0 +1,21 @@
+<svg width="558.236206" height="116.587090" viewBox="0 0 558.236 116.587" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip0_3">
+			<rect id="svg" width="558.236206" height="116.587090" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect width="558.236206" height="116.587090" fill="#FFFFFF"/>
+	<g clip-path="url(#clip0_3)">
+		<rect id="rect" x="0.000004" y="45.641403" width="28.996931" height="28.996931" transform="rotate(-44.5416 0.000004 45.641403)" fill="#71B21F" fill-opacity="1.000000"/>
+		<rect id="rect" x="0.000008" y="96.245354" width="28.996931" height="28.996931" transform="rotate(-44.5416 0.000008 96.245354)" fill="#71B21F" fill-opacity="1.000000"/>
+		<rect id="rect" x="25.710075" y="70.943382" width="28.996931" height="28.996931" transform="rotate(-44.5416 25.710075 70.943382)" fill="#000000" fill-opacity="1.000000"/>
+		<rect id="rect" x="25.710262" y="20.339245" width="28.996931" height="28.996931" transform="rotate(-44.5416 25.710262 20.339245)" fill="#000000" fill-opacity="1.000000"/>
+		<rect id="rect" x="51.420338" y="45.641220" width="28.996931" height="28.996931" transform="rotate(-44.5416 51.420338 45.641220)" fill="#71B21F" fill-opacity="1.000000"/>
+		<rect id="rect" x="77.130219" y="20.339432" width="28.996929" height="28.996931" transform="rotate(-44.5416 77.130219 20.339432)" fill="#000000" fill-opacity="1.000000"/>
+		<rect id="rect" x="51.422699" y="96.247864" width="28.996931" height="28.996941" transform="rotate(-44.5416 51.422699 96.247864)" fill="#71B21F" fill-opacity="1.000000"/>
+		<rect id="rect" x="77.132950" y="70.945694" width="28.996931" height="28.996941" transform="rotate(-44.5416 77.132950 70.945694)" fill="#000000" fill-opacity="1.000000"/>
+	</g>
+</svg>
