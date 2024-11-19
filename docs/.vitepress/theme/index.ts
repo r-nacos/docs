@@ -4,22 +4,21 @@ import ArticleMetadata from "./components/ArticleMetadata.vue"
 import mediumZoom from 'medium-zoom'
 import { onMounted, watch, nextTick, h } from 'vue'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus'
-import { useData, useRoute } from 'vitepress'
-import confetti from "./components/Confetti.vue"
-import backTop from "./components/BackTop.vue"
+import { useData, useRoute, inBrowser } from 'vitepress'
+import Confetti from "./components/Confetti.vue"
+import SwitchLayout from './components/SwitchLayout.vue'
 import HomeUnderline from "./components/HomeUnderline.vue"
+import "vitepress-markdown-timeline/dist/theme/index.css"
 import './style/index.css'
 
 export default {
   extends: DefaultTheme,
   Layout() {
-    return h(DefaultTheme.Layout, null, {
-      'doc-footer-before': () => h(backTop), // 使用doc-footer-before插槽
-    })
+    return h(SwitchLayout)
   },
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
     app.component('ArticleMetadata', ArticleMetadata)
-    app.component('confetti', confetti)
+    app.component('confetti', Confetti)
     app.component('HomeUnderline', HomeUnderline)
   },
   setup() {
@@ -32,6 +31,16 @@ export default {
     }
     onMounted(() => {
       initZoom()
+
+      // 添加 .VPNavBarTitle 的点击事件
+      const navBarTitle = document.querySelector('.VPNavBarTitle')
+      if (navBarTitle) {
+        navBarTitle.addEventListener('click', () => {
+          // 刷新页面
+          location.reload()
+        })
+      }
+
       // 禁止 ios 缩放屏幕
       document.addEventListener('gesturestart', function (event) {
         event.preventDefault()

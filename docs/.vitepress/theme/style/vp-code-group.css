@@ -48,8 +48,6 @@
   top: 24px;
 }
 
-
-
 /* 代码组（无行号）：修正倒角、阴影、边距 */
 .vp-code-group div[class*="language-"].vp-adaptive-theme {
   border-radius: 8px;
