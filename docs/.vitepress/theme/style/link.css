@@ -1,0 +1,188 @@
+/* .vitepress/theme/style/link.css */
+
+/* 哔哩哔哩 */
+.vp-doc a[href*="bilibili"]:before {
+    content: '';
+    background-image: url(/svg/bilibili.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* GitHub */
+.vp-doc a[href*="github"]:before {
+    content: '';
+    background-image: url(/svg/github.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* Cygwin */
+.vp-doc a[href*="cygwin"]:before {
+    content: '';
+    background-image: url(/svg/cygwin.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* jetbrains */
+.vp-doc a[href*="jetbrains"]:before {
+    content: '';
+    background-image: url(/svg/jetbrains.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* clion */
+.vp-doc a[href*="clion"]:before {
+    background-image: url(/svg/clion.svg);
+}
+
+/* MinGW-64 */
+.vp-doc a[href*="mingw-w64"]:before {
+    content: '';
+    background-image: url(/svg/mingw-w64.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* MinGW-64 */
+.vp-doc a[href*="msys2"]:before {
+    content: '';
+    background-image: url(/svg/msys2.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* vs */
+.vp-doc a[href*="visualstudio"]:before {
+    content: '';
+    background-image: url(/svg/vs.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* vs-code */
+.vp-doc a[href*="code.visualstudio"]:before {
+    content: '';
+    background-image: url(/svg/vs-code.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* ubuntu */
+.vp-doc a[href*="ubuntu"]:before {
+    content: '';
+    background-image: url(/svg/ubuntu.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* AlmaLinux */
+.vp-doc a[href*="almalinux"]:before {
+    content: '';
+    background-image: url(/svg/almaLinux.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* tiobe */
+.vp-doc a[href*="tiobe"]:before {
+    content: '';
+    background-image: url(/svg/tiobe.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* cppreference */
+.vp-doc a[href*="cppreference"]:before {
+    content: '';
+    background-image: url(/svg/cpp.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}
+
+/* docker */
+.vp-doc a[href*="docker"]:before {
+    content: '';
+    background-image: url(/svg/docker.svg);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background-size: cover;
+    top: -2px;
+    margin-right: 4px;
+}

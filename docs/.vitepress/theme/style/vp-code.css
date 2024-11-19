@@ -18,7 +18,7 @@
   background-color: #ff5f56;
   border-radius: 50%;
   box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
-  z-index: 1;
+  z-index: 1;  /* 确保伪元素位于上层，能够响应悬停 */
 }
 
 /* 代码块：下移行号 隐藏右侧竖线 */
