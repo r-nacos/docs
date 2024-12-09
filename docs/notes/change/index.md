@@ -11,6 +11,22 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.7](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.7) 2024-12-08
+Released by @github-actions[bot] on 2024-12-08T17:28:09Z
+
+## What's Changed
+* docs: fix typo by @mindfocus in https://github.com/nacos-group/r-nacos/pull/180
+
++  新增：控制台支持国际化，支持中、英两种语言，支持自动选择语言也支持手动切换语言； #181
++  修复：修复grpc协议的配置请求中的默认命名空间id为public与空字符串等价的兼容问题； #184
++  优化：控制台服务实例列表中增加注册到r-nacos的时间信息 ； #177
++  优化：控制台配置列表支持显示配置描述； #179
+
+## New Contributors
+* @mindfocus made their first contribution in https://github.com/nacos-group/r-nacos/pull/180
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.6...v0.6.7
+
 ## [v0.6.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.6) 2024-11-17
 Released by @github-actions[bot] on 2024-11-17T17:09:08Z
 
