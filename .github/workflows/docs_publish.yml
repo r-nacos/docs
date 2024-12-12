@@ -28,7 +28,7 @@ jobs:
         with:
           filters: |
             changed:
-              # - 'docs/**'
+              - 'docs/**'
               # - '.github/workflows/page.yml'
 
       - name: Install Node.js
