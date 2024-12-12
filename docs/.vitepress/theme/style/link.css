@@ -62,7 +62,7 @@
 }
 
 /* MinGW-64 */
-.vp-doc a[href*="mingw-w64"]:before {
+.vp-doc a[href*="mingw-w64.org"]:before {
     content: '';
     background-image: url(/svg/mingw-w64.svg);
     width: 20px;

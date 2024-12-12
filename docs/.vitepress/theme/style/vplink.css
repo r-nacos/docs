@@ -1,0 +1,12 @@
+.VPFeature .box{
+  display: flex;
+  flex-direction: row;
+  padding: 24px;
+  height: 100%;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.VPFeature .box .icon {
+  margin-right: 12px;
+} 
