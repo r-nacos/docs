@@ -65,8 +65,8 @@ jobs:
           cd $BASE_DIR
           rm -rf external-repo
           pwd && ls -lah .   
-          mv $CHANGELOG_FILE $BASE_DIR/docs/notes/change/index.md
-          cat $BASE_DIR/docs/notes/change/index.md
+          mv $CHANGELOG_FILE $BASE_DIR/docs/zh/change/index.md
+          cat $BASE_DIR/docs/zh/change/index.md
       - name: Commit and Push Change Log
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
