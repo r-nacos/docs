@@ -7,6 +7,23 @@
 }
 
 :root {
+  --vp-c-brand-1: #18794e;
+  --vp-c-brand-2: #299764;
+  --vp-c-brand-3: #30a46c;
+
+  --vp-custom-block-info: #cccccc;
+  --vp-custom-block-info-bg: #fafafa;
+  --vp-custom-block-note: #4cb3d4;
+  --vp-custom-block-note-bg: #eef9fd;
+  --vp-custom-block-tip: #009400;
+  --vp-custom-block-tip-bg: #e6f6e6;
+  --vp-custom-block-warning: #e6a700;
+  --vp-custom-block-warning-bg: #fff8e6;
+  --vp-custom-block-danger: #e13238;
+  --vp-custom-block-danger-bg: #ffebec;
+  --vp-custom-block-important: #a371f7;
+  --vp-custom-block-important-bg: #f4eefe;
+
   /* hero标题渐变色 */
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
@@ -15,11 +32,29 @@
   --vp-home-hero-image-filter: blur(40px);
 }
 
+.dark {
+  --vp-c-brand-1: #3dd68c;
+  --vp-c-brand-2: #30a46c;
+  --vp-c-brand-3: #298459;
+
+  --vp-custom-block-info: #cccccc;
+  --vp-custom-block-info-bg: #474748;
+  --vp-custom-block-note: #4cb3d4;
+  --vp-custom-block-note-bg: #193c47;
+  --vp-custom-block-tip: #009400;
+  --vp-custom-block-tip-bg: #003100;
+  --vp-custom-block-warning: #e6a700;
+  --vp-custom-block-warning-bg: #4d3800;
+  --vp-custom-block-danger: #e13238;
+  --vp-custom-block-danger-bg: #4b1113;
+  --vp-custom-block-important: #a371f7;
+  --vp-custom-block-important-bg: #230555;
+}
 
 /* 禁止双指缩放 */
 body, html {
-    touch-action: manipulation;
-    -webkit-touch-callout: none;
-    -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -ms-touch-action: manipulation;
 }
 

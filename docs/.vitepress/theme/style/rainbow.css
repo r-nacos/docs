@@ -422,12 +422,12 @@
 }
 
 /* h1 标题 */
-h1 {
+/* h1 {
   background: -webkit-linear-gradient(10deg, var(--rainbow-prev) 5%, var(--rainbow-next) 15%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
 
 
 @media (min-width: 640px) {
