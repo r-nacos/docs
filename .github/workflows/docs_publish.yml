@@ -29,7 +29,7 @@ jobs:
           filters: |
             changed:
               - 'docs/**'
-              - '.github/workflows/page.yml'
+              # - '.github/workflows/page.yml'
 
       - name: Install Node.js
         uses: actions/setup-node@v4
