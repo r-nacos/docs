@@ -15,11 +15,20 @@ const { frontmatter: fm } = useData();
 onMounted(() => {
   const p = document.querySelector(".VPHero .text") as HTMLElement | null;
   const s = document.querySelector("#hero-text") as HTMLElement | null;
+  const vpHeroText = document.querySelector(
+    ".vp-doc.container #hero-text"
+  ) as HTMLElement | null;
 
   if (!p || !s) return;
 
-  // 移除 `.VPHero .text` 元素下的所有子节点
-  while (p.lastChild) p.lastChild.remove();
+  // 检查元素是否存在
+  if (p) {
+    // 移除 .text 元素下的所有子节点
+    while (p.firstChild) {
+      p.removeChild(p.firstChild);
+    }
+    vpHeroText?.parentNode?.removeChild(vpHeroText);
+  }
 
   // 将 `#hero-text` 元素追加到 `.VPHero .text` 元素中
   p.append(s);
