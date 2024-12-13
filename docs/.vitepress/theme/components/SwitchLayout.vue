@@ -1,7 +1,7 @@
 <template>
   <DefaultTheme.Layout>
     <template #doc-footer-before>
-      <Backtotop />
+      <BackTop />
     </template>
     <template #doc-before>
       <ArticleMetadata />
@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import Backtotop from "./BackTop.vue";
+import BackTop from "./BackTop.vue";
 import ArticleMetadata from "./ArticleMetadata.vue";
 import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
