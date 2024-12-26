@@ -7,36 +7,36 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   themeConfig: { // 主题设置
     lastUpdatedText: '上次更新', // 上次更新显示文本
     returnToTopLabel: '返回顶部', // 更改手机端菜单文字显示
-    search: {
-      provider: 'local',
-      options: {
-        locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: '搜索',
-                buttonAriaLabel: '搜索',
-              },
-              modal: {
-                displayDetails: '显示详细列表',
-                resetButtonTitle: '重制搜索',
-                backButtonTitle: '关闭搜索',
-                noResultsText: '没有找到相关结果',
-                footer: {
-                  selectText: '选择',
-                  selectKeyAriaLabel: 'enter',
-                  navigateText: '切换',
-                  navigateUpKeyAriaLabel: '上方向键',
-                  navigateDownKeyAriaLabel: '下方向键',
-                  closeText: '关闭',
-                  closeKeyAriaLabel: 'esc',
-                },
-              },
-            },
-          },
-        },
-      },
-    },
+    // search: {
+    //   provider: 'local',
+    //   options: {
+    //     locales: {
+    //       zh: {
+    //         translations: {
+    //           button: {
+    //             buttonText: '搜索',
+    //             buttonAriaLabel: '搜索',
+    //           },
+    //           modal: {
+    //             displayDetails: '显示详细列表',
+    //             resetButtonTitle: '重制搜索',
+    //             backButtonTitle: '关闭搜索',
+    //             noResultsText: '没有找到相关结果',
+    //             footer: {
+    //               selectText: '选择',
+    //               selectKeyAriaLabel: 'enter',
+    //               navigateText: '切换',
+    //               navigateUpKeyAriaLabel: '上方向键',
+    //               navigateDownKeyAriaLabel: '下方向键',
+    //               closeText: '关闭',
+    //               closeKeyAriaLabel: 'esc',
+    //             },
+    //           },
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
     nav: zhNav,
     sidebar: zhSidebar, // 侧边栏
     docFooter: { // 自定义上下页名

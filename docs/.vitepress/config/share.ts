@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
 import timeline from "vitepress-markdown-timeline"
-import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { loadEnv } from 'vite'
+import { pagefind,announcement } from './vite-plugin-config'
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+import { AnnouncementPlugin } from 'vitepress-plugin-announcement'
 const mode = process.env.NODE_ENV || 'development'
 const { VITE_BASE_URL } = loadEnv(mode, process.cwd())
 
@@ -53,6 +56,8 @@ export const sharedConfig = defineConfig({
       chunkSizeWarningLimit: 1600
     },
     plugins: [
+      pagefindPlugin(pagefind),
+      AnnouncementPlugin(announcement),
       groupIconVitePlugin() //代码组图标
     ],
     server: {
@@ -103,37 +108,37 @@ export const sharedConfig = defineConfig({
   },
   themeConfig: { // 主题设置
     logo: '/logo.svg',  // 左上角logo
-    search: {
-      provider: 'local',
-      options: {
-        locales: {
-          root: {
-            translations: {
-              button: {
-                buttonText: 'Search',
-                buttonAriaLabel: 'Search',
-              },
-              modal: {
-                displayDetails: 'Display detailed list',
-                resetButtonTitle: 'Reset search',
-                backButtonTitle: 'Close search',
-                noResultsText: 'No results for',
-                footer: {
-                  selectText: 'to select',
-                  selectKeyAriaLabel: 'enter',
-                  navigateText: 'to navigate',
-                  navigateUpKeyAriaLabel: 'up arrow',
-                  navigateDownKeyAriaLabel: 'down arrow',
-                  closeText: 'to close',
-                  closeKeyAriaLabel: 'escape',
-                },
-              },
-            },
-          },
+    // search: {
+    //   provider: 'local',
+    //   options: {
+    //     locales: {
+    //       root: {
+    //         translations: {
+    //           button: {
+    //             buttonText: 'Search',
+    //             buttonAriaLabel: 'Search',
+    //           },
+    //           modal: {
+    //             displayDetails: 'Display detailed list',
+    //             resetButtonTitle: 'Reset search',
+    //             backButtonTitle: 'Close search',
+    //             noResultsText: 'No results for',
+    //             footer: {
+    //               selectText: 'to select',
+    //               selectKeyAriaLabel: 'enter',
+    //               navigateText: 'to navigate',
+    //               navigateUpKeyAriaLabel: 'up arrow',
+    //               navigateDownKeyAriaLabel: 'down arrow',
+    //               closeText: 'to close',
+    //               closeKeyAriaLabel: 'escape',
+    //             },
+    //           },
+    //         },
+    //       },
 
-        },
-      },
-    },
+    //     },
+    //   },
+    // },
     // 编辑链接
     editLink: {
       pattern: 'https://github.com/r-nacos/docs/edit/master/docs/:path',
