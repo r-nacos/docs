@@ -11,6 +11,22 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.9](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.9) 2024-12-29
+Released by @github-actions[bot] on 2024-12-29T16:51:42Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.8...v0.6.9
+
++  新增：控制台用户管理支持设置命名空间黑白名单数据权限；(#186)
++  新增：控制台管理接口支持按命名空间做数据权限控制; (#188)
++  更新：控制台前端接口统一切换到v2版本，之前老控制台接口后续计划废弃；(r-nacos/rnacos-console-web#24)
+
+## [v0.6.8](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.8) 2024-12-09
+Released by @github-actions[bot] on 2024-12-09T15:18:55Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.7...v0.6.8
+
++ 修复国际化引入的控制台页面报错问题 #185 
+
 ## [v0.6.7](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.7) 2024-12-08
 Released by @github-actions[bot] on 2024-12-08T17:28:09Z
 
