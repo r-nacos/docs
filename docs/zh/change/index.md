@@ -11,6 +11,13 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.10](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.10) 2024-12-30
+Released by @github-actions[bot] on 2024-12-30T15:23:02Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.9...v0.6.10
+
++ 修复: 修复v0.6.9版本中控制台用户管理列表命名空间白名单内容显示不正确问题； #190 
+
 ## [v0.6.9](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.9) 2024-12-29
 Released by @github-actions[bot] on 2024-12-29T16:51:42Z
 
