@@ -41,21 +41,6 @@ jobs:
         if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
         run: |
           npm install
-      - name: Add author to each Markdown file in notes
-        run: |
-          ls -lah .
-          for file in $(find docs/notes -type f -name "*.md"); do
-            # 获取当前文件的所有提交者
-            AUTHORS=$(git log --follow --format='%an <%ae>' -- "$file" | sort | uniq | paste -sd ", " -)
-            # 打印作者的信息
-            echo "=========================================="
-            echo "Markdown file: $file"
-            echo "=========================================="
-            echo "提交者：$AUTHORS"
-            echo ""
-            # 追加作者信息到 Markdown 文件中
-            echo -e "作者：$AUTHORS\n\n$(cat "$file")" > "$file"
-          done
       - name: build
         if: ${{ steps.changes.outputs.changed == 'true' || startsWith(github.ref, 'refs/tags/') }}
         run: |
