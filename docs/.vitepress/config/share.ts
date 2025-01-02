@@ -2,9 +2,15 @@ import { defineConfig } from 'vitepress'
 import timeline from "vitepress-markdown-timeline"
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { loadEnv } from 'vite'
-import { pagefind,announcement } from './vite-plugin-config'
+import { pagefind } from './vite-plugin-config'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
-import { AnnouncementPlugin } from 'vitepress-plugin-announcement'
+import {
+  GitChangelog,
+  GitChangelogMarkdownSection,
+} from '@nolebase/vitepress-plugin-git-changelog/vite'
+import {
+  InlineLinkPreviewElementTransform
+} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
 const mode = process.env.NODE_ENV || 'development'
 const { VITE_BASE_URL } = loadEnv(mode, process.cwd())
 
@@ -55,10 +61,39 @@ export const sharedConfig = defineConfig({
     build: {
       chunkSizeWarningLimit: 1600
     },
+    ssr: {
+      noExternal: [
+        '@nolebase/vitepress-plugin-highlight-targeted-heading',
+        '@nolebase/vitepress-plugin-inline-link-preview',
+      ],
+    },
+    optimizeDeps: {
+      exclude: [
+        'vitepress',
+        '@nolebase/vitepress-plugin-inline-link-preview/client',
+      ],
+    },
     plugins: [
       pagefindPlugin(pagefind),
-      AnnouncementPlugin(announcement),
-      groupIconVitePlugin() //代码组图标
+      groupIconVitePlugin(), //代码组图标
+      GitChangelog({
+        // 填写在此处填写您的仓库链接
+        repoURL: () => 'https://github.com/r-nacos/docs',
+        mapAuthors: [ 
+          { 
+            name: '许大仙', 
+            username: 'Aurorxa', 
+            mapByEmailAliases: ['1900919313@qq.com'] 
+          } 
+        ] 
+      }),
+      GitChangelogMarkdownSection({
+        exclude: (id) => id.endsWith("index.md"),
+        sections: {
+          disableChangelog: true,
+          disableContributors: true,
+        },
+      })
     ],
     server: {
       port: 18089
@@ -104,6 +139,7 @@ export const sharedConfig = defineConfig({
       })
       md.use(timeline)
       md.use(groupIconMdPlugin) //代码组图标
+      md.use(InlineLinkPreviewElementTransform)
     }
   },
   themeConfig: { // 主题设置
