@@ -11,6 +11,21 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.11](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.11) 2025-01-12
+Released by @github-actions[bot] on 2025-01-12T16:16:35Z
+
+## What's Changed
+* feat(naming): query service subscriber list by @a981008 in https://github.com/nacos-group/r-nacos/pull/189
+* support linux x64 gnu build by @leyou240 in https://github.com/nacos-group/r-nacos/pull/194
+
++ 新增：新增服务管理订阅者列表查看功能（目前只支持v2.x grpc协议的订阅查看）； #189 
++ 新增：更新打包构建脚本，增加支持x86_64-unknown-linux-gnu 应用包（如果部分老的linux系统不能运行，可以使用x86_64-unknown-linux-musl 应用包）； #193
+
+## New Contributors
+* @leyou240 made their first contribution in https://github.com/nacos-group/r-nacos/pull/194
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.10...v0.6.11
+
 ## [v0.6.10](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.10) 2024-12-30
 Released by @github-actions[bot] on 2024-12-30T15:23:02Z
 
