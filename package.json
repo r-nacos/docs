@@ -38,6 +38,7 @@
     "vitepress-plugin-comment-with-giscus": "^1.1.15",
     "vue-router": "^4.5.0",
     "vitepress-plugin-announcement": "^0.1.3",
-    "vitepress-plugin-pagefind": "^0.4.12"
+    "vitepress-plugin-pagefind": "^0.4.12",
+    "meilisearch-docsearch": "^0.7.0"
   }
 }
