@@ -1,6 +1,7 @@
 {
     "index_uid": "r-nacos-zh",
     "start_urls": ["https://r-nacos.github.io/docs/"],
+    "stop_urls": ["https://r-nacos.github.io/docs/en/"],
     "sitemap_urls": ["https://r-nacos.github.io/docs/sitemap.xml"],
     "selectors": {
       "lvl0": {
