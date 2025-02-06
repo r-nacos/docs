@@ -1,12 +1,12 @@
 {
-    "index_uid": "r-nacos",
-    "start_urls": ["https://r-nacos.github.io/docs/"],
+    "index_uid": "r-nacos-en",
+    "start_urls": ["https://r-nacos.github.io/docs/en"],
     "sitemap_urls": ["https://r-nacos.github.io/docs/sitemap.xml"],
     "selectors": {
       "lvl0": {
         "selector": ".content h1",
         "global": true,
-        "default_value": "我的文档"
+        "default_value": "Documentation"
       },
       "lvl1": ".content h1",
       "lvl2": ".content h2",
@@ -17,4 +17,3 @@
       "text": ".content p, .content li"
     }
   }
-  
