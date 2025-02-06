@@ -1,5 +1,5 @@
 {
-    "index_uid": "r-nacos",
+    "index_uid": "r-nacos-zh",
     "start_urls": ["https://r-nacos.github.io/docs/"],
     "sitemap_urls": ["https://r-nacos.github.io/docs/sitemap.xml"],
     "selectors": {
