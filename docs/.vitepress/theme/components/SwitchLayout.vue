@@ -8,6 +8,9 @@
       <NolebaseGitContributors/>
       <NolebaseGitChangelog/>
     </template>
+    <template #nav-bar-content-before>
+      <Meilisearch />
+    </template>
     <template #doc-top>
       <NolebaseHighlightTargetedHeading />
     </template>
@@ -27,6 +30,9 @@ import {
   NolebaseGitContributors
 } from '@nolebase/vitepress-plugin-git-changelog/client'
 const { isDark } = useData();
+
+
+import Meilisearch from "./Meilisearch.vue";
 
 const enableTransitions = () =>
   "startViewTransition" in document &&
