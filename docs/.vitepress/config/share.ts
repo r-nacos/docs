@@ -90,6 +90,9 @@ export const sharedConfig = defineConfig({
       }
     },
   },
+  sitemap: {
+    hostname: `https://r-nacos.github.io/docs${VITE_BASE_URL}`,
+  },
   markdown: { // markdown 配置
     math: true,
     lineNumbers: true, // 行号显示
