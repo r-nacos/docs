@@ -27,6 +27,9 @@
       <TypeIt />
       <HomeUnderline />
     </template>
+    <template #nav-bar-content-before>
+      <Meilisearch />
+    </template>
   </DefaultTheme.Layout>
 </template>
 
@@ -42,6 +45,7 @@ import MouseFollower from "./MouseFollower.vue";
 import Confetti from "./Confetti.vue";
 import TypeIt from "./TypeIt.vue";
 import HomeUnderline from "./HomeUnderline.vue";
+import Meilisearch from "./Meilisearch.vue";
 
 import "@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css";
 import { NolebaseHighlightTargetedHeading } from "@nolebase/vitepress-plugin-highlight-targeted-heading/client";
