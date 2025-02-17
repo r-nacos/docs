@@ -46,5 +46,4 @@ features:
     title: "高性能"
     details: "Rust 的零成本抽象和高效的并发模型使得 R-Nacos 在处理大量请求时具有更高的性能表现，能够更快地响应和处理服务注册、发现等任务。"
 ---
-<confetti />
-<HomeUnderline />
+
