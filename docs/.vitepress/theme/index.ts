@@ -6,8 +6,11 @@ import { onMounted, watch, nextTick, h } from 'vue'
 import giscusTalk from 'vitepress-plugin-comment-with-giscus'
 import { useData, useRoute, inBrowser } from 'vitepress'
 import Confetti from "./components/Confetti.vue"
+import TypeIt from "./components/TypeIt.vue"
 import SwitchLayout from './components/SwitchLayout.vue'
 import HomeUnderline from "./components/HomeUnderline.vue"
+import MouseClick from "./components/MouseClick.vue"
+import MouseFollower from "./components/MouseFollower.vue"
 import "vitepress-markdown-timeline/dist/theme/index.css"
 import 'nprogress-v2/dist/index.css'
 import 'virtual:group-icons.css' //代码组样式
@@ -30,8 +33,11 @@ export default {
   },
   enhanceApp({ app, router }) {
     app.component('ArticleMetadata', ArticleMetadata)
-    app.component('confetti', Confetti)
+    app.component('Confetti', Confetti)
     app.component('HomeUnderline', HomeUnderline)
+    app.component('TypeIt', TypeIt)
+    app.component('MouseClick', MouseClick) //鼠标跟随组件
+    app.component('MouseFollower', MouseFollower) //鼠标跟随组件
     app.use(NolebaseGitChangelogPlugin)
     app.use(NolebaseInlineLinkPreviewPlugin)
   },

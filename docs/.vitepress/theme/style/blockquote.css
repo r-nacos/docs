@@ -130,3 +130,11 @@
   display: inline-flex; /* 使用flex布局以确保对齐 */
   align-items: center; /* 垂直居中对齐图标和文字 */
 }
+
+.custom-block.note:hover,
+.custom-block.important:hover,
+.custom-block.warning:hover,
+.custom-block.tip:hover,
+.custom-block.caution:hover {
+  box-shadow: var(--vp-shadow-5);
+}

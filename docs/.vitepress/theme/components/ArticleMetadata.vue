@@ -3,7 +3,7 @@
     <p>
       <span>🔥更新：{{ dayjs(date.toLocaleDateString()).format("YYYY-MM-DD") }}</span>
       <span>📝字数: {{ wordCount }} 字</span>
-      <span>⏱时长: {{ readTime }} 分钟</span>
+      <span>⏰时长: {{ readTime }} 分钟</span>
     </p>
   </div>
 </template>

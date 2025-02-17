@@ -3,16 +3,15 @@
 /* 整体容器样式（带阴影和圆角） */
 .vp-code-block-title {
   background-color: var(--vp-code-block-bg);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-radius: 8px;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4); /* 添加阴影 */
-  overflow: hidden;
   position: relative; /* 确保小圆点定位 */
 }
 
 /* Mac 风格的小圆点，放在容器顶部 */
 .vp-code-block-title::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 12px; /* 圆点距离容器顶部的距离 */
   left: 12px;
@@ -24,23 +23,31 @@
   z-index: 1;
 }
 
+@media (max-width: 768px) { /* 适配移动端 */
+  .vp-code-block-title::before {
+    left: -12px; /* 调整为合适的距离 */
+  }
+}
+
 /* 标题栏样式 */
 .vp-code-block-title .vp-code-block-title-bar {
   color: var(--vp-c-text-1);
   font-size: 14px;
   font-weight: bold;
+  padding-top: 20px;
 }
 
 /* 代码块标题：修正倒角、阴影、边距 */
-.vp-code-block-title div[class*="language-"].vp-adaptive-theme.line-numbers-mode {
+.vp-code-block-title
+  div[class*="language-"].vp-adaptive-theme.line-numbers-mode {
   border-radius: 8px;
   box-shadow: none;
-  padding-top: 0px;
   margin-bottom: 0px;
 }
 
 /* 代码块标题：隐藏小圆点 */
-.vp-code-block-title div[class*="language-"].vp-adaptive-theme.line-numbers-mode::before {
+.vp-code-block-title
+  div[class*="language-"].vp-adaptive-theme.line-numbers-mode::before {
   display: none;
 }
 
@@ -65,14 +72,4 @@
 /* 代码块标题（无行号）：隐藏小圆点 */
 .vp-code-block-title div[class*="language-"].vp-adaptive-theme::before {
   display: none;
-}
-
-/* 针对代码块标题（非 code-group），移除图标 */
-.vp-code-block-title:not(.vp-code-group) [data-title]::before {
-    display: none !important;
-}
-
-/* 保留 code-group 的图标样式 */
-.vp-code-group [data-title]::before {
-    display: inline-block;
 }
