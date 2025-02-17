@@ -45,18 +45,21 @@ export const sharedConfig = defineConfig({
   vite: {
     build: {
       chunkSizeWarningLimit: 1600,
-      rollupOptions: {
-        external: ['crypto'], // this is the important part
-      },
+      // rollupOptions: {
+      //   external: ['crypto'], // this is the important part
+      // },
     },
     ssr: {
       noExternal: [
+        '@nolebase/vitepress-plugin-enhanced-readabilities',
+        '@nolebase/ui',
         '@nolebase/vitepress-plugin-highlight-targeted-heading',
-        '@nolebase/vitepress-plugin-inline-link-preview',
+        '@nolebase/vitepress-plugin-inline-link-preview'
       ],
     },
     optimizeDeps: {
       exclude: [
+        '@nolebase/vitepress-plugin-enhanced-readabilities/client',
         'vitepress',
         '@nolebase/vitepress-plugin-inline-link-preview/client',
       ],
