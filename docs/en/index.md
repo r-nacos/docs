@@ -46,7 +46,5 @@ features:
     title: "High performance"
     details: "Rust's zero-cost abstraction and efficient concurrency model enable R-Nacos to deliver higher performance when handling large volumes of requests, and to respond and process tasks such as service registration, discovery, and more quickly."  
 ---
-
-<confetti />
 <HomeUnderline />
 
