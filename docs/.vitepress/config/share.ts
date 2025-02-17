@@ -44,7 +44,10 @@ export const sharedConfig = defineConfig({
   lastUpdated: true, // 上次更新
   vite: {
     build: {
-      chunkSizeWarningLimit: 1600
+      chunkSizeWarningLimit: 1600,
+      rollupOptions: {
+        external: ['crypto'], // this is the important part
+      },
     },
     ssr: {
       noExternal: [
@@ -63,13 +66,13 @@ export const sharedConfig = defineConfig({
       GitChangelog({
         // 填写在此处填写您的仓库链接
         repoURL: () => 'https://github.com/r-nacos/docs',
-        mapAuthors: [ 
-          { 
-            name: '许大仙', 
-            username: 'Aurorxa', 
-            mapByEmailAliases: ['1900919313@qq.com'] 
-          } 
-        ] 
+        mapAuthors: [
+          {
+            name: '许大仙',
+            username: 'Aurorxa',
+            mapByEmailAliases: ['1900919313@qq.com']
+          }
+        ]
       }),
       GitChangelogMarkdownSection({
         exclude: (id) => id.endsWith("index.md"),
