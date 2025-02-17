@@ -1,5 +1,3 @@
-/* .vitepress/theme/style/link.css */
-
 /* 哔哩哔哩 */
 .vp-doc a[href*="bilibili"]:before {
     content: '';
