@@ -20,7 +20,7 @@
     </template>
     <template #layout-top>
       <MouseClick />
-      <MouseFollower />
+      <!--<MouseFollower /> -->
     </template>
     <template #home-features-after>
       <Confetti />
