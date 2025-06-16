@@ -11,6 +11,99 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.18](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.18) 2025-06-15
+Released by @github-actions[bot] on 2025-06-15T17:47:09Z
+
+## What's Changed
+* refactor: fix typos and improve error messages by @GOODBOY008 in https://github.com/nacos-group/r-nacos/pull/229
+* ci: update GitHub Actions to use ubuntu-latest by @GOODBOY008 in https://github.com/nacos-group/r-nacos/pull/230
+
+## New Contributors
+* @GOODBOY008 made their first contribution in https://github.com/nacos-group/r-nacos/pull/229
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.17...v0.6.18
+
++ 修复：注册中心变更通知区分集群节点间通知与服务监听器通知，以修复集群场景部分服务监听不被触发的问题；#226
++ 增加：控制台注册中心服务订阅页面集群场景支持查询指定节点下的订阅者信息; #231
++ 优化：优化控制台注册中心服务订阅查询接口性能，支持服务分组与服务名模糊查询；#231
++ 优化：修复部分错别字并改进错误消息；#229
+
+
+## [v0.6.17](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.17) 2025-06-02
+Released by @github-actions[bot] on 2025-06-02T16:27:37Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.16...v0.6.17
+
++ 修复：回滚控制台移动端适配的前端版本，完成整体UI验证后再更新；#225
++ 修复：修复订阅者列表和数据迁移页面刷新跳转到No permission页面； #227
+
+## [v0.6.16](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.16) 2025-05-26
+Released by @github-actions[bot] on 2025-05-26T00:39:09Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.15...v0.6.16
+
++ 优化：增加控制台移动端适配 #223  r-nacos/rnacos-console-web#29
+
+## [v0.6.15](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.15) 2025-05-19
+Released by @github-actions[bot] on 2025-05-19T00:39:03Z
+
+## What's Changed
+* fix: 修复  cargo clippy 建议 by @mangerle in https://github.com/nacos-group/r-nacos/pull/215
+* fix README.md by @Aurorxa in https://github.com/nacos-group/r-nacos/pull/219
+
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.14...v0.6.15
+
++ 优化: 增加对nacos-sdk-python v2的适配 #213 
+
+## [v0.6.15-beta](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.15-beta) 2025-05-13
+Released by @github-actions[bot] on 2025-05-13T01:00:46Z
+
+## What's Changed
+* fix: 修复  cargo clippy 建议 by @mangerle in https://github.com/nacos-group/r-nacos/pull/215
+* fix README.md by @Aurorxa in https://github.com/nacos-group/r-nacos/pull/219
+
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.14...v0.6.15-beta
+
++ feat: 增加对nacos-sdk-python v2的适配 #213 
+
+## [v0.6.14](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.14) 2025-03-16
+Released by @github-actions[bot] on 2025-03-16T05:06:32Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.13...v0.6.14
+
+1. 注册中心集群功能优化：增强集群数据同步数据可观测性，增加测试模式下注入集群异常问题工具，补充集群节点间定时数据一致性校验与同步机制。#206
+
+## [v0.6.13](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.13) 2025-03-09
+Released by @github-actions[bot] on 2025-03-09T18:17:01Z
+
+## What's Changed
+* feat(openapi): add 2.x open api for namespace management by @sevetis in https://github.com/nacos-group/r-nacos/pull/200
+* feat:cli.rs add missing version command since 0.6.0 by @liyunde in https://github.com/nacos-group/r-nacos/pull/202
+
+## New Contributors
+* @sevetis made their first contribution in https://github.com/nacos-group/r-nacos/pull/200
+* @liyunde made their first contribution in https://github.com/nacos-group/r-nacos/pull/202
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.12...v0.6.13
+
++ 修复：修复k8s集群节点重启后grpc服务实例出现部分缺失的问题; #201
+
+## [v0.6.12](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.12) 2025-02-09
+Released by @github-actions[bot] on 2025-02-09T12:26:01Z
+
+## What's Changed
+* fix: helm模板的Values.persistence.storageClassName -> storageClass by @lazhenyi in https://github.com/nacos-group/r-nacos/pull/195
+
+## New Contributors
+* @lazhenyi made their first contribution in https://github.com/nacos-group/r-nacos/pull/195
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.11...v0.6.12
+
++ 修复： grpc协议中给客户端发送的请求中headers字段内容由None改成Some(HashMap::new())以兼容rust nacos-sdk #196
++ 修复：修复控制台创建服务切换到v2 json接口，但http header中没有指定json类型导致创建失败的问题  r-nacos/rnacos-console-web#28
+
 ## [v0.6.11](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.11) 2025-01-12
 Released by @github-actions[bot] on 2025-01-12T16:16:35Z
 
