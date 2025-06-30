@@ -72,7 +72,7 @@ r-nacos supports these environment variables at runtime; if not set, it will use
 | RNACOS_LDAP_ENABLE | Whether to enable LDAP authentication | false | false | 0.6.19 |
 | RNACOS_LDAP_URL | LDAP server address | empty string | ldap://localhost:389 | 0.6.19 |
 | RNACOS_LDAP_USER_BASE_DN | LDAP user base DN | empty string | ou=people,dc=example,dc=com | 0.6.19 |
-| RNACOS_LDAP_USER_FILTER | LDAP user filter | empty string | (objectClass=person) | 0.6.19 |
+| RNACOS_LDAP_USER_FILTER | LDAP user filter | empty string | (&(objectClass=person)(uid=%s)) | 0.6.19 |
 | RNACOS_LDAP_USER_DEVELOPER_GROUP | User groups included in LDAP developer role (multiple groups separated by commas. User belongs to developer role if in any group) | empty set | dev_group1,dev_group2 | 0.6.19 |
 | RNACOS_LDAP_USER_ADMIN_GROUP | User groups included in LDAP admin role (multiple groups separated by commas. User belongs to admin role if in any group) | empty set | admin_group1,admin_group2 | 0.6.19 |
 | RNACOS_LDAP_USER_DEFAULT_ROLE | Default role for LDAP users. Supported values: Visitor:VISITOR, Developer:DEVELOPER, Admin:ADMIN | VISITOR | DEVELOPER | 0.6.19 |
