@@ -11,6 +11,43 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.6.21](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.21) 2025-07-06
+Released by @github-actions[bot] on 2025-07-06T16:50:23Z
+
+## What's Changed
+* feat: 批量导出配置文件 by @a981008 in https://github.com/nacos-group/r-nacos/pull/236
+* feat: 历史记录增加操作用户 by @a981008 in https://github.com/nacos-group/r-nacos/pull/235
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.20...v0.6.21
+
+变更内容：
+
++ 新增：批量、删除导出配置文件 （by @a981008 in #236 ）；
++ 新增：历史记录增加操作用户 （by @a981008 in #235 ）；
++ 优化：确认没有权限后自动切换命名空间 ；
++ 修复：修复登陆跳转失败问题 （by @a981008 in #228 ）；
++ 新增：切换支持移动端适配的控制台页面（by @peryiqiao in r-nacos/rnacos-console-web#29 );
+
+## [v0.6.20](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.20) 2025-07-05
+Released by @github-actions[bot] on 2025-07-05T04:00:42Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.19...v0.6.20
+
+变更内容
++ [修复ldap因用户过滤条件不匹配不支持部分ldap服务的问题](https://github.com/nacos-group/r-nacos/issues/237)
+
+## [v0.6.20-beta](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.20-beta) 2025-06-30
+Released by @github-actions[bot] on 2025-06-30T15:25:44Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.19...v0.6.20-beta
+
+## [v0.6.19](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.19) 2025-06-30
+Released by @github-actions[bot] on 2025-06-30T00:50:27Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.18...v0.6.19
+
++ 新增：支持接入ldap，控制台支持ldap用户登陆； #233
+
 ## [v0.6.18](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.18) 2025-06-15
 Released by @github-actions[bot] on 2025-06-15T17:47:09Z
 
