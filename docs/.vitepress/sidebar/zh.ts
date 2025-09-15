@@ -31,6 +31,10 @@ export const zhSidebar: DefaultTheme.Sidebar = {
       link: `/backup/`,
     },
     {
+      text: 'MCP服务说明',
+      link: `/mcp-server/`,
+    },
+    {
       text: '版本说明',
       link: `/version_describe/`,
     },
