@@ -11,6 +11,38 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.7.0-beta2](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.0-beta2) 2025-09-14
+Released by @github-actions[bot] on 2025-09-14T17:02:38Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.0-beta...v0.7.0-beta2
+
+r-nacos支持mcp，内置mcp server与接口转发；支持让注册到r-nacos的普通http接口通过r-nacos直接转化成mcp服务对外提供服务。
+
+#241 
+
+## [v0.7.0-beta](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.0-beta) 2025-09-14
+Released by @github-actions[bot] on 2025-09-14T16:24:35Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.0-alpha...v0.7.0-beta
+
+## [v0.7.0-alpha](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.0-alpha) 2025-09-14
+Released by @github-actions[bot] on 2025-09-14T01:28:23Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.22...v0.7.0-alpha
+
+#241 
+
+## [v0.6.22](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.22) 2025-09-01
+Released by @github-actions[bot] on 2025-09-01T01:08:24Z
+
+## What's Changed
+* docs: fix numbering and typo in architecture documentation by @GOODBOY008 in https://github.com/nacos-group/r-nacos/pull/245
+
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.6.21...v0.6.22
+
+- 优化: metrics接口补充content-type信息，以适配最新版本的prometheus；
+
 ## [v0.6.21](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.21) 2025-07-06
 Released by @github-actions[bot] on 2025-07-06T16:50:23Z
 
