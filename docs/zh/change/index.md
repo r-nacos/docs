@@ -11,6 +11,122 @@
 > 💥破坏性变更：指的是对代码、API、协议或系统的更改，这些更改可能会导致依赖旧版本的系统、库或应用程序无法正常工作。
 
 
+## [v0.8.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.8.2) 2026-03-30
+Released by @github-actions[bot] on 2026-03-30T00:57:08Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.8.1...v0.8.2
+
+## [v0.8.1](https://github.com/nacos-group/r-nacos/releases/tag/v0.8.1) 2026-03-15
+Released by @github-actions[bot] on 2026-03-15T16:30:15Z
+
+## What's Changed
+* refactor: 使用惯用 Rust 写法简化 Option 工具函数 by @lly835 in https://github.com/nacos-group/r-nacos/pull/285
+* refactor: 提取 datetime_utils 中的共享 since_epoch() 辅助函数 by @lly835 in https://github.com/nacos-group/r-nacos/pull/286
+
+- 新增: r-nacos监听的ip支持自定义，支持监听ipv6地址运行；
+- 修复：修复控制台出现两个默认命名空间的问题；
+
+## New Contributors
+* @lly835 made their first contribution in https://github.com/nacos-group/r-nacos/pull/285
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.8.0...v0.8.1
+
+## [v0.8.1-beta](https://github.com/nacos-group/r-nacos/releases/tag/v0.8.1-beta) 2026-02-04
+Released by @github-actions[bot] on 2026-02-04T01:29:00Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.8.0...v0.8.1-beta
+
+## [v0.8.0](https://github.com/nacos-group/r-nacos/releases/tag/v0.8.0) 2026-02-01
+Released by @github-actions[bot] on 2026-02-01T17:03:16Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.10...v0.8.0
+
+1. 优化: 将缓存从原来的异步更新raft调整为同步更新，以避免部分场景创建token后有概率没有马上生效的问题； #281
+2. 修复: 修复部分sdk版本中ConfigListenContext md5为null为兼容性问题; #284
+3. 优化: 兼容nacos部分非sdk接口，增加支持 /nacos/v1/ns/catalog/instances 服务实例分页查询接口；#284
+4. 优化：前端监控组件默认选择第一个节点，避免集群场景下默认直接节点多次自动刷新获取的内容不是同一份数据的问题；
+
+本次更新缓存表结构有变更，升级后不支持回退到v0.7.0版本
+
+## [v0.7.10](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.10) 2025-12-15
+Released by @github-actions[bot] on 2025-12-15T01:42:07Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.9...v0.7.10
+
+1. 新增：发版支持龙芯linux应用包；
+2. 调整：因github已不支持MacOS x86目标平台，发版移除对应包；
+3. 优化：注册中心永久实例接入数据导出导入以支持数据备份；
+4. 优化：控制台mcp服务管理支持一键更新服务下的所有mcp工具到最新版本；
+5. 优化：配置中心导入新增支持把yml后缀配置标记为yaml格式；
+
+## [v0.7.9](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.9) 2025-12-08
+Released by @github-actions[bot] on 2025-12-08T01:33:29Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.8...v0.7.9
+
+1. 新增：注册中心正式支持永久实例；永久实例接入raft做持久化，控制台支持创建永久服务实例，支持对永久实例tcp探活。#276  #272
+2. 更新：mcp工具编辑支持通过服务选择组件选择路由服务； #272
+3. 修复：尝试通过延后初始化服务列表以规避部分场景注册中心服务找不到其它集群节点的问题; #277
+
+## [v0.7.9-beta2](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.9-beta2) 2025-12-07
+Released by @github-actions[bot] on 2025-12-07T15:02:53Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.8...v0.7.9-beta2
+
+## [v0.7.8](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.8) 2025-12-01
+Released by @github-actions[bot] on 2025-12-01T01:21:10Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.6...v0.7.8
+
++ 优化：支持GET /nacos/v1/ns/service接口，注册中心初步支持非临时实例，兼容支持php hyperf框架；
++ 优化：支持第三方内存分配器mimalloc，并多打一个使用mimalloc内存分配器的应用包；
+
+## [v0.7.6](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.6) 2025-11-24
+Released by @github-actions[bot] on 2025-11-24T00:53:34Z
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.5...v0.7.6
+
+1. 新增：控制台增加MCP服务批量导出、导入功能；#272
+2. 优化：MCP服务路由url支持pathParam,支持配置动态请求参数内容到url中；
+
+## [v0.7.5](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.5) 2025-11-16
+Released by @github-actions[bot] on 2025-11-16T15:32:42Z
+
+## What's Changed
+* feat: 添加OAuth2.0认证支持 by @seth-shi in https://github.com/nacos-group/r-nacos/pull/268
+
+## New Contributors
+* @seth-shi made their first contribution in https://github.com/nacos-group/r-nacos/pull/268
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.4...v0.7.5
+
+## [v0.7.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.4) 2025-11-09
+Released by @github-actions[bot] on 2025-11-09T16:11:14Z
+
+## What's Changed
+* fix: 修复assertion by @YichiZhang0613 in https://github.com/nacos-group/r-nacos/pull/267
+
+* feat: 兼容nacos v3版本sdk；1) 支持v3的login 2) 默认命名空间适配空串与public,默认命名空间统一使用public即可。
+
+## New Contributors
+* @YichiZhang0613 made their first contribution in https://github.com/nacos-group/r-nacos/pull/267
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.3...v0.7.4
+
+## [v0.7.3](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.3) 2025-10-26
+Released by @github-actions[bot] on 2025-10-26T17:39:48Z
+
+## What's Changed
+
+- 优化: mcp http默认超时时间支持通过配置设置，默认值调整为30秒 #262 
+- 优化: 为用户登陆cookie 添加 max_age by @LFlops in https://github.com/nacos-group/r-nacos/pull/263  #258
+
+
+## New Contributors
+* @LFlops made their first contribution in https://github.com/nacos-group/r-nacos/pull/263
+
+**Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.7.2...v0.7.3
+
 ## [v0.7.2](https://github.com/nacos-group/r-nacos/releases/tag/v0.7.2) 2025-09-27
 Released by @github-actions[bot] on 2025-09-27T16:24:55Z
 
