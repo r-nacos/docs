@@ -35,6 +35,24 @@ export const zhSidebar: DefaultTheme.Sidebar = {
       link: `/mcp-server/`,
     },
     {
+      text: 'Open API 文档',
+      collapsed: false,
+      items: [
+        {
+          text: '登录鉴权 Open API',
+          link: `/open-api-auth/`,
+        },
+        {
+          text: 'Nacos V1 Open API',
+          link: `/open-api-nacos-v1/`,
+        },
+        {
+          text: 'RNacos V1 Open API',
+          link: `/open-api-rnacos-v1/`,
+        }
+      ],
+    },
+    {
       text: '版本说明',
       link: `/version_describe/`,
     },
