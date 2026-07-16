@@ -35,6 +35,18 @@ export const zhSidebar: DefaultTheme.Sidebar = {
       link: `/mcp-server/`,
     },
     {
+      text: '版本说明',
+      link: `/version_describe/`,
+    },
+    {
+      text: '架构',
+      link: `/architecture/`,
+    },
+    {
+      text: '常见问题',
+      link: `/faq/`,
+    },
+    {
       text: 'Open API 文档',
       collapsed: false,
       items: [
@@ -51,18 +63,6 @@ export const zhSidebar: DefaultTheme.Sidebar = {
           link: `/open-api-rnacos-v1/`,
         }
       ],
-    },
-    {
-      text: '版本说明',
-      link: `/version_describe/`,
-    },
-    {
-      text: '架构',
-      link: `/architecture/`,
-    },
-    {
-      text: '常见问题',
-      link: `/faq/`,
     },
     {
       text: '部署样例',
