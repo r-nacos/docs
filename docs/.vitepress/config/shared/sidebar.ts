@@ -1,10 +1,9 @@
 import type { VitePressSidebarOptions } from "vitepress-sidebar/types";
-import { VITE_BASE_URL } from "./context";
 
 const commonSidebarOptions: VitePressSidebarOptions = {
     documentRootPath: "docs",
     debugPrint: true,
-    basePath: VITE_BASE_URL,
+    basePath: "/",
     collapsed: true,
     excludeByGlobPattern: ["assets", "public", "index.md", "about","change"],
     includeDotFiles: true,
