@@ -1,0 +1,1 @@
+import{q as s}from"./theme.DDk7qB6F.js";function l(i,e){var t,a,o;i.accDescr&&((t=e.setAccDescription)==null||t.call(e,i.accDescr)),i.accTitle&&((a=e.setAccTitle)==null||a.call(e,i.accTitle)),i.title&&((o=e.setDiagramTitle)==null||o.call(e,i.title))}s(l,"populateCommonDb");export{l as i};
