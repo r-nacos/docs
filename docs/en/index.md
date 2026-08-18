@@ -1,9 +1,9 @@
 ---
-# 官方文档相关配置：https://vitepress.dev/reference/default-theme-layout
+# Layout options: https://vitepress.dev/reference/default-theme-layout
 layout: home
 home: true
 
-# 官方文档相关配置：https://vitepress.dev/reference/default-theme-home-page
+# Home-page options: https://vitepress.dev/reference/default-theme-home-page
 lang: zh-CN
 title: R-NACOS
 titleTemplate: R-NACOS docs
@@ -22,10 +22,10 @@ hero:
   name: "R-NACOS"
   text: "Fast Nacos"
   tagline: "Nacos service platform implemented by Rust language, compatible with Nacos(Java)"
-  image:  # text 和 tagline 区域旁的图片
+  image:  # Image beside the text and tagline
     src: /logo.svg
     alt: "R-NACOS"  
-  # 按钮相关
+  # Action buttons
   actions:
     - theme: brand
       text: "intro"
@@ -34,7 +34,7 @@ hero:
       text: "Quick Start"
       link: "/en/quick_started/"
 
-# 按钮下方的描述
+# Description below the buttons
 features:
   - icon: 🪶
     title: "Lighter weight"

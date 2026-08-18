@@ -1,0 +1,41 @@
+/* 针对 VitePress 默认错位背景的优化 */
+.VPHero .image-bg {
+    display: block !important;
+
+    /* 1. 恢复高斯模糊，让渐变自然晕染开，不再是硬邦邦的边界 */
+    filter: blur(50px) !important;
+    /* 强制将背景层裁成圆形，避免模糊后暴露矩形边角。 */
+    border-radius: 50% !important;
+
+    /* 3. 限制溢出，双重保险，不让模糊的边缘超过容器 */
+    mix-blend-mode: normal;
+}
+
+.VPImage.image-src {
+    width: 200px;
+    border-radius: 50%;
+}
+
+:root {
+    /* Hero 标题渐变色 */
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: -webkit-linear-gradient(
+            120deg,
+            #bd34fe,
+            #41d1ff
+    );
+    /* Hero Logo 背景渐变色 */
+    --vp-home-hero-image-background-image: linear-gradient(
+            120deg,
+            #bd34fe,
+            #41d1ff
+    ) !important;
+}
+
+.dark {
+    --vp-home-hero-image-background-image: linear-gradient(
+            120deg,
+            #bd34fe,
+            #41d1ff
+    ) !important;
+}

@@ -1,0 +1,25 @@
+/* 右侧目录容器 */
+.VPDocAsideOutline .content {
+    position: relative;
+    padding-left: 14px;
+}
+
+/* 左侧竖线 */
+.VPDocAsideOutline .content::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--vp-c-divider);
+}
+
+/* 当前激活项的绿色粗条 */
+.VPDocAsideOutline .outline-marker {
+    width: 4px !important;
+    height: 20px !important;
+    left: 0 !important;
+    border-radius: 999px !important;
+    background-color: var(--vp-c-brand-1) !important;
+}

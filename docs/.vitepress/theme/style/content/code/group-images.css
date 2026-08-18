@@ -1,0 +1,84 @@
+/* ==========================================================================
+   VitePress 代码组自定义 HTML 块专属重置与美化样式（完美铺满与文字靠前版）
+   ========================================================================== */
+/* 1. 后台未激活状态：完全遵循原生隐藏策略，重置所有可能导致缝隙的样式 */
+.vp-code-group .blocks > div.vp-raw-html-block {
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important; /* 彻底清除原生 Shiki 外层自带的任何边框 */
+}
+
+/* 2. 激活状态：确保外层容器变为可见，完美接管圆角与整体阴影 */
+.vp-code-group .blocks > div.vp-raw-html-block.active {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    box-shadow: var(--vp-shadow-3);
+    border-radius: 0 0 8px 8px; /* 顺应代码组底部的圆角 */
+    overflow: hidden; /* 极其关键：确保内部图片不会超出圆角，同时裁剪掉溢出的多余白边 */
+}
+
+/* 3. 抹平 Shiki 高亮引擎留下的无用空壳，防止它们污染布局或产生空隙 */
+.vp-raw-html-block pre,
+.vp-raw-html-block code,
+.vp-raw-html-block .copy {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+/* 4. 内层通用样式：接管正常的字色、背景色与边框 */
+.vp-custom-html-content {
+    background-color: var(--vp-code-block-bg) !important;
+    color: var(--vp-c-text-1) !important;
+    /*border: 1px solid var(--vp-code-block-divider-color);*/
+    border-top: none; /* 顶部的分割线由 tab 栏提供 */
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+/* 5. 【文字面板】：赋予标准舒适的内边距，且让文字向左进一点 */
+.vp-custom-html-content:not(.rendered-md) {
+    padding: 0 10px !important; /* 左右缩窄到 24px，为文字向左挪动腾出空间 */
+}
+
+/* 6. 【图片面板】：无视所有边距，实现真正的 100% 全铺满 */
+.vp-custom-html-content.rendered-md {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important; /* 图片面板不需要重复的边框，完全交给外层 active 容器 */
+    display: block !important; /* 改为 block 块级布局，彻底消除 flex 带来的边缘不贴合问题 */
+    width: 100% !important;
+}
+
+/* 8. 【核心修复】：图片及容器的终极全铺满重置 */
+.rendered-md figure {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.rendered-md img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important; /* 消除内联图片底部的 3px~4px 幽灵基线空白 */
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 0 8px 8px; /* 让图片的底部圆角贴合最外层剪裁 */
+}
+
+#VPContent .vp-code-group  div.language-txt.vp-adaptive-theme.line-numbers-mode.active {
+    padding: inherit !important;
+}
+
+/* 仅针对包含自定义内容的代码块，将左内边距清零 */
+.language-txt.vp-adaptive-theme.line-numbers-mode:has(.vp-custom-html-content) {
+    padding-left: 15px !important;
+}
+

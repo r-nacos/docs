@@ -1,0 +1,10 @@
+.article-metadata {
+  margin-bottom: 15px;
+  color: var(--vp-c-text-2);
+  font-size: 15px;
+}
+
+.article-metadata .icon {
+  display: inline-block;
+  transform: translateY(2px);
+}

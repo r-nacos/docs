@@ -1,0 +1,30 @@
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vp-doc th {
+  white-space: nowrap;
+}
+
+.vp-doc table thead th {
+  border-bottom: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  background-color: var(--vp-c-bg-soft);
+  font-weight: 600;
+  text-align: center;
+}
+
+.vp-doc table tbody tr,
+.vp-doc table tbody tr:nth-child(2n) {
+  background-color: var(--vp-c-bg);
+}
+
+.vp-doc table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.vp-doc table tbody tr:hover {
+  background-color: var(--vp-c-bg-soft);
+}

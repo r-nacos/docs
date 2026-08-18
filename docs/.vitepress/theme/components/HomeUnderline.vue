@@ -7,7 +7,7 @@
           fill="currentColor"
           height="11"
           style="
-          color: var(--vp-c-brand);
+          color: var(--vp-c-brand-1);
           position: absolute;
           z-index: -1;
           top: 1em;

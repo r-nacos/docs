@@ -1,13 +1,38 @@
-@import './var.css';
-@import './link.css';
-@import './vp-code.css';
-@import './vp-code-title.css';
-@import './vp-code-group.css';
-@import './blockquote.css';
-@import './rainbow.css';
-@import './vplink.css';
-@import './h.css';
-@import './picture.css';
-@import './task-list.css';
+/* Third-party theme styles */
+@import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css';
+@import '@nolebase/vitepress-plugin-highlight-targeted-heading/client/style.css';
+@import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css';
+@import '@vitepress-demo-preview/component/dist/style.css';
+@import 'nprogress-v2/dist/index.css';
+@import 'vitepress-markdown-timeline/dist/theme/index.css';
+@import 'vitepress-plugin-legend/dist/index.css';
 
+/* Foundation: variables first, then document-wide defaults */
+@import './base/theme.css';
+@import './base/typography.css';
+@import './base/global.css';
 
+/* Markdown content */
+@import './content/headings.css';
+@import './content/links.css';
+@import './content/media.css';
+@import './content/tables.css';
+@import './content/custom-blocks.css';
+@import './content/task-list.css';
+@import './content/code/base.css';
+@import './content/code/title.css';
+@import './content/code/group.css';
+@import './content/code/group-images.css';
+
+/* Shared VitePress component overrides */
+@import './components/navigation-surfaces.css';
+@import './components/sidebar-navigation.css';
+@import './components/document-outline.css';
+@import './components/article-metadata.css';
+@import './components/appearance-transition.css';
+
+/* Page-level experiences */
+@import './pages/home-hero.css';
+@import './pages/home-features.css';
+@import './pages/home-rainbow.css';
+@import './pages/access-gate.css';

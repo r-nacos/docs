@@ -1,0 +1,21 @@
+/* Translucent surfaces shared by desktop and mobile navigation. */
+.VPNavBar:not(.has-sidebar):not(.home.top),
+.DocSearch-Button,
+.curtain,
+.VPLocalNav {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+@media (min-width: 960px) {
+  .VPNavBar:not(.home.top) .content-body {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+  }
+}
+
+.VPFeature {
+  border: 0;
+  background-color: transparent;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 15%);
+}

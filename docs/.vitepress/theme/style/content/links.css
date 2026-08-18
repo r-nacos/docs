@@ -1,0 +1,39 @@
+/* External and relative document links receive a favicon-sized marker. */
+.vp-doc a:not([href^='https://img.shields.io/']):not(.not):is(
+  [target='_blank'],
+  [href^='./'],
+  [href^='../']
+)::before {
+  position: relative;
+  top: -0.125rem;
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+  content: '';
+  background-image: var(
+    --link-favicon,
+    url('https://api.iconify.design/heroicons-solid:link.svg?color=%23409eff')
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.vp-doc a:not(.not):is(
+  [href^='./'],
+  [href^='../'],
+  [href^='https://note.weizwz.com'],
+  [href^='https://www.note.weizwz.com']
+)::before {
+  background-image: url('https://p.weizwz.com/logo_a4353391cbf0889b.webp');
+}
+
+.dark .vp-doc a:not([href^='https://img.shields.io/']):not(.not):is(
+  [target='_blank'],
+  [href^='./'],
+  [href^='../']
+)::before {
+  filter: brightness(0.8);
+}

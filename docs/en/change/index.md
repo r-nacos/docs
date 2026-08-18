@@ -1,3 +1,9 @@
+---
+date: 2026-08-19 00:14:46
+title: Changelog
+encrypt: false
+aside: false
+---
 > Commonly used symbols description:
 >
 > ✨New: Used to indicate tasks that add new features or new characteristics.
@@ -89,7 +95,7 @@ Released by @github-actions[bot] on 2024-11-11T01:09:03Z
 
 +  Optimization: Made r-nacos compatible with the grpc publish configuration interface in nacos-sdk-csharp; #162 
 +  New: Added a sub-command `mysql-to-data` to r-nacos, enabling the export of nacos mysql data (including configurations, namespaces, and user data) to intermediate data files, facilitating indirect import of nacos data into r-nacos; #138
-+  Fix: Corrected a typo on the console page, changing `主角点` to `主节点`;
++  Fix: Corrected a Chinese typo for "primary node" on the console page;
 
 ## [v0.6.4](https://github.com/nacos-group/r-nacos/releases/tag/v0.6.4) 2024-11-03
 Released by @github-actions[bot] on 2024-11-03T17:30:36Z
@@ -144,8 +150,8 @@ Released by @github-actions[bot] on 2024-10-07T17:42:27Z
 ## What's Changed
 
 * Added support for data export and import, enabling scenarios like backup, recovery, and data migration; #138
-* On Linux and macOS, data is now stored by default in the absolute path `~/.local/share/r-nacos/nacos_db`; #78
-* Disabled console CAPTCHA support for frontend-backend integration. When `RNACOS_CONSOLE_ENABLE_CAPTCHA=false`, the returned data is null, allowing the frontend to hide the CAPTCHA; by @a981008 in https://github.com/nacos-group/r-nacos/pull/142
+* On Linux and macOS, data is now stored by default in the absolute path `~/.local/share/r-nacos/nacos_db` ; #78
+* Disabled console CAPTCHA support for frontend-backend integration. When `RNACOS_CONSOLE_ENABLE_CAPTCHA=false` , the returned data is null, allowing the frontend to hide the CAPTCHA; by @a981008 in https://github.com/nacos-group/r-nacos/pull/142
 * Compatibility with v0.5.x data, enabling seamless upgrades from v0.5.x; #123
 
 ## New Contributors
@@ -159,7 +165,7 @@ Released by @github-actions[bot] on 2024-09-27T01:12:42Z
 **Full Changelog**: https://github.com/nacos-group/r-nacos/compare/v0.5.23...v0.6.0-beta
 
 1. Added support for data export and import, enabling scenarios like backup, recovery, and data migration; #138
-2. On Linux and macOS, data is now stored by default in the absolute path `~/.local/share/r-nacos/nacos_db`; #78
+2. On Linux and macOS, data is now stored by default in the absolute path `~/.local/share/r-nacos/nacos_db` ; #78
 3. Compatibility with v0.5.x data, enabling seamless upgrades from v0.5.x;
 
 This is currently a beta version. Interested users can try it out in testing environments. For production environments, it is recommended to wait for the official release before upgrading.
@@ -346,13 +352,13 @@ v0.5.9 addresses the issues with the console frontend in v0.5.8. The changes com
 4. 🛠️ Optimization: Switched to the newly refactored console frontend, which retains most of the same functionality. Future updates will include mobile support and internationalization (#58).
 5. 🛠️ Optimization: Restructured and refactored the openapi interface code (#62)
 
-In this update, the console frontend was switched to the newly refactored version [rnacos-console-web](https://github.com/r-nacos/rnacos-console-web).
+In this update, the console frontend was switched to the newly refactored version [rnacos-console-web](https://github.com/r-nacos/rnacos-console-web) .
 The entire console refactoring was completed by @DaqiongYang. After this release, he will lead the future development of the console frontend.
 
-After more than a month of磨合, we have finally found a suitable frontend development lead for the project.
+After more than a month of collaboration, we have finally found a suitable frontend development lead for the project.
 From now on, the author can focus more on system design and backend development.
 
-We would like to extend our特别感谢 to @DaqiongYang for his work.
+We would like to extend special thanks to @DaqiongYang for his work.
 
 ## New Contributors
 * @Clownsw made their first contribution in https://github.com/nacos-group/r-nacos/pull/90
@@ -510,7 +516,7 @@ Released by @github-actions[bot] on 2024-03-10T10:20:02Z
 	* Currently, there is no tool to migrate console user data; since demand for this is expected to be low, a separate migration tool will not be provided for now; if there is significant demand, a tool to migrate from v0.4.x to v0.5.x may be developed later (users with this need can raise an issue, and if the number exceeds 10, I will consider adding this migration tool);
 	* Currently, v0.5.x is only available as a beta version, and production environments should wait for the official release before considering migration;
 
-The primary focus of this change is [Optimize raft cluster write mechanism](https://github.com/r-nacos/r-nacos/issues/19), and more details can be found in the corresponding [issue](https://github.com/r-nacos/r-nacos/issues/19).
+The primary focus of this change is [Optimize raft cluster write mechanism](https://github.com/r-nacos/r-nacos/issues/19) , and more details can be found in the corresponding [issue](https://github.com/r-nacos/r-nacos/issues/19) .
 
 ## New Contributors
 * @asmpg made their first contribution in https://github.com/r-nacos/r-nacos/pull/45
@@ -582,7 +588,7 @@ Released by @github-actions[bot] on 2023-12-09T16:10:05Z
 
 Developed a new console for r-nacos, which supports a new HTTP port, user password login, and exposure to the external network.
 
-1. The new console opens a new HTTP port to allow external network access, enabling the new console's port to be exposed to the external network separately. The port number is http_port+2000, defaulting to 10848, and can be accessed locally via http://127.0.0.1:10848/.
+1. The new console opens a new HTTP port to allow external network access, enabling the new console's port to be exposed to the external network separately. The port number is http_port+2000, defaulting to 10848, and can be accessed locally via http://127.0.0.1:10848/ .
 2. The new console includes a user management module, allowing for the management of console users. The default username is admin, with the corresponding password being admin; the password should be updated before exposing the console to the external network.
 3. All interfaces in the new console now require login verification, and the login page interface includes captcha verification (future official versions will also include error verification frequency interception).
 

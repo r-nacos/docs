@@ -1,0 +1,72 @@
+:root {
+    --vp-sidebar-width: 300px;
+}
+
+#VPSidebarNav .VPSidebarItem .item {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#VPSidebarNav .VPSidebarItem .item a,
+#VPSidebarNav .VPSidebarItem .item .link {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* 核心：单行文本溢出完美切出 ... 且不留白 */
+#VPSidebarNav .VPSidebarItem .item .text,
+#VPSidebarNav .VPSidebarItem .item span:not([class*="icon"]) {
+    display: block !important;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important; /* 稳稳露出末尾的 ... */
+    white-space: nowrap !important;
+    text-align: left;
+    background-color: transparent !important;
+}
+
+/* 强行抹除任何官方默认悬停引入的底层白块 */
+#VPSidebarNav .VPSidebarItem .item:hover,
+#VPSidebarNav .VPSidebarItem .item .text:hover {
+    background-color: transparent !important;
+}
+
+/* 图标防挤压安全网 */
+#VPSidebarNav .VPSidebarItem .item::before {
+    content: '';
+    width: 16px !important;
+    height: 16px !important;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+/* 图标路径精准分流 */
+#VPSidebarNav .VPSidebarItem:not(.is-link) > .item::before {
+    background-image: url('/svg/document-open.svg') !important;
+}
+#VPSidebarNav .VPSidebarItem:not(.is-link).collapsed > .item::before {
+    background-image: url('/svg/document.svg') !important;
+}
+#VPSidebarNav .VPSidebarItem.is-link > .item::before {
+    background-image: url('/svg/file.svg') !important;
+}
+
+/* 一级分组缩进和引导线 */
+.group:has([role="button"]) .VPSidebarItem.level-0 .items {
+    padding-left: 15px !important;
+    border-left: 1px solid var(--vp-c-divider);
+    border-radius: 2px;
+    transition: background-color 0.25s;
+}
